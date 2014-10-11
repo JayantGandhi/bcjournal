@@ -47,5 +47,8 @@ gem 'rmagick'
 gem 'carrierwave'
 gem 'carrierwave-aws'
 
+
+gem 'ckeditor'
+
 # Mercury Editor for editing
-# gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git'
+gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git'
