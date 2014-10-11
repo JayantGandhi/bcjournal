@@ -46,6 +46,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'carrierwave-aws'
+gem 'mini_magick'
 
 
 gem 'ckeditor'
