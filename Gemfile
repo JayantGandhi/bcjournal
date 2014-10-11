@@ -44,7 +44,8 @@ gem 'activeadmin', github: 'activeadmin'
 
 # Image Upload
 gem 'rmagick'
-gem 'paperclip'
+gem 'carrierwave'
+gem 'carrierwave-aws'
 
 # Mercury Editor for editing
 # gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git'
