@@ -38,3 +38,13 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# User Authentication
+gem 'devise'
+gem 'activeadmin', github: 'activeadmin'
+
+# Image Upload
+gem 'rmagick'
+gem 'paperclip'
+
+# Mercury Editor for editing
+# gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git'
