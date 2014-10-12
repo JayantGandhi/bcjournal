@@ -1,4 +1,4 @@
-ActiveAdmin.register AdminUser do
+ActiveAdmin.register AdminUser, as: 'Admin' do
   permit_params :email, :password, :password_confirmation, :super_admin
 
   index do

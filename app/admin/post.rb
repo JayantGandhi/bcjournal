@@ -1,4 +1,4 @@
-ActiveAdmin.register Post do
+ActiveAdmin.register Post, as: 'Article' do
 
   permit_params :title, :by_line, :content, :cover_image
 
