@@ -1,0 +1,91 @@
+@font-face {
+  font-family: 'fontello';
+  src: font-url('/assests/fontello.eot');
+  src: font-url('/assests/fontello.eot?#iefix') format('embedded-opentype'),
+    font-url('/assests/fontello.svg#fontello') format('svg'),
+    font-url('/assests/fontello.woff') format('woff'),
+    font-url('/assests/fontello.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*@font-face {
+  font-family: 'helvetica';
+  src: font-url('Helvetica.eot?#iefix') format('embedded-opentype'),
+       font-url('Helvetica.woff') format('woff'),
+       font-url('Helvetica.ttf')  format('truetype'),
+       font-url('Helvetica.svg#Helvetica') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}*/
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: font-url('HelveticaNeue.eot');
+  src: font-url('HelveticaNeue.eot?#iefix') format('embedded-opentype'),
+       font-url('HelveticaNeue.woff') format('woff'),
+       font-url('HelveticaNeue.ttf')  format('truetype'),
+       font-url('HelveticaNeue.svg#helvetica-neue') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Bold';
+  src: font-url('HelveticaBold.eot');
+  src: font-url('HelveticaBold.eot?#iefix') format('embedded-opentype'),
+       font-url('HelveticaBold.woff') format('woff'),
+       font-url('HelveticaBold.ttf')  format('truetype'),
+       font-url('HelveticaBold.svg#HelveticaBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Light';
+  src: font-url('HelveticaLight.eot');
+  src: font-url('HelveticaLight.eot?#iefix') format('embedded-opentype'),
+       font-url('HelveticaLight.woff') format('woff'),
+       font-url('HelveticaLight.ttf')  format('truetype'),
+       font-url('HelveticaLight.svg#HelveticaLight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Helvetica Neue Bold';
+  src: font-url('HelveticaNeueBold.eot');
+  src: font-url('HelveticaNeueBold.eot?#iefix') format('embedded-opentype'),
+       font-url('HelveticaNeueBold.woff') format('woff'),
+       font-url('HelveticaNeueBold.ttf')  format('truetype'),
+       font-url('HelveticaNeueBold.svg#helvetica-neue-bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Light';
+  src: font-url('HelveticaNeueLight.eot');
+  src: font-url('HelveticaNeueLight.eot?#iefix') format('embedded-opentype'),
+       font-url('HelveticaNeueLight.woff') format('woff'),
+       font-url('HelveticaNeueLight.ttf')  format('truetype'),
+       font-url('HelveticaNeueLight.svg#HelveticaNeueLight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Ultralight';
+  src: font-url('HelveticaNeueUltraLight.eot');
+  src: font-url('HelveticaNeueUltraLight.eot?#iefix') format('embedded-opentype'),
+       font-url('HelveticaNeueUltraLight.woff') format('woff'),
+       font-url('HelveticaNeueUltraLight.ttf')  format('truetype'),
+       font-url('HelveticaNeueUltraLight.svg#HelveticaNeueuUltraLight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import "fontello/fontello-codes";
+@import "fontello/fontello-embedded";
+@import "fontello/fontello-ie7-codes";
+@import "fontello/fontello-ie7";
+@import "fontello/fontello";
