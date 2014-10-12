@@ -1,7 +1,7 @@
 <%= semantic_form_for [:admin, @post], multipart: true do |f| %>
   <%= f.inputs "Post", multipart: true do %>
     <%= f.input :title %>
-    <img id="img_preview" src="#" alt="your image" />
+    <img id="img_preview" src='<%= @post.cover_image %>' alt="Cover Image" />
     <%= f.input :cover_image, as: :file, hint: f.template.image_tag(f.object.cover_image.url(:thumb))%>
     <%= f.input :by_line %>
     <%= f.input :content, as: :ckeditor %>
