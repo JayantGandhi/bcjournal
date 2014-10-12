@@ -53,4 +53,7 @@ gem 'mini_magick'
 gem 'ckeditor'
 
 # Mercury Editor for editing
-gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git'
+# gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git'
+
+# Zurb Foundation because I want this to be easy :D
+gem 'foundation-rails'
