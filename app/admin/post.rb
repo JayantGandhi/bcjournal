@@ -1,6 +1,8 @@
-ActiveAdmin.register Post, as: 'Article' do
+ActiveAdmin.register Post do
 
   permit_params :title, :by_line, :content, :cover_image
+
+  menu priority: 1, label: 'Manage Posts'
 
   index do
     selectable_column
@@ -11,6 +13,14 @@ ActiveAdmin.register Post, as: 'Article' do
     column :updated_at
     column 'Published?', :published
     actions
+  end
+
+  action_item only: :show do
+    if post.published
+      link_to('View on site', post_path(post))
+    else
+      link_to('Preview', post_path(post))
+    end
   end
 
   form partial: 'form'
