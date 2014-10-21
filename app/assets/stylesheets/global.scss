@@ -6,3 +6,16 @@ a:active {
 .content-container {
   min-height: 1000px;
 }
+
+.desktop-only {
+  display: none;
+}
+
+@media #{$large-up} {
+  .desktop-only {
+    display: block;
+  }
+  .mobile-only {
+    display: none;
+  }
+}
