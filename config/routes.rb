@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   resources :posts
 
+  post 'post/:id/publish', to: 'post#publish', as: 'post_publish'
+  post 'post/:id/unpublish', to: 'post#unpublish', as: 'post_unpublish'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 

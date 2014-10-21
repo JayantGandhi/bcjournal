@@ -18,8 +18,10 @@ ActiveAdmin.register Post do
   action_item only: :show do
     if post.published
       link_to('View on site', post_path(post))
+      link_to('Unpublish', post_unpublish_path(post))
     else
       link_to('Preview', post_path(post))
+      link_to('Publish', post_publish_path(post))
     end
   end
 
