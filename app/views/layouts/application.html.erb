@@ -13,9 +13,9 @@
 
   <body>
     <%= render partial: "shared/navbar" %>
-    <div id="content" class="content-container">
+    <main id="content" class="content-container small-12 columns">
       <%= yield %>
-    </div>
+    </main>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
