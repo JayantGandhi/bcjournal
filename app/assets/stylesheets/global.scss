@@ -11,6 +11,18 @@ a:active {
   display: inline;
 }
 
+.right {
+  float: right;
+}
+
+hr {
+padding: 0;
+border: none;
+border-top: medium double #333;
+color: #333;
+text-align: center;
+}
+
 .desktop-only {
   display: none;
 }
