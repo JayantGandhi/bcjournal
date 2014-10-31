@@ -14,8 +14,7 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require foundation
-//= require headroom.min
-//= require jquery.headroom.min
+//= require lodash.min
 //= require_tree .
 //= require turbolinks
 

@@ -12,6 +12,9 @@
   </head>
 
   <body>
+    <section id="preContainer">
+      <%= yield :pre_container %>
+    </section>
     <%= render partial: "shared/navbar" %>
     <main id="content" class="content-container small-12 columns">
       <%= yield %>
