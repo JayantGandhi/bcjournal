@@ -63,3 +63,6 @@ gem 'foundation-rails'
 
 # Bourbon for css3 mixins
 gem 'bourbon'
+
+# New Relic for tracking
+gem 'newrelic_rpm'
