@@ -16,6 +16,14 @@
   top: 0;
 }
 
+.sticky {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
 #preContainer {
   min-height: 150px;
 }
