@@ -60,3 +60,6 @@ gem 'ckeditor'
 
 # Zurb Foundation because I want this to be easy :D
 gem 'foundation-rails'
+
+# Bourbon for css3 mixins
+gem 'bourbon'

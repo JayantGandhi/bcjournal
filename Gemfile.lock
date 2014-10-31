@@ -199,6 +199,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  bourbon
   carrierwave
   carrierwave-aws
   ckeditor
