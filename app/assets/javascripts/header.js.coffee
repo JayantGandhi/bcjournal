@@ -4,5 +4,5 @@
 #   -Jquery
 
 jQuery ->
-  $("#headerDesktop").headroom()
+  $("#header").headroom()
   # console.log $ "#headerDesktop"

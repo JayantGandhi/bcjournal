@@ -1,13 +1,14 @@
-  <nav id="headerDesktop" class="top-bar headroom--fixed" data-topbar role="navigation">
+  <nav id="header" class="top-bar headroom--fixed" data-topbar role="navigation">
     <ul class="title-area">
-      <li class="name">
-        <h1><a href="/">The SAIS Journal of Global Affairs</a></h1>
+      <li class="name desktop-only">
+        <h1><a href="/" class="desktop-only">The SAIS Journal of Global Affairs</a></h1>
       </li>
+      <li class="name mobile-only"><h1><a href="/" class="mobile-only">SJGA</a></h1></li>
        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+      <li id="mobileMenuToggle" class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
     </ul>
 
-    <section class="top-bar-section">
+    <section class="top-bar-section desktop-only">
       <!-- Right Nav Section -->
       <ul class="right">
         <li class="has-dropdown">
@@ -20,7 +21,7 @@
       </ul>
 
       <!-- Left Nav Section -->
-      <ul class="left">
+      <ul class="left desktop-only">
         <li><a href="#">Vertical 1</a></li>
         <li><a href="#">Vertical 2</a></li>
         <li><a href="#">Vertical 3</a></li>
