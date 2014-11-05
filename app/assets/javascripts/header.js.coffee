@@ -3,13 +3,15 @@
 #   -underscore.js
 #   -Jquery
 
-jQuery ->
+
+$(window).on 'load', ->
   $header = $('#header')
   $headerOffset = $header.offset().top
 
   checkSticky = ->
     scrollTop = $(window).scrollTop()
-
+    console.log scrollTop
+    console.log $headerOffset
     if scrollTop < $headerOffset
       if $header.hasClass('sticky')
         $header.removeClass('sticky')
@@ -20,5 +22,3 @@ jQuery ->
   stickyScroll = _.throttle(checkSticky, 33)
 
   $(window).on 'scroll', stickyScroll
-
-
