@@ -10,14 +10,14 @@ $(window).on 'load', ->
 
   checkSticky = ->
     scrollTop = $(window).scrollTop()
-    console.log scrollTop
-    console.log $headerOffset
     if scrollTop < $headerOffset
       if $header.hasClass('sticky')
         $header.removeClass('sticky')
     else
       if not $header.hasClass('sticky')
         $header.addClass('sticky')
+
+  do checkSticky
 
   stickyScroll = _.throttle(checkSticky, 33)
 
