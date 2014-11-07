@@ -1,22 +1,26 @@
 <%= content_for :pre_container do %>
-  <div class="logo">
-    <%= image_tag 'sais_thumb.jpg', {alt: 'logo goes here'} %>
-  </div>
-  <div class="title">
-    <h1 class="inline">SAIS</h1>
-  </div>
-  <div class="right">
-    <div class="fb-like" data-href="https://www.facebook.com/bcjournal" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-  </div>
-  <hr>
-  <ul class="slideshow" data-orbit data-options="animation_speed:2000;">
-    <% for post in @posts do %>
-      <li>
-        <img src='<%= post.cover_image.cover %>'>
-        <div class="orbit-caption">
-          <%= post.title %>
+  <div id="homeHeader">
+    <div class="logo">
+      <%= image_tag 'sais_thumb.jpg', {alt: 'logo goes here'} %>
+    </div>
+    <div class="title">
+      <h1 class="inline">SAIS</h1>
+    </div>
+    <div class="right">
+      <div class="fb-like" data-href="https://www.facebook.com/bcjournal" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+    </div>
+    <hr>
+    <div class="slideshow">
+      <% for post in @posts do %>
+        <div>
+          <%= link_to(post)  do%>
+          <img src='<%= post.cover_image.cover %>'>
+          <div class="caption">
+            <%= post.title %>
+          </div>
+          <%- end -%>
         </div>
-      </li>
-    <%- end -%>
-  </ul>
+      <%- end -%>
+    </div>
+  </div>
 <%- end -%>

@@ -11,11 +11,14 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
 //= require foundation
 //= require lodash.min
+//= require slick
 //= require_tree .
-//= require turbolinks
 
 $(function(){ $(document).foundation(); });
+
+$(document).ready(function(){
+  $('.slideshow').slick();
+});
