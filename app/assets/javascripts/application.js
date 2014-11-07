@@ -20,5 +20,8 @@
 $(function(){ $(document).foundation(); });
 
 $(document).ready(function(){
-  $('.slideshow').slick();
+  $('.slideshow').slick({
+    dots: true,
+    infinite: true,
+  });
 });
