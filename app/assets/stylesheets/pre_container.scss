@@ -14,4 +14,27 @@
   img {
     margin: 0 auto;
   }
+
+  #prevArrow {
+    float: left;
+  }
+
+  #nextArrow {
+    float: right;
+    right: 0;
+  }
+
+  #prevArrow,
+  #nextArrow {
+    top: 0;
+    font-size: 5rem;
+    font-family: 'fontello';
+    line-height: 305px;
+    position: absolute;
+    cursor: pointer;
+
+    &:hover {
+      color: $oil;
+    }
+  }
 }

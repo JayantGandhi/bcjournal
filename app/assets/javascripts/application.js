@@ -23,5 +23,7 @@ $(document).ready(function(){
   $('.slideshow').slick({
     dots: true,
     infinite: true,
+    prevArrow: $('#prevArrow'),
+    nextArrow: $('#nextArrow')
   });
 });
