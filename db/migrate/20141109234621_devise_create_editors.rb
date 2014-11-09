@@ -1,19 +1,9 @@
-class DeviseCreateAdminUsers < ActiveRecord::Migration
-  def migrate(direction)
-    super
-    # Create a default user
-    AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password', super_admin: true) if direction == :up
-    puts "Created admin_user"
-  end
-
+class DeviseCreateEditors < ActiveRecord::Migration
   def change
-    create_table(:admin_users) do |t|
+    create_table(:editors) do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-
-      ## Super Admin?
-      t.boolean :super_admin, null: false, default: false
 
       ## Recoverable
       t.string   :reset_password_token
@@ -44,9 +34,9 @@ class DeviseCreateAdminUsers < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :admin_users, :email,                unique: true
-    add_index :admin_users, :reset_password_token, unique: true
-    # add_index :admin_users, :confirmation_token,   unique: true
-    # add_index :admin_users, :unlock_token,         unique: true
+    add_index :editors, :email,                unique: true
+    add_index :editors, :reset_password_token, unique: true
+    # add_index :editors, :confirmation_token,   unique: true
+    # add_index :editors, :unlock_token,         unique: true
   end
 end

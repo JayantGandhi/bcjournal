@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :editors
   mount Ckeditor::Engine => '/ckeditor'
   resources :posts
 
   post 'post/:id/publish', to: 'post#publish', as: 'post_publish'
   post 'post/:id/unpublish', to: 'post#unpublish', as: 'post_unpublish'
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
 
   root 'posts#index'
   # The priority is based upon order of creation: first created -> highest priority.
