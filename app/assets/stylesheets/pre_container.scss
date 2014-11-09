@@ -11,6 +11,8 @@
 }
 
 .slideshow {
+  overflow: hidden;
+
   img {
     margin: 0 auto;
   }
@@ -36,5 +38,57 @@
     &:hover {
       color: $oil;
     }
+  }
+
+  .caption {
+    top:0;
+    position: relative;
+    margin-left: 5rem;
+    @include transition(top, 250ms, ease-in-out);
+
+    h1 {
+      color: #000000;
+    }
+
+    p {
+      color: #fff;
+    }
+  }
+
+  .slide-image {
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-bottom: 24%;
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+.overlay {
+  @include opacity(0);
+  @include transition(opacity, 250ms, ease-in-out);
+  width: 100%;
+  padding-bottom: 24%;
+  display: inline-block;
+  position: absolute;
+  background-color: rgba(0,0,0,.75);
+}
+
+.slick-slide:hover {
+  .caption {
+    top: -2rem;
+    @include transition(top, 250ms, ease-in-out);
+
+    h1 {
+      color: #fff;
+      @include transition(color, 250ms, ease-in-out);
+    }
+  }
+
+
+
+  .overlay {
+    @include opacity(1);
   }
 }

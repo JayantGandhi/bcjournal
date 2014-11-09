@@ -14,9 +14,11 @@
       <% for post in @posts do %>
         <div>
           <%= link_to(post)  do%>
-          <img src='<%= post.cover_image.cover %>'>
+          <span class="overlay"></span>
+          <span class="slide-image" style='background-image:url(<%= post.cover_image.cover %>)'></span>
           <div class="caption">
-            <%= post.title %>
+            <h1><%= post.title %></h1>
+            <p>THIS IS A BLURB BLURBY BLURBY BLURB.SEE HOW BLURBY I AM.SO MUCH BLURB.</p>
           </div>
           <%- end -%>
         </div>

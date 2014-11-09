@@ -1,6 +1,7 @@
 @import 'foundation_and_overrides';
 /* Add imports of custom sass/scss files here */
 @import 'bourbon'; // for css mixins
+@import 'mixins'; // custom mixins
 @import 'global';
 @import 'fonts';
 @import 'header';
