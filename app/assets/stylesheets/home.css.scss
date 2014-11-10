@@ -5,15 +5,24 @@
   .logo,
   .title {
     display: table;
+    text-align: center;
 
     h1 {
       display: table-cell;
       vertical-align: middle;
     }
+
+    img {
+      max-height: 100px;
+    }
   }
 
   .title-area {
     max-width: 100%;
+  }
+
+  hr {
+    margin: 3px 0;
   }
 }
 
@@ -47,9 +56,17 @@
     line-height: 305px;
     position: absolute;
     cursor: pointer;
+    display: table;
+    @include transition(background-color, 250ms, ease-in-out);
+
+    &:before {
+      display: table-cell;
+      vertical-align: middle;
+    }
 
     &:hover {
       color: $oil;
+      background-color: rgba(0,0,0,0.5);
     }
   }
 
@@ -108,4 +125,8 @@
   .overlay {
     @include opacity(1);
   }
+}
+
+.slick-slider {
+  margin-bottom: 0 !important;
 }
