@@ -8,6 +8,22 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def new
+    @post = Post.new
+  end
+
+  def create
+
+  end
+
+  def edit
+
+  end
+
+  def update
+
+  end
+
   def publish
     @post = Post.find_by_id(params[:id])
 
@@ -27,5 +43,16 @@ class PostsController < ApplicationController
   def unpublish
     @post = Post.find_by_id(params[:id])
   end
+
+  protected
+
+    def post_params
+      params[:post].permit(
+        'title',
+        'by_line',
+        'subtitle',
+        'cover_image'
+      )
+    end
 
 end

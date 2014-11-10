@@ -1,4 +1,8 @@
-<ul>
+<div class="tools">
+  <span><%= link_to 'Create a Post', new_post_path %></span>
+</div>
+
+<ul class="list-of-posts">
 <%- for post in @posts -%>
   <li><%= post.title %></li>
 <%- end -%>
