@@ -69,3 +69,7 @@ gem 'newrelic_rpm'
 
 # Slick.js for slideshow
 gem 'slick_rails'
+
+# For Forms
+gem 'formtastic'
+gem 'nested_form'
