@@ -28,6 +28,18 @@ class EditorsController < ApplicationController
     end
   end
 
+  def index
+    @editors = Editor.all
+  end
+
+  def destroy
+    @editor = Editor.find_by_id(params[:id])
+
+    if @editor.destroy!
+      redirect_to editor_panel_path
+    end
+  end
+
   protected
 
     def editor_params

@@ -1,0 +1,8 @@
+<ul>
+  <% for editor in @editors do %>
+    <li>
+      <%= editor.email %>
+      <%= link_to 'Delete', editor, method: :delete, date: {confirm: true} %>
+    </li>
+  <%- end -%>
+</ul>
