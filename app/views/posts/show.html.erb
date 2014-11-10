@@ -1,18 +1,24 @@
-<h1><%= @post.title %></h1>
-<h5><%= @post.by_line %></h5>
-<div class="content-container">
-  <% for section in @post.sections do %>
-    <section>
-      <h2><%= section.header %></h2>
-      <div>
-        <%= raw section.body %>
-      </div>
-    </section>
-  <%- end -%>
-</div>
+<article>
+  <section class="title-area">
+    <h1><%= @post.title %></h1>
+    <h2><%= @post.subtitle %></h3>
+    <h5>By <%= @post.by_line %></h5>
+  </section>
 
-<% if editor_signed_in? %>
-  <div class="editor-tools">
-    <%= link_to 'Edit', edit_post_path %>
+  <div class="article-content">
+    <% for section in @post.sections do %>
+      <section>
+        <h3><%= section.header %></h2>
+        <div>
+          <%= raw section.body %>
+        </div>
+      </section>
+    <%- end -%>
   </div>
-<%- end -%>
+
+  <% if editor_signed_in? %>
+    <div class="editor-tools">
+      <%= link_to 'Edit', edit_post_path %>
+    </div>
+  <%- end -%>
+</article>

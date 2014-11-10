@@ -81,6 +81,7 @@ class PostsController < ApplicationController
         :blurb,
         :vertical_id,
         :tag_list,
+        :subtitle,
         sections_attributes: [
           :id,
           :header,

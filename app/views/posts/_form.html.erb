@@ -1,7 +1,8 @@
 <%= semantic_nested_form_for @post, multipart: true do |f| %>
   <%= f.inputs "Post", multipart: true do %>
     <%= f.input :title, required: true %>
-    <%= f.input :blurb, required: true %>
+    <%= f.input :subtitle %>
+    <%= f.input :blurb, required: true, input_html: {rows: 3} %>
     <span id="img_preview" style="background-image:url(<%= @post.cover_image %>)"></span>
     <%= f.input :cover_image, as: :file%>
     <%= f.input :by_line, required: true %>
