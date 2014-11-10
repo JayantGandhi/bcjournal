@@ -14,6 +14,9 @@
     <%= f.link_to_add 'Add A Section', :sections %>
     <%= f.input :vertical %>
     <%= f.input :tag_list %>
+    <div data-tooltip aria-haspopup='true' class="has-tip" title="Check this box if the post is a book review">
+      <%= f.input :book_review %>
+    </div>
   <% end %>
 
   <%= f.actions do %>

@@ -12,10 +12,11 @@
     <!-- Right Nav Section -->
     <ul class="right">
       <li class="has-dropdown">
-        <a href="#">Dropdown</a>
+        <a href="/about">About</a>
         <ul class="dropdown">
-          <li><a href="#">First link in dropdown</a></li>
-          <li><a href="#">Second link in dropdown</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/submit">Submit</a></li>
         </ul>
       </li>
     </ul>
@@ -23,7 +24,7 @@
     <!-- Left Nav Section -->
     <ul class="left">
       <% for vertical in Vertical.all do %>
-        <li><a href="#"><%= vertical.name %></a></li>
+        <li><a href="#"><%= vertical.name.titleize %></a></li>
       <% end %>
     </ul>
   </section>
