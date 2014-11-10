@@ -35,7 +35,12 @@ class EditorsController < ApplicationController
   def destroy
     @editor = Editor.find_by_id(params[:id])
 
-    if @editor.destroy!
+    if @editor.nil?
+      redirect_to editors_path
+    elsif @editor.email == 'jgandhi2@jhu.edu'
+      flash[:message] = 'Ahahah, you didn\'t say the magic word!'
+      redirect_to editor_panel_path
+    elsif @editor.destroy!
       redirect_to editor_panel_path
     end
   end
