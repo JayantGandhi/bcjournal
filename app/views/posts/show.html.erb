@@ -36,7 +36,7 @@
     <div class="progress-bar"></div>
     <ul>
       <%- for section in @post.sections do -%>
-        <li><a href="#<%= section.header.parameterize %>"><%= section.header %></a></li>
+        <li><a href="#<%= section.header.parameterize %>"><%= truncate(section.header, length: 20, omission: '...') %></a></li>
       <%- end -%>
     </ul>
   </div>
