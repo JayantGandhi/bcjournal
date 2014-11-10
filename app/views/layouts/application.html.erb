@@ -14,7 +14,6 @@
   <body>
     <%= render partial: 'shared/body_scripts' %>
 
-
     <section id="preContainer" class="desktop-only">
       <%= yield :pre_container %>
     </section>
@@ -22,6 +21,10 @@
     <main id="content" class="content-container small-12 columns">
       <%= yield %>
     </main>
+
+    <% if editor_signed_in? %>
+      <%= render partial: 'shared/admin_logout' %>
+    <% end %>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
