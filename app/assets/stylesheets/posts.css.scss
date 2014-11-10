@@ -100,6 +100,18 @@
 article {
   .title-area {
     text-align: center;
+    min-height: 40rem;
+    display: table;
+
+    .title {
+      display: table-cell;
+      vertical-align: middle;
+      background-color: rgba(0,0,0,0.5);
+
+      h1, h2, h5 {
+        color: #fff;
+      }
+    }
   }
   h1,
   h2,
@@ -126,4 +138,20 @@ article {
     text-transform: uppercase;
   }
 
+  .cover-image {
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+  }
+}
+
+body.posts.show {
+  main.content-container {
+    padding: 0;
+  }
+
+  .article-content {
+    padding: 1rem 5rem 0;
+  }
 }

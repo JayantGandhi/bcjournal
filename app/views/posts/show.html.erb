@@ -1,8 +1,10 @@
 <article>
-  <section class="title-area">
-    <h1><%= @post.title %></h1>
-    <h2><%= @post.subtitle %></h3>
-    <h5>By <%= @post.by_line %></h5>
+  <section class="title-area cover-image" style="background-image:url(<%= @post.cover_image.cover %>)">
+    <div class="title">
+      <h1><%= @post.title %></h1>
+      <h2><%= @post.subtitle %></h3>
+      <h5>By <%= @post.by_line %></h5>
+    </div>
   </section>
 
   <div class="article-content">
