@@ -1,7 +1,7 @@
-<%= semantic_form_for @editor do |f| %>
+<%= semantic_form_for @editor, url: {action: :create, id: @editor} do |f| %>
   <%= f.input :email, required: true %>
   <%= f.input :password, required: true %>
-  <%= f.input :password_confirm, required: true %>
+  <%= f.input :password_confirmation, required: true %>
   <%= f.actions do %>
     <%= f.action :submit, as: :input %>
     <li class="cancel">

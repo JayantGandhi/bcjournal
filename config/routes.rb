@@ -10,11 +10,10 @@ Rails.application.routes.draw do
   post 'post/:id/unpublish', to: 'posts#unpublish', as: 'post_unpublish'
 
   # Editor Routes (once logged in)
-  get 'editor', to: redirect('/editors/login')
   get 'editor-panel', to: 'editors#panel', as: 'editor_panel'
   get 'editor/posts', to: 'editors#manage_posts', as: 'manage_posts'
-
-
+  post 'editor/create', to: 'editors#create', as: 'editor_create_path'
+  resources :editors
 
   root 'posts#index'
   # The priority is based upon order of creation: first created -> highest priority.

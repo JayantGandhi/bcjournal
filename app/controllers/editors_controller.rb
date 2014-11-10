@@ -1,4 +1,4 @@
-class EditorsController < Devise::RegistrationsController
+class EditorsController < ApplicationController
   before_action :authenticate_editor!
 
   def manage_posts
@@ -9,12 +9,33 @@ class EditorsController < Devise::RegistrationsController
 
   end
 
+  def show
+
+  end
+
   def new
     @editor = Editor.new
   end
 
   def create
-    Editor.create!({:email => params[:email], :password => params[:password], :password_confirmation => params[:password_confirmation] })
+    @editor = Editor.new(editor_params)
+
+    if @editor.save!
+      flash[:message] = "Success!"
+      redirect_to editor_panel_path
+    else
+      flash[:error] = 'Whoops! Something Happened'
+    end
   end
+
+  protected
+
+    def editor_params
+      params[:editor].permit(
+        'email',
+        'password',
+        'password_confirmation'
+      )
+    end
 
 end
