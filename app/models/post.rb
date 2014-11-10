@@ -23,4 +23,12 @@ class Post < ActiveRecord::Base
   def to_param
     slug
   end
+
+  # def self.search(search)
+  #   if search
+  #     find(:all, :conditions => ['name LIKE ? OR tag_list', "%#{search}%"])
+  #   else
+  #     find(:all)
+  #   end
+  # end
 end

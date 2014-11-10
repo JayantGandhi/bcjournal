@@ -68,6 +68,16 @@ class PostsController < ApplicationController
 
   def unpublish
     @post = Post.find_by_slug(params[:id])
+
+    if @post.published
+      @post.published = false
+
+      if @post.save!
+        redirect_to manage_posts_path
+      end
+    else
+
+    end
   end
 
   protected
@@ -82,6 +92,7 @@ class PostsController < ApplicationController
         :vertical_id,
         :tag_list,
         :subtitle,
+        :published,
         sections_attributes: [
           :id,
           :header,

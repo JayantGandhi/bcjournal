@@ -4,6 +4,13 @@
 
 <ul class="list-of-posts">
 <%- for post in @posts -%>
-  <li><%= link_to post.title, edit_post_path(post) %></li>
+  <li>
+    <%= link_to post.title, edit_post_path(post) %>
+    <%- if post.published? -%>
+      <%= link_to 'Unpublish', post_unpublish_path(post), method: :post %>
+    <%- else -%>
+      <%= link_to 'Publish', post_publish_path(post), method: :post%>
+    <%- end -%>
+  </li>
 <%- end -%>
 </ul>
