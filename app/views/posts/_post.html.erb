@@ -1,13 +1,16 @@
 <%-
-  position = ((post_counter - 5) % 17)
+  position = ((post_counter) % 16)
 
   if position == 0
     class_name = 'tile-large'
     image = post.cover_image.tile_large
-  elsif position % 9 == 0
+  elsif position % 7 == 0
+    class_name = 'tile-wide'
+    image = post.cover_image.tile_wide
+  elsif position % 8 == 0
     class_name = 'tile-tall'
     image = post.cover_image.tile_tall
-  elsif position % 10 == 0
+  elsif position % 9 == 0
     class_name = 'tile-large'
     image = post.cover_image.tile_large
   else

@@ -10,6 +10,10 @@ class PostsController < ApplicationController
     @missing_images = 0
     @slideshow = Slideshow.first()
     @slides = @slideshow.posts
+
+    for slide in @slides do
+      @posts - [slide]
+    end
   end
 
   def new
