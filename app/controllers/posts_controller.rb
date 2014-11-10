@@ -24,11 +24,18 @@ class PostsController < ApplicationController
   end
 
   def edit
-
+    @post = Post.find_by_id(params[:id])
   end
 
   def update
+    @post = Post.find_by_id(params[:id])
 
+    if @post.update_attributes!(post_params)
+      flash[:message] = "Huzzah!"
+      redirect_to @post
+    else
+      flash[:error] = 'umm...'
+    end
   end
 
   def publish

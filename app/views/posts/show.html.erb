@@ -10,3 +10,9 @@
     </section>
   <%- end -%>
 </div>
+
+<% if editor_signed_in? %>
+  <div class="editor-tools">
+    <%= link_to 'Edit', edit_post_path %>
+  </div>
+<%- end -%>

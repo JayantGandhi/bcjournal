@@ -1,3 +1,97 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#preContainer {
+  .logo,
+  .title {
+    display: inline-block;
+  }
+}
+
+.fb-like {
+  line-height: 150px;
+  margin-right: 50px;
+}
+
+.slideshow {
+  overflow: hidden;
+
+  img {
+    margin: 0 auto;
+  }
+
+  #prevArrow {
+    float: left;
+  }
+
+  #nextArrow {
+    float: right;
+    right: 0;
+  }
+
+  #prevArrow,
+  #nextArrow {
+    top: 0;
+    font-size: 5rem;
+    font-family: 'fontello';
+    line-height: 305px;
+    position: absolute;
+    cursor: pointer;
+
+    &:hover {
+      color: $oil;
+    }
+  }
+
+  .caption {
+    top:0;
+    position: relative;
+    margin-left: 5rem;
+    @include transition(top, 250ms, ease-in-out);
+
+    h1 {
+      color: #000000;
+    }
+
+    p {
+      color: #fff;
+    }
+  }
+
+  .slide-image {
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-bottom: 24%;
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+.overlay {
+  @include opacity(0);
+  @include transition(opacity, 250ms, ease-in-out);
+  width: 100%;
+  padding-bottom: 24%;
+  display: inline-block;
+  position: absolute;
+  background-color: rgba(0,0,0,.75);
+}
+
+.slick-slide:hover {
+  .caption {
+    top: -2rem;
+    @include transition(top, 250ms, ease-in-out);
+
+    h1 {
+      color: #fff;
+      @include transition(color, 250ms, ease-in-out);
+    }
+  }
+
+
+
+  .overlay {
+    @include opacity(1);
+  }
+}
