@@ -1,10 +1,20 @@
 Rails.application.routes.draw do
-  devise_for :editors
+  devise_for :editors,
+    controllers: {registrations: :registrations},
+    path_names: {sign_in: "login", sign_out: "logout", sign_up: "register"}
+
   mount Ckeditor::Engine => '/ckeditor'
   resources :posts
 
-  post 'post/:id/publish', to: 'post#publish', as: 'post_publish'
-  post 'post/:id/unpublish', to: 'post#unpublish', as: 'post_unpublish'
+  post 'post/:id/publish', to: 'posts#publish', as: 'post_publish'
+  post 'post/:id/unpublish', to: 'posts#unpublish', as: 'post_unpublish'
+
+  # Editor Routes (once logged in)
+  get 'editor', to: redirect('/editors/login')
+  get 'editor-panel', to: 'editors#panel', as: 'editor_panel'
+  get 'editor/posts', to: 'editors#manage_posts', as: 'manage_posts'
+
+
 
   root 'posts#index'
   # The priority is based upon order of creation: first created -> highest priority.
