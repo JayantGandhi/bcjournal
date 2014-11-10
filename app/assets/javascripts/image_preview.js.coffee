@@ -12,3 +12,5 @@ $ ->
   $("#post_cover_image").change ->
     readURL this
     return
+
+  $('#post_tag_list').tagsInput()

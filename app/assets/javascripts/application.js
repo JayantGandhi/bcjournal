@@ -19,6 +19,7 @@
 //= require slick
 //= require image_preview
 //= require posts
+//= require jquery.tagsinput.min
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

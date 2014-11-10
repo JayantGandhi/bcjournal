@@ -7,6 +7,8 @@ class Post < ActiveRecord::Base
   belongs_to :vertical
   belongs_to :slideshow
 
+  acts_as_taggable
+
   accepts_nested_attributes_for :sections, allow_destroy: true
 
   validates :title, presence: true

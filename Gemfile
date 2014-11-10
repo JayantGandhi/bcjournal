@@ -76,3 +76,6 @@ gem 'nested_form'
 
 # for pagination
 gem 'will_paginate'
+
+# for tagging
+gem 'acts-as-taggable-on'

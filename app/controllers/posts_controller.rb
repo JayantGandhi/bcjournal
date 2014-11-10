@@ -80,6 +80,7 @@ class PostsController < ApplicationController
         :cover_image,
         :blurb,
         :vertical_id,
+        :tag_list,
         sections_attributes: [
           :id,
           :header,
