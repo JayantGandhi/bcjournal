@@ -166,10 +166,23 @@ body.posts.show {
   }
 
   .article-content {
-    padding: 1rem 5rem 0;
+    padding: 1rem 20rem 0;
   }
 }
 
 .book-review {
   max-width: 10rem;
+}
+
+.section-navigator {
+  display: inline-block;
+  position: fixed;
+  right: 1.2rem;
+  top: 40%;
+  background-color: $oil;
+  text-align: center;
+}
+
+#nanobar {
+  top: 4.5rem !important;
 }

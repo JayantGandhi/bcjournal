@@ -17,6 +17,7 @@
 //= require jquery_nested_form
 //= require ckeditor/init
 //= require chosen.jquery.min
+//= require nanobar.min
 //= require slick
 //= require image_preview
 //= require posts

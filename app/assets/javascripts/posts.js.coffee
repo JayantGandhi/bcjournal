@@ -21,3 +21,32 @@ jQuery ->
       do $window.scroll
 
   do init
+
+  $sectionNavigator = $('.section-navigator')
+
+  if $sectionNavigator.length
+    $progressBar = $('.progress-bar')
+    docHeight = $document.height()
+
+    articleHeight = $('.article-content').height()
+    articleOffset = $('.article-content').offset().top
+
+    nanobar = new Nanobar({
+      'id': 'nanobar'
+    })
+
+    console.log nanobar
+
+    checkProgress = ->
+      scrollTop = $window.scrollTop()
+      scrollBottom = scrollTop + $window.height()
+
+      if scrollBottom > articleOffset
+
+        percentage = (scrollBottom - articleOffset)/articleHeight * 100
+        console.log percentage
+        nanobar.go(percentage)
+
+    throttledProgress = _.throttle(checkProgress, 33)
+
+    $window.on 'scroll', throttledProgress

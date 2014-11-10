@@ -30,3 +30,14 @@
     </div>
   <%- end -%>
 </article>
+
+<%- if @post.sections.length > 1 -%>
+  <div class="section-navigator">
+    <div class="progress-bar"></div>
+    <ul>
+      <%- for section in @post.sections do -%>
+        <li><a href="#"><%= section.header %></a></li>
+      <%- end -%>
+    </ul>
+  </div>
+<%- end -%>
