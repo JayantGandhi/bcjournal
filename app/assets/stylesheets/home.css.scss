@@ -13,7 +13,7 @@
     }
 
     img {
-      max-height: 100px;
+      max-height: 10rem;
     }
   }
 
@@ -29,7 +29,7 @@
 .fb_iframe_widget {
   position: absolute !important;
   bottom: 0;
-  margin-right: 50px;
+  margin-right: 5rem;
 }
 
 .slideshow {
@@ -51,9 +51,9 @@
   #prevArrow,
   #nextArrow {
     top: 0;
-    font-size: 5rem;
+    font-size: 7.5rem;
     font-family: 'fontello';
-    line-height: 305px;
+    line-height: 3.05rem;
     position: absolute;
     cursor: pointer;
     display: table;
@@ -106,12 +106,12 @@
 }
 
 .slick-slide {
-  max-height: 400px;
+  max-height: 40rem;
 }
 
 .slick-slide:hover {
   .caption {
-    top: -2rem;
+    top: -5rem;
     @include transition(top, 250ms, ease-in-out);
 
     h1 {

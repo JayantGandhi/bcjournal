@@ -1,10 +1,19 @@
+html {
+  font-size: 62.5%;
+
+  body,
+  p {
+    font-size: 1.6rem;
+  }
+}
+
 a:hover,
 a:active {
   // color: #2233BF !important;
 }
 
 .content-container {
-  min-height: 1000px;
+  min-height: 100rem;
 }
 
 .inline {

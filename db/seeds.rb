@@ -9,6 +9,12 @@ Editor.create!(email: 'admin@example.com', password: 'password', password_confir
 
 Slideshow.create!()
 
+# create the verticals
+Vertical.create!(name: 'security')
+Vertical.create!(name: 'energy & environment')
+Vertical.create!(name: 'regional studies')
+Vertical.create!(name: 'development')
+
 i = 0
 100.times do
 

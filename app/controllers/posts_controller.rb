@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_editor!, only: [:new, :edit, :destroy]
 
   def show
     @post = Post.find_by_slug(params[:id])
@@ -12,6 +13,10 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+
+    @verticals = Verticals::VERTICALS
+
+    puts @verticals
   end
 
   def create
@@ -74,6 +79,7 @@ class PostsController < ApplicationController
         :subtitle,
         :cover_image,
         :blurb,
+        :vertical_id,
         sections_attributes: [
           :id,
           :header,

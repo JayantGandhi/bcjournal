@@ -9,3 +9,59 @@
   display: inline-block;
   width: 100%;
 }
+
+.tile-wrapper {
+  padding: 1rem 0;
+
+  .tile {
+    float: left;
+    display: inline-block;
+    width: 24rem;
+    height: 20rem;
+    margin: 1rem;
+    border: 1px solid;
+  }
+
+  .tile-large {
+    height: 42rem;
+    width: 50rem;
+  }
+
+  .tile-tall {
+    height: 42rem;
+  }
+
+  .overlay {
+    @include opacity(0);
+    background-color: rgba(0,0,0,0.75);
+    width: inherit;
+    height: inherit;
+    display: inline-block;
+    position: absolute;
+    padding: 0;
+    @include transition(opacity, 250ms, ease-in-out);
+  }
+
+  .tile:hover {
+    .overlay {
+      @include opacity(1);
+    }
+
+    .caption h2 {
+      color: #fff;
+    }
+  }
+
+  .caption {
+    padding: 1rem;
+
+    h2 {
+      color: #fff;
+      @include transition(color, 250ms, ease-in-out);
+    }
+
+    span {
+      color: #fff;
+    }
+  }
+}

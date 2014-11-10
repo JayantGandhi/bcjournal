@@ -1,4 +1,23 @@
-<div>
-<%= post.title %>
-<%= post.blurb %>
+<%-
+
+  position = post_counter % 17
+
+  if position == 0
+    class_name = 'tile-large'
+  elsif position % 9 == 0
+    class_name = 'tile-tall'
+  elsif position % 10 == 0
+    class_name = 'tile-large'
+  else
+    class_name = 'tile-small'
+  end
+-%>
+
+<div class="tile <%= class_name %>">
+  <span class="overlay">
+    <div class="caption">
+      <h2><%= post.title %></h2>
+      <span><%= post.blurb %></span>
+    </div>
+  </span>
 </div>

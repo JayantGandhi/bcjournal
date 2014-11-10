@@ -1,6 +1,10 @@
 <%= render partial: 'home_header' %>
-<section class="tile-wrapper">
+<section class="tile-wrapper small-10 columns">
   <%= render @posts %>
+</section>
+
+<section class="right-side small-2 columns">
+
 </section>
 
 <%= will_paginate @posts %>

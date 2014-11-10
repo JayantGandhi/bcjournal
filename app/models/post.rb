@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
 
   has_many :sections
 
+  belongs_to :vertical
   belongs_to :slideshow
 
   accepts_nested_attributes_for :sections, allow_destroy: true

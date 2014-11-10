@@ -1,23 +1,23 @@
 #logoutPrompt {
-  height: 5rem;
-  width: 5rem;
+  height: 8rem;
+  width: 8rem;
   position: fixed;
   bottom: 0;
   right: 0;
   background-color: rgba(0,0,0,0.75);
   text-align: center;
   a {
-    line-height: 2.5rem;
-    width: 5rem;
-    height: 2.5rem;
+    line-height: 4rem;
+    width: 8rem;
+    height: 4rem;
   }
 }
 
 .editor-tools {
   position: fixed;
-  top: 45px;
+  top: 4.5rem;
   right: 0;
-  width: 50px;
+  width: 5rem;
   text-align: center;
   background-color: rgba(0,0,0,0.75);
 }
