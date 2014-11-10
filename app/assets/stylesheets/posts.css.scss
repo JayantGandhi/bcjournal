@@ -31,6 +31,13 @@
     height: 42rem;
   }
 
+  .tile-large,
+  .tile-tall {
+    .caption {
+      bottom: 10rem;
+    }
+  }
+
   a {
     width: inherit;
     height: inherit;
@@ -53,21 +60,28 @@
       @include opacity(1);
     }
 
-    .caption h2 {
+    .title h2 {
       color: #fff;
     }
   }
 
   .caption {
     padding: 1rem;
+    position: absolute;
+    bottom: 0;
+
+    span {
+      color: #fff;
+    }
+  }
+
+  .title {
+    display: block;
+    position: absolute;
 
     h2 {
       color: #000;
       @include transition(color, 250ms, ease-in-out);
-    }
-
-    span {
-      color: #fff;
     }
   }
 }
