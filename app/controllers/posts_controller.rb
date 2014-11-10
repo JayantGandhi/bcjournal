@@ -93,6 +93,8 @@ class PostsController < ApplicationController
         :tag_list,
         :subtitle,
         :published,
+        :book_review,
+        vertical_ids: [],
         sections_attributes: [
           :id,
           :header,

@@ -4,12 +4,13 @@ class Post < ActiveRecord::Base
 
   has_many :sections
 
-  belongs_to :vertical
+  has_and_belongs_to_many :verticals
   belongs_to :slideshow
 
   acts_as_taggable
 
   accepts_nested_attributes_for :sections, allow_destroy: true
+  accepts_nested_attributes_for :verticals, allow_destroy: true
 
   validates :title, presence: true
   validates :by_line, presence: true

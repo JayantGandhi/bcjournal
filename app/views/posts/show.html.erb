@@ -7,6 +7,12 @@
     </div>
   </section>
 
+  <div class="verticals">
+    <% for vertical in @post.verticals do %>
+      <span class="label"><%= vertical.name %></span>
+    <%- end -%>
+  </div>
+
   <div class="article-content">
     <% for section in @post.sections do %>
       <section>
