@@ -14,7 +14,7 @@ class Post < ActiveRecord::Base
 
   validates :title, presence: true
   validates :by_line, presence: true
-  validates :blurb, presence: true, length: {maximum: 200}
+  validates :blurb, presence: true, length: {maximum: 400}
   validates :slug,
     uniqueness: {
       case_sensitive: false
