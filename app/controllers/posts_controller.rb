@@ -8,7 +8,8 @@ class PostsController < ApplicationController
   def index
     @posts = Post.where(:published => true).paginate(:page => params[:page]).order('created_at DESC')
     @missing_images = 0
-    @slideshow = Post.where(published: true).order('created_at DESC').first(5)
+    @slideshow = Slideshow.first()
+    @slides = @slideshow.posts
   end
 
   def new

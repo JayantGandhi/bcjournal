@@ -1,6 +1,8 @@
 class SlideshowsController < ApplicationController
   def edit
     @slideshow = Slideshow.first
+
+    @posts = Post.where(published: true).order('created_at DESC')
   end
 
   def update
@@ -14,6 +16,6 @@ class SlideshowsController < ApplicationController
 
   protected
     def slideshow_params
-      params[:slideshow].permit(posts_attributes: [:id, :slideshow_id])
+      params[:slideshow].permit(post_ids: [])
     end
 end

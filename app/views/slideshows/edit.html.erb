@@ -1,6 +1,6 @@
 <h1>Pick the Articles to Show in the Slideshow</h1>
-<%= semantic_form_for @slideshow do |f| %>
-  <%= f.input :posts %>
+<%= semantic_nested_form_for @slideshow do |f| %>
+  <%= f.input :post_ids, collection: @posts, input_html: {multiple: true} %>
   <%= f.actions do %>
     <%= f.submit %>
     <li class="cancel">

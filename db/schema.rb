@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141110163242) do
+ActiveRecord::Schema.define(version: 20141110164655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,11 @@ ActiveRecord::Schema.define(version: 20141110163242) do
     t.integer  "vertical_id"
     t.string   "subtitle"
     t.boolean  "book_review",  default: false
+  end
+
+  create_table "posts_slideshows", id: false, force: true do |t|
+    t.integer "post_id"
+    t.integer "slideshow_id"
   end
 
   create_table "posts_verticals", id: false, force: true do |t|
