@@ -3,17 +3,22 @@
 
   if position == 0
     class_name = 'tile-large'
+    image = post.cover_image.tile_large
   elsif position % 9 == 0
     class_name = 'tile-tall'
+    image = post.cover_image.tile_tall
   elsif position % 10 == 0
     class_name = 'tile-large'
+    image = post.cover_image.tile_large
   else
     class_name = 'tile-small'
+    image = post.cover_image.tile_small
   end
 -%>
 
 <div class="tile <%= class_name %>">
   <%= link_to post do %>
+    <span class='tile-image' style="background-image:url(<%= image %>)"></span>
     <span class="overlay">
       <div class="caption">
         <span><%= post.blurb %></span>

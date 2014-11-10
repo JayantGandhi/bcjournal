@@ -1,4 +1,4 @@
-$('#products').append('<%= j render(@posts) %>');
+$('.tile-wrapper').append('<%= j render(@posts) %>');
 <% if @posts.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate(@posts) %>');
 <% else %>

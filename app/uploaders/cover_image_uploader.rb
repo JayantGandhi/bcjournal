@@ -34,8 +34,16 @@ class CoverImageUploader < CarrierWave::Uploader::Base
     process resize_to_fit: [50, 50]
   end
 
-  version :tile do
-    process resize_to_fit: [300, 300]
+  version :tile_small do
+    process resize_to_fit: [240, 200]
+  end
+
+  version :tile_tall do
+    process resize_to_fit: [240, 420]
+  end
+
+  version :tile_large do
+    process resize_to_fit: [500, 420]
   end
 
   version :cover do
