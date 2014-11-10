@@ -1,5 +1,5 @@
 <%-
-  position = post_counter % 17
+  position = ((post_counter - 5) % 17)
 
   if position == 0
     class_name = 'tile-large'
@@ -28,6 +28,10 @@
 
     @missing_images += 1
   end
+
+  if @slideshow.include? post
+    class_name += " mobile-only"
+  end
 -%>
 
 <div class="tile <%= class_name %>">
@@ -38,6 +42,6 @@
         <span><%= post.blurb %></span>
       </div>
     </span>
-    <span class="title"><h2><%= post.title %></h2></span>
+    <span class="title"><h2><%= post.title %> <%= position %></h2></span>
   <%- end -%>
 </div>

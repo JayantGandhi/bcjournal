@@ -41,7 +41,7 @@ hr {
     display: block;
   }
   .mobile-only {
-    display: none;
+    display: none !important;
   }
 }
 
