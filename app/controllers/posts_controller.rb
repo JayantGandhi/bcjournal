@@ -13,7 +13,14 @@ class PostsController < ApplicationController
   end
 
   def create
+    @post = Post.new(post_params)
 
+    if @post.save!
+      flash[:message] = "Huzzah!"
+      redirect_to @post
+    else
+      flash[:error] = 'umm...'
+    end
   end
 
   def edit
@@ -48,10 +55,17 @@ class PostsController < ApplicationController
 
     def post_params
       params[:post].permit(
-        'title',
-        'by_line',
-        'subtitle',
-        'cover_image'
+        :title,
+        :by_line,
+        :subtitle,
+        :cover_image,
+        sections_attributes: [
+          :id,
+          :header,
+          :body,
+          :_destroy
+        ],
+
       )
     end
 

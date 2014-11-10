@@ -1,10 +1,15 @@
-<%= semantic_form_for @post, multipart: true do |f| %>
+<%= semantic_nested_form_for @post, multipart: true do |f| %>
   <%= f.inputs "Post", multipart: true do %>
     <%= f.input :title, required: true %>
     <img id="img_preview" src='<%= @post.cover_image %>' alt="Cover Image" />
     <%= f.input :cover_image, as: :file%>
     <%= f.input :by_line, required: true %>
-    <%= f.input :content, as: :ckeditor %>
+    <%= f.semantic_fields_for :sections do |s| %>
+      <%= s.input :header %>
+      <%= s.input :body, as: :ckeditor %>
+      <%= s.link_to_remove 'Remove This Section' %>
+    <%- end -%>
+    <%= f.link_to_add 'Add A Section', :sections %>
   <% end %>
 
   <%= f.actions do %>

@@ -1,5 +1,3 @@
-#= require active_admin/base
-
 # some code for image previews...
 readURL = (input) ->
   if input.files and input.files[0]

@@ -14,7 +14,10 @@
 //= require jquery_ujs
 //= require foundation
 //= require lodash.min
+//= require jquery_nested_form
+//= require ckeditor/init
 //= require slick
+//= require image_preview
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

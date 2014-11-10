@@ -1,4 +1,12 @@
 <h1><%= @post.title %></h1>
+<h5><%= @post.by_line %></h5>
 <div class="content-container">
-  <%= raw @post.content %>
+  <% for section in @post.sections do %>
+    <section>
+      <h2><%= section.header %></h2>
+      <div>
+        <%= raw section.body %>
+      </div>
+    </section>
+  <%- end -%>
 </div>
