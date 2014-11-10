@@ -1,0 +1,11 @@
+<%= semantic_form_for @editor do |f| %>
+  <%= f.input :email, required: true %>
+  <%= f.input :password, required: true %>
+  <%= f.input :password_confirm, required: true %>
+  <%= f.actions do %>
+    <%= f.action :submit, as: :input %>
+    <li class="cancel">
+      <a href="/editor-panel">Cancel</a>
+    </li>
+  <%- end -%>
+<%- end -%>
