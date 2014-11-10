@@ -6,7 +6,9 @@
 
 $(window).on 'load', ->
   $header = $('#header')
+  $rightBar = $('.right-side')
   $headerOffset = $header.offset().top
+  $rightBarOffset = $rightBar.offset().top
 
   checkSticky = ->
     scrollTop = $(window).scrollTop()
@@ -16,6 +18,13 @@ $(window).on 'load', ->
     else
       if not $header.hasClass('sticky')
         $header.addClass('sticky')
+
+    if scrollTop < $rightBarOffset
+      if $rightBar.hasClass('sticky')
+        $rightBar.removeClass('sticky')
+    else
+      if not $rightBar.hasClass('sticky')
+        $rightBar.addClass('sticky')
 
   do checkSticky
 

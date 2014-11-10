@@ -85,3 +85,14 @@
     }
   }
 }
+
+.right-side {
+  height: 40rem;
+
+  &.sticky {
+    position: fixed;
+    top: 4.5rem;
+    right: 0;
+    left: auto;
+  }
+}

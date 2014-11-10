@@ -15,10 +15,10 @@ Vertical.create!(name: 'energy & environment')
 Vertical.create!(name: 'regional studies')
 Vertical.create!(name: 'development')
 
-i = 0
-100.times do
+# i = 0
+# 100.times do
 
-  i += 1
-  Post.create!(title: "Post#{i}", by_line: 'Me', blurb: 'HEYA this is a blurb about a really cool article, but I bet you didnt know that!', slug: "post#{i}", published: true)
+#   i += 1
+#   Post.create!(title: "Post#{i}", by_line: 'Me', blurb: 'HEYA this is a blurb about a really cool article, but I bet you didnt know that!', slug: "post#{i}", published: true)
 
-end
+# end
