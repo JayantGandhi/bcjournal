@@ -31,6 +31,8 @@ jQuery ->
     articleHeight = $('.article-content').height()
     articleOffset = $('.article-content').offset().top
 
+    $sections = $('.article-content section')
+
     nanobar = new Nanobar({
       'id': 'nanobar'
     })
@@ -42,11 +44,21 @@ jQuery ->
       scrollBottom = scrollTop + $window.height()
 
       if scrollBottom > articleOffset
-
         percentage = (scrollBottom - articleOffset)/articleHeight * 100
-        console.log percentage
         nanobar.go(percentage)
 
+      for section in $sections
+        $section = $(section)
+        sectionBottom = $section.offset().top + $section.height()
+        id = $section.attr('id')
+        $link = $('.section-navigator a[href="#' + id + '"]')
+
+        if scrollBottom > sectionBottom
+          $link.parent().removeClass('highlighted')
+        else if scrollBottom <= $(section).offset().top
+          $link.parent().removeClass('highlighted')
+        else if scrollBottom > $(section).offset().top
+          $link.parent().addClass('highlighted')
     throttledProgress = _.throttle(checkProgress, 33)
 
     $window.on 'scroll', throttledProgress

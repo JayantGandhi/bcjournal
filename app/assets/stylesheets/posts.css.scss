@@ -181,6 +181,11 @@ body.posts.show {
   top: 40%;
   background-color: $oil;
   text-align: center;
+
+  .highlighted a{
+    color: red !important;
+    font-weight: bold;
+  }
 }
 
 #nanobar {
