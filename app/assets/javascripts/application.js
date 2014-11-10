@@ -31,6 +31,7 @@ $(document).ready(function(){
     prevArrow: $('#prevArrow'),
     nextArrow: $('#nextArrow'),
     autoplay: true,
-    autoplaySpeed: 10000
+    autoplaySpeed: 10000,
+    lazyLoad: 'progressive'
   });
 });

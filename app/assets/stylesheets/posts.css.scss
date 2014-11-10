@@ -20,6 +20,16 @@
     height: 20rem;
     margin: 1rem;
     border: 1px solid;
+
+    .tile-image {
+      width: inherit;
+      display: inline-block;
+      position: absolute;
+      height: inherit;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   }
 
   .tile-large {

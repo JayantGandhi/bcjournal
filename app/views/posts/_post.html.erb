@@ -14,6 +14,20 @@
     class_name = 'tile-small'
     image = post.cover_image.tile_small
   end
+
+  if image.blank?
+    if @missing_images % 4 == 0
+      image = image_path 's.jpg'
+    elsif @missing_images % 4 == 0
+      image = 'images/a.jpg'
+    elsif @missing_images % 4 == 0
+      image = 'images/i.jpg'
+    else @missing_images % 4 == 0
+      image = image_path 's.jpg'
+    end
+
+    @missing_images += 1
+  end
 -%>
 
 <div class="tile <%= class_name %>">
