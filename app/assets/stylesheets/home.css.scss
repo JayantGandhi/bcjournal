@@ -71,7 +71,7 @@
   }
 
   .caption {
-    top: 11rem;
+    top: -11rem;
     position: relative;
     margin-left: 5rem;
     @include transition(top, 250ms, ease-in-out);
