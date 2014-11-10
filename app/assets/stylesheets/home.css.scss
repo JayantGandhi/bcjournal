@@ -71,7 +71,7 @@
   }
 
   .caption {
-    top:0;
+    top: 11rem;
     position: relative;
     margin-left: 5rem;
     @include transition(top, 250ms, ease-in-out);
@@ -111,7 +111,7 @@
 
 .slick-slide:hover {
   .caption {
-    top: -5rem;
+    top: -15rem;
     @include transition(top, 250ms, ease-in-out);
 
     h1 {
