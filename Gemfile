@@ -73,3 +73,6 @@ gem 'slick_rails'
 # For Forms
 gem 'formtastic'
 gem 'nested_form'
+
+# for pagination
+gem 'will_paginate'

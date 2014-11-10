@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resource :slideshow
+
   devise_for :editors,
     controllers: {registrations: :registrations},
     path_names: {sign_in: "login", sign_out: "logout", sign_up: "register"}

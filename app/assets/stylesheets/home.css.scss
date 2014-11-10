@@ -4,12 +4,22 @@
 #preContainer {
   .logo,
   .title {
-    display: inline-block;
+    display: table;
+
+    h1 {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  .title-area {
+    max-width: 100%;
   }
 }
 
-.fb-like {
-  line-height: 150px;
+.fb_iframe_widget {
+  position: absolute !important;
+  bottom: 0;
   margin-right: 50px;
 }
 
@@ -76,6 +86,10 @@
   display: inline-block;
   position: absolute;
   background-color: rgba(0,0,0,.75);
+}
+
+.slick-slide {
+  max-height: 400px;
 }
 
 .slick-slide:hover {

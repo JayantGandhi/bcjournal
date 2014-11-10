@@ -18,6 +18,7 @@
 //= require ckeditor/init
 //= require slick
 //= require image_preview
+//= require posts
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

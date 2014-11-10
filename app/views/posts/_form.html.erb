@@ -1,6 +1,7 @@
 <%= semantic_nested_form_for @post, multipart: true do |f| %>
   <%= f.inputs "Post", multipart: true do %>
     <%= f.input :title, required: true %>
+    <%= f.input :blurb, required: true %>
     <span id="img_preview" style="background-image:url(<%= @post.cover_image %>)"></span>
     <%= f.input :cover_image, as: :file%>
     <%= f.input :by_line, required: true %>
@@ -15,7 +16,7 @@
   <%= f.actions do %>
     <%= f.action :submit, as: :input %>
     <li class="cancel">
-      <a href="/admin/posts">Cancel</a>
+      <a href="/editor-panel">Cancel</a>
     </li>
   <% end %>
 

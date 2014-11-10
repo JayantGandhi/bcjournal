@@ -4,6 +4,6 @@
 
 <ul class="list-of-posts">
 <%- for post in @posts -%>
-  <li><%= post.title %></li>
+  <li><%= link_to post.title, edit_post_path(post) %></li>
 <%- end -%>
 </ul>

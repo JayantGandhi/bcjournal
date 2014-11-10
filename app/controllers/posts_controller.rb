@@ -1,11 +1,13 @@
 class PostsController < ApplicationController
 
   def show
-    @post = Post.find_by_id(params[:id])
+    @post = Post.find_by_slug(params[:id])
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.where(:published => true).paginate(:page => params[:page]).order('created_at DESC')
+
+    @slideshow = @posts[0..4]
   end
 
   def new
@@ -14,6 +16,8 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+
+    @post.slug = @post.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#/, '')
 
     if @post.save!
       flash[:message] = "Huzzah!"
@@ -24,11 +28,14 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find_by_id(params[:id])
+    @post = Post.find_by_slug(params[:id])
   end
 
   def update
-    @post = Post.find_by_id(params[:id])
+    @post = Post.find_by_slug(params[:id])
+
+    @post.slug = @post.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#/, '')
+
 
     if @post.update_attributes!(post_params)
       flash[:message] = "Huzzah!"
@@ -39,7 +46,7 @@ class PostsController < ApplicationController
   end
 
   def publish
-    @post = Post.find_by_id(params[:id])
+    @post = Post.find_by_slug(params[:id])
 
     if !@post.published
       @post.published = true
@@ -55,7 +62,7 @@ class PostsController < ApplicationController
   end
 
   def unpublish
-    @post = Post.find_by_id(params[:id])
+    @post = Post.find_by_slug(params[:id])
   end
 
   protected
@@ -66,6 +73,7 @@ class PostsController < ApplicationController
         :by_line,
         :subtitle,
         :cover_image,
+        :blurb,
         sections_attributes: [
           :id,
           :header,
