@@ -15,7 +15,7 @@
 
   <div class="article-content">
     <% for section in @post.sections do %>
-      <section>
+      <section id="<%= section.header.parameterize %>">
         <h3><%= section.header %></h2>
         <div>
           <%= raw section.body %>
@@ -36,7 +36,7 @@
     <div class="progress-bar"></div>
     <ul>
       <%- for section in @post.sections do -%>
-        <li><a href="#"><%= section.header %></a></li>
+        <li><a href="#<%= section.header.parameterize %>"><%= section.header %></a></li>
       <%- end -%>
     </ul>
   </div>
