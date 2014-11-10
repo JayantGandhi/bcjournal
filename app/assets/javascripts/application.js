@@ -28,6 +28,8 @@ $(document).ready(function(){
     dots: true,
     infinite: true,
     prevArrow: $('#prevArrow'),
-    nextArrow: $('#nextArrow')
+    nextArrow: $('#nextArrow'),
+    autoplay: true,
+    autoplaySpeed: 10000
   });
 });
