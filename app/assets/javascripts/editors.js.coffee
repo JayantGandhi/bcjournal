@@ -5,11 +5,15 @@ $ ->
   $textArea = $('.text-area-with-limit')
 
   if $textArea.length
-    textAreaMax = $textArea.attr('max_length')
-    initialChars = $textArea.val().length
-    $textArea.after('<span class="char-counter">' + initialChars + '/' + textAreaMax + '</span>')
 
-    $textArea.on 'keyup', ->
-      chars = $textArea.val().length
+    for element in $textArea
+      $element = $(element)
+      textAreaMax = $element.attr('max_length')
+      initialChars = $element.val().length
+      $element.after('<span class="char-counter">' + initialChars + '/' + textAreaMax + '</span>')
+
+    $textArea.on 'keyup', (e)->
+      $element = $(e.target)
+      chars = $element.val().length
       if chars >= 0
-        $textArea.next('.char-counter').text(chars + '/' + textAreaMax)
+        $element.next('.char-counter').text(chars + '/' + textAreaMax)

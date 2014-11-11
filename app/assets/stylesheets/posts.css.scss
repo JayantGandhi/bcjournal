@@ -213,7 +213,11 @@ body.posts.show {
   top: 4.5rem !important;
 }
 
-.text-area-with-limit + .char-counter {
-  top: -1.6rem;
-  position: relative;
+.text-area-with-limit {
+  resize: none;
+
+  + .char-counter {
+    top: -1.6rem;
+    position: relative;
+  }
 }
