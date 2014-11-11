@@ -50,6 +50,15 @@ li {
   font-size: 1.6rem;
 }
 
+// override for article lis
+article ul li {
+  list-style: circle;
+}
+
+article ol li {
+  list-style: upper-roman;
+}
+
 a {
   font-size: 1.6rem;
 }
