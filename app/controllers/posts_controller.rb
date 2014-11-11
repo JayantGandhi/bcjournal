@@ -101,6 +101,7 @@ class PostsController < ApplicationController
         :book_review,
         :publish_date,
         :archived,
+        :author_bio,
         vertical_ids: [],
         sections_attributes: [
           :id,
