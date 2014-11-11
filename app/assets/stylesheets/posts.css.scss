@@ -10,6 +10,14 @@
   width: 100%;
 }
 
+.archive-tag {
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  font-family: Old Standard TT;
+}
+
 .tile-wrapper {
   padding: 1rem 0;
 
@@ -179,13 +187,19 @@ body.posts.show {
   position: fixed;
   right: 1.2rem;
   top: 20%;
-  background-color: $oil;
   text-align: center;
   max-width: 18rem;
 
   .highlighted a{
-    color: red !important;
+    color: #000 !important;
     font-weight: bold;
+
+    &:before {
+      content: '\e802';
+      font-family: 'fontello';
+      left: -1rem;
+      position: relative;
+    }
   }
 }
 

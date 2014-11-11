@@ -1,4 +1,7 @@
 <article>
+  <% if @post.archived? %>
+    <div class="archive-tag">From the Archive</div>
+  <%- end -%>
   <section class="title-area cover-image" style="background-image:url(<%= @post.cover_image.cover %>)">
     <div class="title">
       <h1><%= @post.title %></h1>
@@ -11,6 +14,9 @@
     <% for vertical in @post.verticals do %>
       <a href="#"><span class="label"><%= vertical.name %></span></a>
     <%- end -%>
+  </div>
+  <div>
+    <%= @post.publish_date.to_formatted_s(:long) %>
   </div>
 
   <div class="article-content">

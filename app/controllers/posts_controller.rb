@@ -99,6 +99,8 @@ class PostsController < ApplicationController
         :subtitle,
         :published,
         :book_review,
+        :publish_date,
+        :archived,
         vertical_ids: [],
         sections_attributes: [
           :id,

@@ -2,10 +2,10 @@
   <%= f.inputs "Post", multipart: true do %>
     <%= f.input :title, required: true %>
     <%= f.input :subtitle %>
-    <%= f.input :blurb, required: true, input_html: {rows: 3} %>
+    <%= f.input :by_line, required: true %>
+    <%= f.input :blurb, required: true, input_html: {rows: 3, max_length: 400} %>
     <span id="img_preview" style="background-image:url(<%= @post.cover_image %>)"></span>
     <%= f.input :cover_image, as: :file%>
-    <%= f.input :by_line, required: true %>
     <%= f.semantic_fields_for :sections do |s| %>
       <%= s.input :header %>
       <%= s.input :body, as: :ckeditor %>
@@ -14,8 +14,12 @@
     <%= f.link_to_add 'Add A Section', :sections %>
     <%= f.input :verticals, as: :check_boxes, collection: Vertical.all %>
     <%= f.input :tag_list %>
+    <%= f.input :publish_date %>
     <div data-tooltip aria-haspopup='true' class="has-tip book-review" title="Check this box if the post is a book review">
       <%= f.input :book_review %>
+    </div>
+    <div data-tooltip aria-haspopup='true' class="has-tip book-review" title="Check this box if the post an archive post">
+      <%= f.input :archived %>
     </div>
   <% end %>
 
