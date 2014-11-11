@@ -29,11 +29,14 @@ class PostsController < ApplicationController
 
     @post.slug = @post.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#/, '')
 
-    if @post.save!
-      flash[:message] = "Huzzah!"
-      redirect_to @post
-    else
-      flash[:error] = 'umm...'
+    respond_to do |format|
+      if @post.create(post_params)
+        format.html { redirect_to @post, notice: 'post was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -47,11 +50,14 @@ class PostsController < ApplicationController
     @post.slug = @post.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#/, '')
 
 
-    if @post.update_attributes!(post_params)
-      flash[:message] = "Huzzah!"
-      redirect_to @post
-    else
-      flash[:error] = 'umm...'
+    respond_to do |format|
+      if @post.update(post_params)
+        format.html { redirect_to @post, notice: 'post was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
     end
   end
 
