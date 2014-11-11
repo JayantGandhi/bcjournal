@@ -3,13 +3,16 @@ readURL = (input) ->
   if input.files and input.files[0]
     reader = new FileReader()
     reader.onload = (e) ->
-      $("#img_preview").attr "src", e.target.result
+      backgroundStyle = 'background-image:url(' + e.target.result + ')';
+      $("#img_preview").attr "style", backgroundStyle
       return
 
     reader.readAsDataURL input.files[0]
   return
 $ ->
+  console.log 'initmuthafuka'
   $("#post_cover_image").change ->
+    console.log 'herro?'
     readURL this
     return
 
