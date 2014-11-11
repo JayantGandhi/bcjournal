@@ -53,8 +53,7 @@
     width: 50rem;
   }
 
-  .tile-large,
-  .tile-tall {
+  .tile-large {
     .caption {
       bottom: 10rem;
     }
@@ -186,6 +185,7 @@ body.posts.show {
   color: gray;
   font-style: italic;
   padding: 0 10rem;
+  text-align: center;
 }
 
 .section-navigator {
@@ -211,4 +211,9 @@ body.posts.show {
 
 #nanobar {
   top: 4.5rem !important;
+}
+
+.text-area-with-limit + .char-counter {
+  top: -1.6rem;
+  position: relative;
 }

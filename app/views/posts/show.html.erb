@@ -16,7 +16,7 @@
     <%- end -%>
   </div>
   <div>
-    <%= @post.publish_date.to_formatted_s(:long) %>
+    <%= @post.publish_date.to_formatted_s(:long) if !@post.publish_date.nil? %>
   </div>
 
   <div class="article-content">
