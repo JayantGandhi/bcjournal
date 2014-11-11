@@ -31,10 +31,10 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.create(post_params)
-        format.html { redirect_to @post, notice: 'post was successfully updated.' }
+        format.html { redirect_to @post, notice: 'post was successfully created.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html { render action: 'new' }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
@@ -67,10 +67,14 @@ class PostsController < ApplicationController
     if !@post.published
       @post.published = true
 
-      if @post.save!
-        redirect_to @post
-      else
-        flash[:alert] = "Something went wrong and your post didn't get published!"
+      respond_to do |format|
+        if @post.save
+          format.html { redirect_to @post, notice: 'post was successfully updated.' }
+          format.json { head :no_content }
+        else
+          format.html { redirect_to manage_posts_path, notice: 'something went wrong' }
+          format.json { render json: @post.errors, status: :unprocessable_entity }
+        end
       end
     else
       flash[:alert] = 'Looks like it is already published...'

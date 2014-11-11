@@ -177,10 +177,6 @@ body.posts.show {
   }
 }
 
-.form-checkbox {
-  max-width: 10rem;
-}
-
 .author-bio {
   color: gray;
   font-style: italic;
@@ -211,13 +207,4 @@ body.posts.show {
 
 #nanobar {
   top: 4.5rem !important;
-}
-
-.text-area-with-limit {
-  resize: none;
-
-  + .char-counter {
-    top: -1.6rem;
-    position: relative;
-  }
 }
