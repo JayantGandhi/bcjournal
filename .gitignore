@@ -17,4 +17,5 @@
 
 *.sw?
 
-aws.rb
+aws.rb.env
+*.env
