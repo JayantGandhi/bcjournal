@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
   before_action :authenticate_editor!, only: [:new, :edit, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
 
   def show
-    @post = Post.find_by_slug(params[:id])
+
   end
 
   def index
@@ -25,8 +26,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-
     @post.slug = @post.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#/, '')
 
     respond_to do |format|
@@ -45,8 +44,6 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find_by_slug(params[:id])
-
     @post.slug = @post.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#/, '')
 
 
@@ -61,9 +58,15 @@ class PostsController < ApplicationController
     end
   end
 
-  def publish
-    @post = Post.find_by_slug(params[:id])
+  def destroy
+    @post.destroy
+    respond_to do |format|
+      format.html { redirect_to manage_posts_path }
+      format.json { head :no_content }
+    end
+  end
 
+  def publish
     if !@post.published
       @post.published = true
 
@@ -82,8 +85,6 @@ class PostsController < ApplicationController
   end
 
   def unpublish
-    @post = Post.find_by_slug(params[:id])
-
     if @post.published
       @post.published = false
 
@@ -95,7 +96,7 @@ class PostsController < ApplicationController
     end
   end
 
-  protected
+  private
 
     def post_params
       params[:post].permit(
@@ -121,6 +122,10 @@ class PostsController < ApplicationController
         ],
 
       )
+    end
+
+    def set_post
+      @post = Post.find_by_slug(params[:id])
     end
 
 end
