@@ -28,6 +28,12 @@ jQuery ->
     $progressBar = $('.progress-bar')
     docHeight = $document.height()
 
+    $titleArea = $('section.title-area')
+    titleAreaBottom = $titleArea.offset().top + $titleArea.height()
+
+    if $window.scrollTop() > titleAreaBottom
+      $sectionNavigator.addClass('shown')
+
     articleHeight = $('.article-content').height()
     articleOffset = $('.article-content').offset().top
 
@@ -37,8 +43,6 @@ jQuery ->
       'id': 'nanobar'
     })
 
-    console.log nanobar
-
     checkProgress = ->
       scrollTop = $window.scrollTop()
       scrollBottom = scrollTop + $window.height()
@@ -47,18 +51,25 @@ jQuery ->
         percentage = (scrollBottom - articleOffset)/articleHeight * 100
         nanobar.go(percentage)
 
+      if $window.scrollTop() > titleAreaBottom
+        $sectionNavigator.addClass('shown')
+      else
+        $sectionNavigator.removeClass('shown')
+
       for section in $sections
         $section = $(section)
         sectionBottom = $section.offset().top + $section.height()
         id = $section.attr('id')
-        $link = $('.section-navigator a[href="#' + id + '"]')
 
-        if scrollBottom > sectionBottom
-          $link.parent().removeClass('highlighted')
-        else if scrollBottom <= $(section).offset().top
-          $link.parent().removeClass('highlighted')
-        else if scrollBottom > $(section).offset().top
-          $link.parent().addClass('highlighted')
+        if id isnt ''
+          $link = $('.section-navigator a[href="#' + id + '"]')
+
+          if scrollBottom > sectionBottom
+            $link.parent().removeClass('highlighted')
+          else if scrollBottom <= $(section).offset().top
+            $link.parent().removeClass('highlighted')
+          else if scrollBottom > $(section).offset().top
+            $link.parent().addClass('highlighted')
     throttledProgress = _.throttle(checkProgress, 33)
 
     $window.on 'scroll', throttledProgress

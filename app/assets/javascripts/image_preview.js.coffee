@@ -10,9 +10,7 @@ readURL = (input) ->
     reader.readAsDataURL input.files[0]
   return
 $ ->
-  console.log 'initmuthafuka'
   $("#post_cover_image").change ->
-    console.log 'herro?'
     readURL this
     return
 

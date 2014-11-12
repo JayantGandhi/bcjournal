@@ -25,11 +25,11 @@ class Post < ActiveRecord::Base
     slug
   end
 
-  # def self.search(search)
-  #   if search
-  #     find(:all, :conditions => ['name LIKE ? OR tag_list', "%#{search}%"])
-  #   else
-  #     find(:all)
-  #   end
-  # end
+  def self.search(search)
+    if search
+      where('title LIKE ?', "%#{search}%")
+    else
+      all
+    end
+  end
 end

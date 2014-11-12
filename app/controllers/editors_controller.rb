@@ -1,8 +1,9 @@
 class EditorsController < ApplicationController
   before_action :authenticate_editor!
+  helper_method :sort_column, :sort_direction
 
   def manage_posts
-    @posts = Post.all.paginate(:page => params[:page]).order('created_at DESC')
+    @posts = Post.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:page => params[:page])
   end
 
   def panel
@@ -45,7 +46,7 @@ class EditorsController < ApplicationController
     end
   end
 
-  protected
+  private
 
     def editor_params
       params[:editor].permit(
@@ -53,6 +54,14 @@ class EditorsController < ApplicationController
         'password',
         'password_confirmation'
       )
+    end
+
+    def sort_column
+      Post.column_names.include?(params[:sort]) ? params[:sort] : "created_at"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
     end
 
 end

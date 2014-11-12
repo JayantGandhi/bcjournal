@@ -5,8 +5,14 @@
 <ul class="list-of-posts">
   <%= render 'managed_posts' %>
 </ul>
-<div class="filters column small-2">
-FILTHY FILTERS
+<div class="filters column small-2 panel callout">
+  <%= sortable 'title' %>
+  <%= form_tag manage_posts_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :title => nil %>
+    </p>
+  <% end %>
 </div>
 
 <%= will_paginate @posts %>
