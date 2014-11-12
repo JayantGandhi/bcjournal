@@ -1,5 +1,8 @@
 <%= render partial: 'home_header' %>
 <section class="tile-wrapper small-10 columns">
+  <div class="mobile-only">
+    <%= render @slides %>
+  </div>
   <%= render @posts %>
 </section>
 
