@@ -23,6 +23,29 @@
     width: 100%;
     padding: 0;
   }
+
+  body.posts.show .content-container .article-content {
+    padding: 1.5rem;
+  }
+}
+
+.tile {
+  min-height: 23rem;
+  margin: 1rem 0;
+
+  .tile-image {
+    width: 100%;
+    position: absolute;
+    display: inline-block;
+    padding-bottom: 79%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .title {
+    position: absolute;
+  }
 }
 
 @media #{$large-up} {
@@ -37,15 +60,12 @@
       height: 20rem;
       margin: 1rem;
       border: 1px solid;
+      min-height: auto;
+      margin: 0;
 
       .tile-image {
         width: inherit;
-        display: inline-block;
-        position: absolute;
         height: inherit;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
       }
     }
 
@@ -66,6 +86,10 @@
       .caption {
         bottom: 10rem;
       }
+    }
+
+    .title {
+      position: static;
     }
 
     a {
