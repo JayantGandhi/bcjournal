@@ -79,3 +79,8 @@ gem 'will_paginate'
 
 # for tagging
 gem 'acts-as-taggable-on'
+
+# Mandrill for Mandrill
+gem 'mandrill-api'
+
+gem 'gibbon'

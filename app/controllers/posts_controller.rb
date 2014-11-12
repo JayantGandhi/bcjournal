@@ -30,7 +30,7 @@ class PostsController < ApplicationController
     @post.slug = @post.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#/, '')
 
     respond_to do |format|
-      if @post.create(post_params)
+      if @post.save(post_params)
         format.html { redirect_to @post, notice: 'post was successfully created.' }
         format.json { head :no_content }
       else
