@@ -5,10 +5,10 @@
 <ul class="list-of-posts">
   <%= render 'managed_posts' %>
 </ul>
-<div class="filters column small-2 panel callout">
-  <%= sortable 'title' %>
-  <%= sortable 'created_at', "Created On" %>
-  <%= sortable 'published', "Published?" %>
-</div>
+<ul class="filters column small-2 panel callout">
+  <li><%= sortable 'title' %></li>
+  <li><%= sortable 'created_at', "Created On" %></li>
+  <li><%= sortable 'published', "Published?" %></li>
+</ul>
 
 <%= will_paginate @posts %>
