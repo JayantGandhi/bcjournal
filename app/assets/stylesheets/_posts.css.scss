@@ -188,6 +188,10 @@ article {
     background-position: center;
     width: 100%;
   }
+
+  p {
+    overflow-wrap: break-word;
+  }
 }
 
 body.posts.show {
