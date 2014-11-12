@@ -2,7 +2,7 @@ class EditorsController < ApplicationController
   before_action :authenticate_editor!
 
   def manage_posts
-    @posts = Post.all.order('created_at DESC')
+    @posts = Post.all.paginate(:page => params[:page]).order('created_at DESC')
   end
 
   def panel
