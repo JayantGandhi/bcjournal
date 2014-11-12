@@ -52,6 +52,20 @@
     margin-top: 1rem;
   }
 
+  .post-title {
+    text-align: center;
+
+    .button-group{
+      margin: 0 auto;
+      display: inline-block;
+
+      .button {
+        font-size: 1.4rem;
+        padding: 2rem 1rem;
+      }
+    }
+  }
+
   .filters {
     span {
       font-size: 2rem;
