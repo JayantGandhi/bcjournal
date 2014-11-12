@@ -34,6 +34,7 @@
 
 .slideshow {
   overflow: hidden;
+  min-height: 40rem;
 
   img {
     margin: 0 auto;
@@ -89,7 +90,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    padding-bottom: 31%;
+    min-height: 40rem;
     display: inline-block;
     width: 100%;
   }
