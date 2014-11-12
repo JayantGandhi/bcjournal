@@ -6,9 +6,10 @@
   <%= render 'managed_posts' %>
 </ul>
 <ul class="filters column small-2 panel callout">
-  <li><%= sortable 'title' %></li>
-  <li><%= sortable 'created_at', "Created On" %></li>
-  <li><%= sortable 'published', "Published?" %></li>
+  <span>Sort By:</span>
+  <li class="filter"><%= sortable 'title' %></li>
+  <li class="filter"><%= sortable 'created_at', "Created On" %></li>
+  <li class="filter"><%= sortable 'published', "Published?" %></li>
 </ul>
 
 <%= will_paginate @posts %>

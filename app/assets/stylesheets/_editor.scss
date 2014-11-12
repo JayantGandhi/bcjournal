@@ -51,4 +51,22 @@
   .tools {
     margin-top: 1rem;
   }
+
+  .filters {
+    span {
+      font-size: 2rem;
+    }
+
+    .filter .current {
+      color: #000;
+
+      &.asc:after {
+        content: '\2191';
+      }
+
+      &.desc:after {
+        content: '\2193';
+      }
+    }
+  }
 }
