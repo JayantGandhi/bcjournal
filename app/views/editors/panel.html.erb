@@ -1,9 +1,9 @@
 <section id="editor-options">
   <h1>Here's what you can do</h1>
-  <ul>
-    <li><%= link_to 'Manage Posts', manage_posts_path %></li>
-    <li><%= link_to 'Add an Editor', new_editor_path %></li>
-    <li><%= link_to 'Delet an Editor', editors_path %></li>
-    <li><%= link_to 'Edit Slideshow', edit_slideshow_path %></li>
+  <ul class="button-group round">
+    <li><%= link_to 'Manage Posts', manage_posts_path, class: 'button' %></li>
+    <li><%= link_to 'Add an Editor', new_editor_path, class: 'button success' %></li>
+    <li><%= link_to 'Delet an Editor', editors_path, class: 'button alert' %></li>
+    <li><%= link_to 'Edit Slideshow', edit_slideshow_path, class: 'button' %></li>
   </ul>
 </section>
