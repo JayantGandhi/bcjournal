@@ -1,9 +1,12 @@
 <%- for post in @posts -%>
-  <li class="row">
-    <div class="post-title column small-4">
+  <li class="row panel column small-10">
+    <div class="post-title column small-3">
       <%= link_to post.title, edit_post_path(post) %>
     </div>
-    <ul class="button-group round">
+    <div class="post-created-date column small-2">
+      <%= post.created_at.to_formatted_s(:long) %>
+    </div>
+    <ul class="button-group round right">
       <li class="post-publish">
         <%- if post.published? -%>
           <%= link_to 'Unpublish', post_unpublish_path(post), method: :post, class: 'button' %>

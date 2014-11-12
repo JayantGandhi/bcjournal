@@ -21,3 +21,18 @@
   text-align: center;
   background-color: rgba(0,0,0,0.75);
 }
+
+.filters {
+  position: fixed;
+  right: 0;
+}
+
+.pagination {
+  float: left;
+}
+
+.list-of-posts {
+  li:last-child {
+    float: left !important;
+  }
+}
