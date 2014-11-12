@@ -25,9 +25,9 @@
   <% end %>
 
   <%= f.actions do %>
-    <%= f.action :submit, as: :input %>
+    <%= f.action :submit, button_html: {class: 'button success'} %>
     <li class="cancel">
-      <a href="/editor-panel">Cancel</a>
+      <a class="button alert" href="/editor-panel">Cancel</a>
     </li>
   <% end %>
 
