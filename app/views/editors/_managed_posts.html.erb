@@ -1,17 +1,19 @@
 <%- for post in @posts -%>
-  <li>
-    <div class="post-title">
+  <li class="row">
+    <div class="post-title column small-4">
       <%= link_to post.title, edit_post_path(post) %>
     </div>
-    <div class="post-publish">
-      <%- if post.published? -%>
-        <%= link_to 'Unpublish', post_unpublish_path(post), method: :post %>
-      <%- else -%>
-        <%= link_to 'Publish', post_publish_path(post), method: :post%>
-      <%- end -%>
-    </div>
-    <div class="post-delete">
-      <%= link_to 'Delete Post', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </div>
+    <ul class="button-group round">
+      <li class="post-publish">
+        <%- if post.published? -%>
+          <%= link_to 'Unpublish', post_unpublish_path(post), method: :post, class: 'button' %>
+        <%- else -%>
+          <%= link_to 'Publish', post_publish_path(post), method: :post, class: 'button'%>
+        <%- end -%>
+      </li>
+      <li class="post-delete">
+        <%= link_to 'Delete Post', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button alert' %>
+      </li>
+    </ul>
   </li>
 <%- end -%>
