@@ -7,12 +7,8 @@
 </ul>
 <div class="filters column small-2 panel callout">
   <%= sortable 'title' %>
-  <%= form_tag manage_posts_path, :method => 'get' do %>
-    <p>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "Search", :title => nil %>
-    </p>
-  <% end %>
+  <%= sortable 'created_at', "Created On" %>
+  <%= sortable 'published', "Published?" %>
 </div>
 
 <%= will_paginate @posts %>
