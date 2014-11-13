@@ -1,10 +1,11 @@
 .splash-page {
   height: 100%;
+  padding-top: 1rem;
 
   .sais-logo {
     background-image:url('sais_thumb.jpg');
     width: 80%;
-    height: 40%;
+    height: 35%;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -25,6 +26,29 @@ body.splash {
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media #{$large-up} {
+  .splash-page {
+    .sais-logo {
+      height: 45%;
+      margin-bottom: 2rem;
+    }
+
+    .splash-text {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h3 {
+        font-size: 2.2rem;
+      }
+    }
   }
 }
