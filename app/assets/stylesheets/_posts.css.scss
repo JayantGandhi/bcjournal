@@ -247,6 +247,15 @@ body.posts.show {
   .tile-wrapper {
     width: 100%;
     padding: 0;
+
+    .title {
+      background-color: rgba(0,0,0,0.75);
+      width: 100%;
+
+      h2 {
+        color: #fff;
+      }
+    }
   }
 
   body.posts.show .content-container .article-content {
