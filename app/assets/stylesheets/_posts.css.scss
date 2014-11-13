@@ -19,14 +19,12 @@
 }
 
 .tile {
-  min-height: 23rem;
   margin: 1rem 0;
 
   .tile-image {
     width: 100%;
     position: absolute;
     display: inline-block;
-    padding-bottom: 79%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -50,7 +48,6 @@
       margin: 1rem;
       border: 1px solid;
       min-height: auto;
-      margin: 0;
 
       .tile-image {
         width: inherit;
@@ -247,6 +244,14 @@ body.posts.show {
   .tile-wrapper {
     width: 100%;
     padding: 0;
+
+    .tile {
+      min-height: 23rem;
+
+      .tile-image {
+        padding-bottom: 79%;
+      }
+    }
 
     .title {
       background-color: rgba(0,0,0,0.75);
