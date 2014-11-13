@@ -26,6 +26,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    @post = Post.new
     @post.slug = @post.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#/, '')
 
     respond_to do |format|
