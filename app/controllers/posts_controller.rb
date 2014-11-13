@@ -119,6 +119,7 @@ class PostsController < ApplicationController
           :id,
           :header,
           :body,
+          :position,
           :_destroy
         ],
 
