@@ -9,6 +9,7 @@
     <%= f.semantic_fields_for :sections do |s| %>
       <%= s.input :header %>
       <%= s.input :body, as: :ckeditor %>
+      <%= s.input :position %>
       <%= s.link_to_remove 'Remove This Section' %>
     <%- end -%>
     <%= f.link_to_add 'Add A Section', :sections %>
