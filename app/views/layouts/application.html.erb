@@ -20,7 +20,9 @@
     <section id="preContainer" class="desktop-only">
       <%= yield :pre_container %>
     </section>
-    <%= render partial: "shared/navbar" %>
+    <%- if !@no_nav -%>
+      <%= render partial: "shared/navbar" %>
+    <%- end -%>
     <main id="content" class="content-container small-12 columns">
       <%= yield %>
     </main>

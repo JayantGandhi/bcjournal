@@ -7,4 +7,8 @@ class PagesController < ApplicationController
 
   def submit
   end
+
+  def splash
+    @no_nav = true
+  end
 end

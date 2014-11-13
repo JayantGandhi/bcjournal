@@ -24,7 +24,10 @@ Rails.application.routes.draw do
   post 'editor/create', to: 'editors#create', as: 'editor_create_path'
   resources :editors
 
-  root 'posts#index'
+  # root 'posts#index'
+
+  root 'pages#splash'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
