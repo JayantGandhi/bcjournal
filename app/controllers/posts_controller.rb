@@ -26,11 +26,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new
+    @post = Post.new(post_params)
     @post.slug = @post.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#/, '')
 
     respond_to do |format|
-      if @post.save(post_params)
+      if @post.save
         format.html { redirect_to @post, notice: 'post was successfully created.' }
         format.json { head :no_content }
       else
