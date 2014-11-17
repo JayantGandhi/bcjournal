@@ -58,6 +58,10 @@
     .tile-large {
       height: 42rem;
       width: 50rem;
+
+      .title {
+        max-width: 50rem;
+      }
     }
 
     .tile-tall {
