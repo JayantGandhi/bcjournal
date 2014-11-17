@@ -1,18 +1,15 @@
 <h2>Subscribe!</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= semantic_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+  <%= f.input :first_name, required: true, autofocus: true %>
+  <%= f.input :last_name, required: true %>
+  <%= f.input :email, required: true %>
+  <%= f.input :password, autocomplete: 'off', required: true %>
+  <%= f.input :password_confirmation, autocomplete: 'off', required: true %>
 
-  <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
-
-  <div><%= f.submit "Sign up" %></div>
+  <div><%= f.submit "Sign up", class: 'button success round' %></div>
 <% end %>
-
+<div>or</div>
 <%= render "subscribers/shared/links" %>

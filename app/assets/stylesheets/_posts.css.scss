@@ -68,6 +68,16 @@
       width: 50rem;
     }
 
+    .tile-small {
+      .title {
+        max-width: 24rem;
+      }
+
+      .caption {
+        display: none;
+      }
+    }
+
     .tile-large {
       .caption {
         bottom: 10rem;
