@@ -1,5 +1,5 @@
 <%-
-  position = ((post_counter) % 16)
+  position = ((post_counter - @slides.length) % 16)
 
   if position == 0
     class_name = 'tile-large'
@@ -37,7 +37,7 @@
   end
 -%>
 
-<div class="tile <%= class_name %>">
+<div class="tile <%= class_name %> <%= post_counter %>">
   <%= link_to post do %>
     <span class='tile-image' style="background-image:url(<%= image %>)"></span>
     <span class="overlay">
