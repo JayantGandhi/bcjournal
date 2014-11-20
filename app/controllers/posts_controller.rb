@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
 
   def show
-
+    @no_nav = true
   end
 
   def index
