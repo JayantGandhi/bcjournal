@@ -15,7 +15,7 @@
   </head>
 
   <body class="<%= controller_name %> <%= action_name  %> <%= "no-nav" if @no_nav %>">
-    <%= render partial: 'shared/body_scripts' %>
+    <div id="fb-root"></div>
 
     <section id="preContainer" class="desktop-only">
       <%= yield :pre_container %>
