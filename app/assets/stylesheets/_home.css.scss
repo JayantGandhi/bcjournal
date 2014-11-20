@@ -120,6 +120,7 @@
 
     h1 {
       color: #fff;
+      background-color: transparent;
       @include transition(color, 250ms, ease-in-out);
     }
   }
