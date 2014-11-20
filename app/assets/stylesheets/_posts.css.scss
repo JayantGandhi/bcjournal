@@ -251,6 +251,10 @@ body.posts.show {
 
 #nanobar {
   top: 4.5rem !important;
+
+  body.no-nav & {
+    top: 0 !important;
+  }
 }
 
 

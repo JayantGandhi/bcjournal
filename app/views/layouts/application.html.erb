@@ -14,7 +14,7 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body class="<%= controller_name %> <%= action_name  %>">
+  <body class="<%= controller_name %> <%= action_name  %> <%= "no-nav" if @no_nav %>">
     <%= render partial: 'shared/body_scripts' %>
 
     <section id="preContainer" class="desktop-only">
