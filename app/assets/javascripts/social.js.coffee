@@ -14,7 +14,7 @@ postToFeed = (title, desc, url, image) ->
   return
 window.fbAsyncInit = ->
   FB.init
-    appId: "your-app-id"
+    appId: "591649337603308"
     xfbml: true
     version: "v2.1"
 
@@ -30,6 +30,12 @@ window.fbAsyncInit = ->
   fjs.parentNode.insertBefore js, fjs
   return
 ) document, "script", "facebook-jssdk"
+
+$ ->
+  $(".fb-share").click ->
+    elem = $(this)
+    postToFeed elem.data("title"), elem.data("desc"), elem.prop("href"), elem.data("image")
+    false
 
 ##############
 # Twitter JS #
