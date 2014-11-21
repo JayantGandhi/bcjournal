@@ -11,4 +11,8 @@ class PagesController < ApplicationController
   def splash
     @no_nav = true
   end
+
+  def call_for_submissions
+    render layout: false
+  end
 end

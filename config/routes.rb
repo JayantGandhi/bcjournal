@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get 'submit', to: 'pages#submit'
 
+  get 'call-for-submissions', to: 'pages#call_for_submissions'
+
   resource :slideshow
 
   devise_for :editors,
