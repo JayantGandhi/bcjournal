@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def show
     @no_nav = true
+    @bitly_url = Bitly.client.shorten(request.original_url).short_url
   end
 
   def index

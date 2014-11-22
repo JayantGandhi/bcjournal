@@ -84,3 +84,6 @@ gem 'acts-as-taggable-on'
 gem 'mandrill-api'
 
 gem 'gibbon'
+
+# Bitly for url shortening
+gem 'bitly'
