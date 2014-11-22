@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post.slug = @post.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#/, '')
+    @post.slug = @post.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#|\,|\;|\:/, '')
 
 
     respond_to do |format|
