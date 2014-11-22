@@ -17,5 +17,5 @@
 
 *.sw?
 
-aws.rb
+api_keys.rb
 *.env
