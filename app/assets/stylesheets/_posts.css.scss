@@ -300,3 +300,34 @@ body.posts.show {
     }
   }
 }
+
+.sticky-social {
+  display: inline-block;
+
+  // TEMPORARY
+  display: none !important;
+  // TEMPORARY
+
+  .social-list {
+    .social-item {
+      list-style: none;
+      height: 4rem;
+      padding: 0 1rem;
+      line-height: 4rem;
+      width: 11rem;
+
+      a {
+        color: $white;
+      }
+
+
+      &.facebook {
+        background-color: $facebook-blue;
+
+        &:hover {
+          background-color: $facebook-hover;
+        }
+      }
+    }
+  }
+}

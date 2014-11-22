@@ -7,6 +7,9 @@ html {
   }
 }
 
+$facebook-blue: #3b5998;
+$facebook-hover: darken($facebook-blue, 10%);
+
 a:hover,
 a:active {
   // color: #2233BF !important;

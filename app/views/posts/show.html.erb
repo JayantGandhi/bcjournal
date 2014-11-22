@@ -15,8 +15,15 @@
       <a href="#"><span class="label"><%= vertical.name %></span></a>
     <%- end -%>
   </div>
-  <div>
+  <div class="publish-date">
     <%= @post.publish_date.to_formatted_s(:long) if !@post.publish_date.nil? %>
+  </div>
+
+  <div class="sticky-social">
+    <ul class="social-list">
+      <li class="social-item facebook"><a class="fb-share" data-title="<%= @post.title %>" data-image="<%= @post.cover_image.thumb %>" data-desc="<%= @post.blurb %>" href="<%= request.original_url %>"><span class="social-text">Share on</span><span class="icon-facebook"></span></a></li>
+      <li class="social-item twitter">Tweet</li>
+    </ul>
   </div>
 
   <div class="article-content">
@@ -39,13 +46,6 @@
     </div>
   <%- end -%>
 </article>
-
-<div class="sticky-social">
-  <ul class="social-list">
-    <li class="social-item"><a class="fb-share" data-title="<%= @post.title %>" data-image="<%= @post.cover_image.thumb %>" data-desc="<%= @post.blurb %>" href="<%= request.original_url %>"><span class="social-text">Share on</span><span class="icon-facebook"></span></a></li>
-    <li></li>
-  </ul>
-</div>
 
 <%- if @post.sections.length > 1 -%>
   <div class="section-navigator desktop-only">
