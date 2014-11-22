@@ -3,8 +3,15 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
 
   def show
+    # no nav for now - waiting to have full site ready
     @no_nav = true
+
+    # shorten the url with bitly
     @bitly_url = Bitly.client.shorten(request.original_url).short_url
+
+    # Set the page title
+    @page_title = @post.title
+    @page_description = @post.blurb.slice(0..154)
   end
 
   def index

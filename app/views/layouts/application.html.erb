@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "The SAIS Journal of Global Affairs" %></title>
-    <meta name="description" content="A graduate student publication of the Johns Hopkins University's School of Advanced International Studies" />
+    <title><%= @page_title ? @page_title : "The SAIS Europe Journal of Global Affairs" %></title>
+    <meta name="description" content="<%= @page_description ? @page_description : 'A graduate student publication of the Johns Hopkins University\'s School of Advanced International Studies' %>" />
     <%= favicon_link_tag 'icons/saisjournal-icon.ico' %>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
