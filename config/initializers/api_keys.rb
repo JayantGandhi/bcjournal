@@ -1,8 +1,0 @@
-# AWS security codes
-ENV["AWS_ACCESS_KEY_ID"] = 'AKIAJLYS3QTJ4EJNKCDA'
-ENV["AWS_SECRET_ACCESS_KEY"] = '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'
-ENV["S3_BUCKET_NAME"] = 'bcjournal'
-
-# Bitly API Info
-ENV['BITLY_USERNAME'] = 'saisjournal'
-ENV['BITLY_API_KEY'] = 'R_bfe9da2b3d0e4c2ebf9d03a463ac0477'
