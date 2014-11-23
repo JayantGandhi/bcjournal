@@ -1,6 +1,8 @@
 <% content_for :head do %>
     <meta property="og:title" content="<%= @post.title %>">
     <meta property="og:image" content="<%= @post.cover_image.thumb %>">
+    <meta property="og:description" content="<%= @post.blurb %>">
+    <meta property="og:url" content="<%= request.original_url %>">
 <% end %>
 
 <article>
