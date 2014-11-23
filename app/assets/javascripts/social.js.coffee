@@ -16,7 +16,7 @@ window.fbAsyncInit = ->
   FB.init
     appId: "591649337603308"
     xfbml: true
-    version: "v2.1"
+    version: "v2.2"
 
   return
 

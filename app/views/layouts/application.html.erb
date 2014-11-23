@@ -6,6 +6,7 @@
 
     <title><%= @page_title ? @page_title : "The SAIS Europe Journal of Global Affairs" %></title>
     <meta name="description" content="<%= @page_description ? @page_description : 'A graduate student publication of the Johns Hopkins University\'s School of Advanced International Studies' %>" />
+    <%= content_for :head %>
     <%= favicon_link_tag 'icons/saisjournal-icon.ico' %>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>

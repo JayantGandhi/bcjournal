@@ -1,3 +1,8 @@
+<% content_for :head do %>
+    <meta property="og:title" content="<%= @post.title %>">
+    <meta property="og:image" content="<%= @post.cover_image.thumb %>">
+<% end %>
+
 <article>
   <% if @post.archived? %>
     <!-- <div class="archive-tag">From the Archive</div> -->
