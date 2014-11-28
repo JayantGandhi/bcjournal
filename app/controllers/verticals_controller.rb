@@ -1,4 +1,5 @@
 class VerticalsController < ApplicationController
+  before_action :authenticate_editor!
   before_action :set_vertical, only: [:show, :edit, :update, :destroy]
 
   # GET /verticals
