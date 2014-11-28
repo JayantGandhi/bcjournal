@@ -1,0 +1,7 @@
+<h1>Verticals</h1>
+
+<ul>
+  <%- for vertical in @verticals do -%>
+    <li><%= link_to vertical.name, edit_vertical_path(vertical) %></li>
+  <%- end -%>
+</ul>
