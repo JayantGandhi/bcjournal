@@ -45,6 +45,9 @@
         <span><%= post.blurb %></span>
       </div>
     </span>
-    <span class="title"><h2><%= post.title %></h2></span>
+    <span class="title">
+      <h2><%= post.title %></h2>
+      <h4>By <%= post.by_line %></h4>
+    </span>
   <%- end -%>
 </div>
