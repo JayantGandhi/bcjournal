@@ -2,6 +2,7 @@
   <li class="row panel column small-10">
     <div class="post-title column small-3">
       <h5><%= post.title %></h5>
+      <h6><%= post.id %></h6>
       <ul class="button-group round">
         <li><%= link_to 'Edit', edit_post_path(post), class: 'button success' %></li>
         <li><%= link_to 'View', post, class: 'button' %></li>
