@@ -18,10 +18,9 @@
         </a>
       </div>
     </div>
-    <hr>
-    <div class="slideshow" data-equalizer>
+    <div class="slideshow">
       <% for post in @slides do %>
-        <div data-equalizer-watch>
+        <div>
           <%= link_to(post)  do%>
           <span class="overlay"></span>
           <span class="slide-image" style='background-image:url(<%= post.cover_image.cover %>)'></span>
@@ -32,8 +31,8 @@
           <%- end -%>
         </div>
       <%- end -%>
-      <span id="prevArrow" class="icon-angle-left" data-equalizer-watch></span>
-      <span id="nextArrow" class='icon-angle-right' data-equalizer-watch></span>
+      <span id="prevArrow" class="icon-angle-left slide-arrow"></span>
+      <span id="nextArrow" class='icon-angle-right slide-arrow'></span>
     </div>
   </section>
 <%- end -%>
