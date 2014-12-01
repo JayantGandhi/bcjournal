@@ -15,10 +15,13 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.where(:published => true).paginate(:page => params[:page], per_page: 16).order('created_at DESC')
-    @missing_images = 0
     @slideshow = Slideshow.first()
     @slides = @slideshow.posts
+
+    @position = 0
+
+    @posts = Post.where(:published => true).paginate(:page => params[:page], per_page: 16).order('created_at DESC')
+    @missing_images = 0
   end
 
   def new

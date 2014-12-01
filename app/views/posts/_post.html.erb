@@ -1,26 +1,34 @@
 <%-
-  position = ((post_counter - @slides.length) % 8)
+  position = (@position % 8)
+  class_name = ''
 
-  if position == 0
-    class_name = 'tile-large'
-    image = post.cover_image.tile_large
-    blurb = post.blurb
-  elsif position == 3
-    class_name = 'tile-wide'
-    image = post.cover_image.tile_wide
-    blurb = post.blurb
-  elsif position == 4
-    class_name = 'tile-tall'
-    image = post.cover_image.tile_tall
-    blurb = post.blurb
-  elsif position == 7
-    class_name = 'tile-large'
-    image = post.cover_image.tile_large
-    blurb = post.blurb
+  if @slides.include? post
+    class_name += " mobile-only"
   else
-    class_name = 'tile-small'
-    image = post.cover_image.tile_small
-    blurb = post.blurb.truncate(245)
+
+    if position == 0
+      class_name = 'tile-large'
+      image = post.cover_image.tile_large
+      blurb = post.blurb
+    elsif position == 3
+      class_name = 'tile-wide'
+      image = post.cover_image.tile_wide
+      blurb = post.blurb
+    elsif position == 4
+      class_name = 'tile-tall'
+      image = post.cover_image.tile_tall
+      blurb = post.blurb
+    elsif position == 7
+      class_name = 'tile-large'
+      image = post.cover_image.tile_large
+      blurb = post.blurb
+    else
+      class_name = 'tile-small'
+      image = post.cover_image.tile_small
+      blurb = post.blurb.truncate(245)
+    end
+
+    @position += 1
   end
 
   if image.blank?
@@ -35,10 +43,6 @@
     end
 
     @missing_images += 1
-  end
-
-  if @slides.include? post
-    class_name += " mobile-only"
   end
 -%>
 
