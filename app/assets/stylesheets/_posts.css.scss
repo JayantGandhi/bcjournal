@@ -94,6 +94,11 @@
         max-width: 24rem;
         font-size: 2.6rem;
       }
+
+      h3 {
+        max-width: 24rem;
+        font-size: 2.2rem;
+      }
     }
 
     .tile-wide {
@@ -172,6 +177,14 @@
       }
 
       .overlay {
+        max-width: 50rem;
+      }
+
+      h2 {
+        max-width: 50rem;
+      }
+
+      h3 {
         max-width: 50rem;
       }
     }
