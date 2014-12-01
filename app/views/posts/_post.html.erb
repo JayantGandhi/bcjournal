@@ -25,7 +25,7 @@
     else
       class_name = 'tile-small'
       image = post.cover_image.tile_small
-      blurb = post.blurb.truncate(245)
+      blurb = post.blurb.truncate(length: 245, separator: ' ')
     end
 
     @position += 1
