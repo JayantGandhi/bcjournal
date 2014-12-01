@@ -1,5 +1,5 @@
 <%-
-  position = (@position % 8)
+  position = (@position % 6)
   class_name = ''
 
   if @slides.include? post
@@ -14,11 +14,11 @@
       class_name = 'tile-wide'
       image = post.cover_image.tile_wide
       blurb = post.blurb
-    elsif position == 4
+    elsif position == 2
       class_name = 'tile-tall'
       image = post.cover_image.tile_tall
       blurb = post.blurb
-    elsif position == 7
+    elsif position == 5
       class_name = 'tile-large'
       image = post.cover_image.tile_large
       blurb = post.blurb

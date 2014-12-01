@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 
     @position = 0
 
-    @posts = Post.where(:published => true).paginate(:page => params[:page], per_page: 16).order('created_at DESC')
+    @posts = Post.where(:published => true).paginate(:page => params[:page], per_page: 18).order('created_at DESC')
     @missing_images = 0
   end
 
