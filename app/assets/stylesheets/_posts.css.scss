@@ -207,7 +207,7 @@
 
     .overlay {
       @include opacity(0);
-      background-color: rgba(0,0,0,0.75);
+      background-color: rgba(2,44,116,0.75);
       width: inherit;
       height: inherit;
       display: inline-block;
@@ -220,6 +220,10 @@
     .tile:active {
       .overlay {
         @include opacity(1);
+      }
+
+      .caption {
+        background-color: lighten($main-color, 50%);
       }
 
       .title{
