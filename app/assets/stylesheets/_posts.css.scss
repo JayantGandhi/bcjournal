@@ -46,33 +46,89 @@
       width: 24rem;
       height: 20rem;
       margin: 1rem;
-      border: 1px solid;
       min-height: auto;
 
       .tile-image {
         width: inherit;
         height: inherit;
       }
+
+      .caption span {
+        color: #000;
+      }
     }
 
     .tile-large {
       height: 42rem;
-      width: 50rem;
+      width: 74rem;
 
       .title {
+        max-width: 50rem;
+      }
+
+      .tile-image {
         max-width: 50rem;
       }
     }
 
     .tile-tall {
       height: 42rem;
+      width: 50rem;
+
+      .overlay {
+        max-width: 24rem;
+      }
+
+      .tile-image {
+        max-width: 24rem;
+      }
+
+      .caption {
+        position: relative;
+        margin-left: 24rem;
+        width: 24rem;
+        height: 42rem;
+      }
     }
 
     .tile-wide {
-      width: 50rem;
+      width: 70rem;
+
+      .overlay {
+        max-height: 20rem;
+      }
+
+      .tile-image {
+        max-height: 20rem;
+      }
+
+      .caption {
+        margin-top: 20rem;
+        position: relative;
+        height: 20rem;
+        width: 50rem;
+      }
     }
 
     .tile-small {
+      height: 42rem;
+
+      .tile-image {
+        max-height: 20rem;
+      }
+
+      .overlay {
+        max-height: 20rem;
+      }
+
+      .caption {
+        position: relative;
+        top: 0;
+        width: 24rem;
+        height: 24rem;
+        margin-top: 24rem;
+      }
+
       .title {
         max-width: 24rem;
 
@@ -88,15 +144,21 @@
           font-size: 1.4rem;
         }
       }
-
-      .caption {
-        display: none;
-      }
     }
 
     .tile-large {
       .caption {
-        bottom: 10rem;
+        top: 0;
+        position: relative;
+        width: 24rem;
+        height: 42rem;
+        color: blue;
+        margin-left: 50rem;
+        z-index: -1;
+      }
+
+      .overlay {
+        max-width: 50rem;
       }
     }
 
@@ -121,7 +183,8 @@
       @include transition(opacity, 250ms, ease-in-out);
     }
 
-    .tile:hover {
+    .tile:hover,
+    .tile:active {
       .overlay {
         @include opacity(1);
       }

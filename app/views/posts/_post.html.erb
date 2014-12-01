@@ -1,21 +1,26 @@
 <%-
-  position = ((post_counter - @slides.length) % 16)
+  position = ((post_counter - @slides.length) % 8)
 
   if position == 0
     class_name = 'tile-large'
     image = post.cover_image.tile_large
-  elsif position % 7 == 0
+    blurb = post.blurb
+  elsif position == 3
     class_name = 'tile-wide'
     image = post.cover_image.tile_wide
-  elsif position % 8 == 0
+    blurb = post.blurb
+  elsif position == 4
     class_name = 'tile-tall'
     image = post.cover_image.tile_tall
-  elsif position % 9 == 0
+    blurb = post.blurb
+  elsif position == 7
     class_name = 'tile-large'
     image = post.cover_image.tile_large
+    blurb = post.blurb
   else
     class_name = 'tile-small'
     image = post.cover_image.tile_small
+    blurb = post.blurb.truncate(245)
   end
 
   if image.blank?
@@ -40,15 +45,14 @@
 <div class="tile <%= class_name %> <%= post_counter %>">
   <%= link_to post do %>
     <span class='tile-image' style="background-image:url(<%= image %>)"></span>
-    <span class="overlay">
-      <div class="caption">
-        <span><%= post.blurb %></span>
-      </div>
-    </span>
+    <span class="overlay"></span>
     <span class="title">
       <h2><%= post.title %></h2>
       <h3><%= post.subtitle %></h3>
       <h4>By <%= post.by_line %></h4>
     </span>
+    <div class="caption">
+      <span><%= blurb %></span>
+    </div>
   <%- end -%>
 </div>
