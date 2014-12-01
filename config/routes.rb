@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get 'call-for-submissions', to: 'pages#call_for_submissions'
 
+  get 'most-recent', to: 'posts#index'
+
   resource :slideshow
 
   devise_for :editors,
