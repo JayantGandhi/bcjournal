@@ -8,7 +8,10 @@
       </ul>
     </div>
     <div class="post-created-date column small-2">
-      <%= post.created_at.to_formatted_s(:long) %>
+      Created: <%= post.created_at.to_formatted_s(:long) %>
+    </div>
+    <div class="post-published-date column small-2">
+      Published: <%= post.publish_date.to_formatted_s(:long) if post.publish_date? %>
     </div>
     <ul class="button-group round right post-tools">
       <li class="post-publish">
