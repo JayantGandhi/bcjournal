@@ -40,7 +40,7 @@
   }
 }
 
-@media #{$large-up} {
+@media #{$medium-up} {
 
   .tile-wrapper {
     padding: 1rem 0;
@@ -424,9 +424,84 @@ body.posts.show {
 }
 
 @media #{$medium-only} {
-  .tile {
-      max-width: 75rem;
-      height: 42rem;
+  .tile-wrapper{
+    width: 100%;
+
+    .tile-large {
+      height: 25.2rem;
+      width: 44.4rem;
+
+      .title {
+        max-width: 30rem;
+      }
+
+      .tile-image {
+        max-width: 30rem;
+      }
+
+      .caption {
+        width: 14.4rem;
+        height: 25.2rem;
+        margin-left: 30rem;
+      }
+    }
+
+    .tile-wide {
+      height: 25.2rem;
+      width: 44.4rem;
+
+      .title {
+        max-width: 30rem;
+      }
+
+      .tile-image {
+        max-height: 12rem;
+      }
+    }
+
+    .tile-tall {
+
+    }
+
+    .tile-small {
+      width: 25.2rem;
+      height: 25.2rem;
+
+      .title {
+        max-width: 25.2rem;
+        padding-top: 0;
+
+        h2 {
+          font-size: 1.8rem;
+        }
+
+        h3 {
+          font-size: 1.6rem;
+        }
+
+        h4 {
+          font-size: 1.2rem;
+        }
+      }
+
+      .tile-image {
+        max-height: 12rem;
+      }
+
+      .caption {
+        width: 25.2rem;
+        height: 13.4rem;
+        margin-top: 12rem;
+        padding: 0.1rem 0.5rem;
+        line-height: 2rem;
+
+        span {
+          font-size: 1.2rem;
+          max-height: 14.4rem;
+          overflow: hidden;
+        }
+      }
+    }
   }
 }
 
