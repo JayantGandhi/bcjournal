@@ -24,9 +24,13 @@
     <!-- Left Nav Section -->
     <ul class="left">
       <li><a href="/most-recent">Most Recent</a></li>
-      <% for vertical in Vertical.all do %>
-        <li><a href="#"><%= vertical.name.titleize %></a></li>
-      <% end %>
+      <li>
+        <ul class="verticals-list">
+          <% for vertical in Vertical.all do %>
+            <li class="vertical"><a href="#"><%= vertical.name.titleize %></a></li>
+          <% end %>
+        </ul>
+      </li>
     </ul>
   </section>
 </nav>

@@ -14,6 +14,7 @@
       <h1><%= @post.title %></h1>
       <h2><%= @post.subtitle %></h3>
       <h5>By <%= @post.by_line %></h5>
+      <span class="visibly-hidden"><%= @post.photo_title %></span>
     </div>
   </section>
 
@@ -24,6 +25,9 @@
   </div>
   <div class="publish-date">
     <%= @post.publish_date.to_formatted_s(:long) if !@post.publish_date.nil? %>
+  </div>
+  <div class="photo-credit">
+    <a href="<%= @post.photo_url %>" target="_blank"><%= @post.photo_credit %></a>
   </div>
 
   <div class="sticky-social">

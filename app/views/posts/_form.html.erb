@@ -6,6 +6,9 @@
     <%= f.input :blurb, required: true, input_html: {rows: 3, max_length: 400, class: 'text-area-with-limit'} %>
     <span id="img_preview" style="background-image:url(<%= @post.cover_image %>)"></span>
     <%= f.input :cover_image, as: :file%>
+    <%= f.input :photo_credit %>
+    <%= f.input :photo_url %>
+    <%= f.input :photo_title %>
     <%= f.semantic_fields_for :sections do |s| %>
       <%= s.input :header %>
       <%= s.input :body, as: :ckeditor %>

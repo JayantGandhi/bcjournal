@@ -36,6 +36,8 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.slug = @post.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#|\,|\.|\%|\;|\:/, '')
 
+    check_photo_url
+
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'post was successfully created.' }
@@ -54,6 +56,8 @@ class PostsController < ApplicationController
   def update
     @post.slug = @post.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#|\,|\;|\:/, '')
 
+    check_photo_url
+    puts post_params[:photo_url]
 
     respond_to do |format|
       if @post.update(post_params)
@@ -121,6 +125,9 @@ class PostsController < ApplicationController
         :publish_date,
         :archived,
         :author_bio,
+        :photo_credit,
+        :photo_url,
+        :photo_title,
         vertical_ids: [],
         sections_attributes: [
           :id,
@@ -135,6 +142,17 @@ class PostsController < ApplicationController
 
     def set_post
       @post = Post.find_by_slug(params[:id])
+    end
+
+    def check_photo_url
+      if post_params[:photo_url].start_with?("http://", "https://")
+        # do nothing
+        puts 'WTF M8??'
+      else
+        post_params[:photo_url].prepend("http://")
+        puts "here ya go"
+        puts post_params[:photo_url]
+      end
     end
 
 end

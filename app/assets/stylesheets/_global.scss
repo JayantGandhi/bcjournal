@@ -52,6 +52,14 @@ hr {
   }
 }
 
+@media only screen and (min-width: 769px) and (max-width: 1000px) {
+  #content {
+    padding: 0;
+  }
+
+
+}
+
 @media #{$medium-up} {
   .desktop-only {
     display: block;
@@ -82,4 +90,8 @@ article ol {
 
 a {
   font-size: 1.6rem;
+}
+
+.visibly-hidden {
+  visibility: hidden;
 }

@@ -1,20 +1,8 @@
-.headroom {
-  @include transition (transform 200ms ease-in-out);
-}
-.headroom--pinned {
-  @include transform(translateY(0%));
-}
-.headroom--unpinned {
-  @include transform(translateY(-100%));
-}
-
-.headroom--pinned {
-  position: fixed;
-  z-index: 10;
-  right: 0;
-  left: 0;
-  top: 0;
-}
+// @media only screen and (max-width: 1000px) {
+//   .verticals-list {
+//     @extend .dropdown;
+//   }
+// }
 
 .sticky {
   position: fixed;
