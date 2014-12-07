@@ -167,6 +167,10 @@
 .slide-arrow {
   margin-top: 10rem;
   min-height: 40rem;
+
+  &:before {
+    color: $main-color;
+  }
 }
 
 #twitter-widget-0 {
