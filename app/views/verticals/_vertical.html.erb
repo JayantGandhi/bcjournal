@@ -1,4 +1,4 @@
 <li id="edit_vertical_<%= vertical.id %>">
   <%= link_to vertical.name, edit_vertical_path(vertical.id), id: "editVertical#{vertical.id}", remote: true %>
-  <%= link_to "(remove)", vertical, method: :delete, data: {confirm: "Are you sure?"}, remote: true %>
+  <%= link_to "(X)", vertical, method: :delete, data: {confirm: "Are you sure?"}, remote: true, class: 'delete' %>
 </li>
