@@ -24,6 +24,7 @@
 
   .tile-image {
     width: 100%;
+    z-index: -9;
     position: absolute;
     display: inline-block;
     background-size: cover;
@@ -39,23 +40,31 @@
   .caption {
     text-align: justify;
     padding-top: 0;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
 
     h2 {
       font-weight: bold;
+      color: #fff;
     }
 
     h3 {
       font-style: italic;
+      color: #fff;
     }
 
     h4 {
       font-size: 1.4rem;
       text-transform: uppercase;
+      color: #fff;
     }
 
     span {
       font-size: 1.4rem;
       line-height: 1.4rem;
+      color: #fff;
     }
   }
 }
@@ -76,6 +85,17 @@
       .tile-image {
         width: inherit;
         height: inherit;
+      }
+
+      .caption {
+        background-color: transparent;
+
+        h2,
+        h3,
+        h4,
+        span {
+          color: #000;
+        }
       }
 
       .caption span {
