@@ -166,14 +166,14 @@
     }
 
     .tile-small {
-      height: 37.8rem;
+      height: 40.66rem;
 
       .tile-image {
-        max-height: 17.8rem;
+        max-height: 20.33rem;
       }
 
       .overlay {
-        max-height: 17.8rem;
+        max-height: 20.33rem;
       }
 
       .title {
@@ -184,8 +184,8 @@
         position: relative;
         top: 0;
         width: 24rem;
-        height: 24rem;
-        margin-top: 17.8rem;
+        height: 20.33rem;
+        margin-top: 20.33rem;
 
         h2 {
           font-size: 1.6rem;
@@ -283,9 +283,10 @@
     }
 
     .caption {
-      padding: 0 1rem 0;
       position: absolute;
       bottom: 0;
+      width: 100%;
+      padding: 0 0.5rem;
 
       span {
         color: #fff;
