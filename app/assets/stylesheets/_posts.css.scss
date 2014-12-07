@@ -20,6 +20,7 @@
 
 .tile {
   margin: 1rem 0;
+  position: relative;
 
   .tile-image {
     width: 100%;
@@ -37,6 +38,11 @@
 
   .caption {
     text-align: justify;
+
+    h4 {
+      font-size: 1.4rem;
+      text-transform: uppercase;
+    }
   }
 }
 
@@ -69,6 +75,7 @@
 
       .title {
         max-width: 45rem;
+        bottom: 0;
       }
 
       .tile-image {
@@ -79,6 +86,10 @@
     .tile-tall {
       height: 42rem;
       width: 50rem;
+
+      .title {
+        bottom: 0;
+      }
 
       .overlay {
         max-width: 24rem;
@@ -109,6 +120,10 @@
     .tile-wide {
       width: 50rem;
       height: 42rem;
+
+      .title {
+        bottom: 50%;
+      }
 
       .overlay {
         max-height: 20rem;
@@ -145,6 +160,10 @@
 
       .overlay {
         max-height: 17.8rem;
+      }
+
+      .title {
+        bottom: 50%;
       }
 
       .caption {
