@@ -1,5 +1,23 @@
 <%= render partial: 'home_header' %>
+
 <section class="tile-wrapper small-10 columns">
+  <div class="mobile-only slides">
+    <% for slide in @slides %>
+      <div class="tile">
+        <%= link_to slide do %>
+          <span class='tile-image' style="background-image:url(<%= slide.cover_image %>)"></span>
+          <span class="overlay"></span>
+          <span class="title">
+          </span>
+          <div class="caption">
+            <h2><%= slide.title %></h2>
+            <h3><%= slide.subtitle %></h3>
+            <h4>By <%= slide.by_line %></h4>
+          </div>
+        <%- end -%>
+      </div>
+    <% end %>
+  </div>
   <%= render @posts %>
 </section>
 
