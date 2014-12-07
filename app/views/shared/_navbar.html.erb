@@ -1,3 +1,7 @@
+<%-
+  @verticals = verticals_list
+-%>
+
 <nav id="header" class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name desktop-only">
@@ -24,9 +28,16 @@
     <!-- Left Nav Section -->
     <ul class="left">
       <li><a href="/most-recent">Most Recent</a></li>
-      <li>
-        <ul class="verticals-list">
-          <% for vertical in Vertical.all do %>
+      <li class="verticals large-only">
+        <ul class="verticals-list large-only">
+          <% for vertical in @verticals do %>
+            <li class="vertical"><a href="#"><%= vertical.name.titleize %></a></li>
+          <% end %>
+        </ul>
+      </li>
+      <li class="has-dropdown medium-down"><a>Sections</a>
+        <ul class="dropdown">
+          <% for vertical in @verticals do %>
             <li class="vertical"><a href="#"><%= vertical.name.titleize %></a></li>
           <% end %>
         </ul>

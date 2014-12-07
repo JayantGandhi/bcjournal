@@ -445,100 +445,96 @@ body.posts.show {
   }
 }
 
-@media #{$medium-only} {
-  .tile-wrapper{
-    width: 100%;
+// @media #{$medium-only} {
+//   .tile-wrapper{
+//     width: 100%;
 
-    .tile-large {
-      height: 25.2rem;
-      width: 44.4rem;
+//     .tile-large {
+//       height: 25.2rem;
+//       width: 44.4rem;
 
-      .title {
-        max-width: 30rem;
-      }
+//       .title {
+//         max-width: 30rem;
+//       }
 
-      .tile-image {
-        max-width: 30rem;
-      }
+//       .tile-image {
+//         max-width: 30rem;
+//       }
 
-      .caption {
-        width: 14.4rem;
-        height: 25.2rem;
-        margin-left: 30rem;
-      }
-    }
+//       .caption {
+//         width: 14.4rem;
+//         height: 25.2rem;
+//         margin-left: 30rem;
+//       }
+//     }
 
-    .tile-wide,
-    .tile-tall {
-      height: 30rem;
-      width: 30rem;
+//     .tile-wide,
+//     .tile-tall {
+//       height: 30rem;
+//       width: 30rem;
 
-      .title {
-        max-width: 15rem;
-      }
+//       .title {
+//         max-width: 15rem;
+//       }
 
-      .tile-image {
-        max-width: 15rem;
-        max-height: none;
-      }
+//       .tile-image {
+//         max-width: 15rem;
+//         max-height: none;
+//       }
 
-      .overlay {
-        max-width: 30rem;
-        max-height: none;
-      }
+//       .overlay {
+//         max-width: 30rem;
+//         max-height: none;
+//       }
 
-      .caption {
-        margin: 0 0 0 15rem;
-        width: 15rem;
-        height: 30rem;
-      }
-    }
+//       .caption {
+//         margin: 0 0 0 15rem;
+//         width: 15rem;
+//         height: 30rem;
+//       }
+//     }
 
-    .tile-wide {
-      float: right;
-    }
+//     .tile-small {
+//       width: 25.2rem;
+//       height: 25.2rem;
 
-    .tile-small {
-      width: 25.2rem;
-      height: 25.2rem;
+//       .title {
+//         max-width: 25.2rem;
+//         padding-top: 0;
 
-      .title {
-        max-width: 25.2rem;
-        padding-top: 0;
+//         h2 {
+//           font-size: 1.8rem;
+//         }
 
-        h2 {
-          font-size: 1.8rem;
-        }
+//         h3 {
+//           font-size: 1.6rem;
+//         }
 
-        h3 {
-          font-size: 1.6rem;
-        }
+//         h4 {
+//           font-size: 1.2rem;
+//         }
+//       }
 
-        h4 {
-          font-size: 1.2rem;
-        }
-      }
+//       .tile-image {
+//         max-height: 12rem;
+//       }
 
-      .tile-image {
-        max-height: 12rem;
-      }
+//       .caption {
+//         width: 25.2rem;
+//         height: 13.4rem;
+//         margin-top: 12rem;
+//         padding: 0.1rem 0.5rem;
+//         line-height: 2rem;
 
-      .caption {
-        width: 25.2rem;
-        height: 13.4rem;
-        margin-top: 12rem;
-        padding: 0.1rem 0.5rem;
-        line-height: 2rem;
-
-        span {
-          font-size: 1.2rem;
-          max-height: 14.4rem;
-          overflow: hidden;
-        }
-      }
-    }
-  }
-}
+//         span {
+//           font-size: 1.2rem;
+//           max-height: 14.4rem;
+//           overflow: hidden;
+//         }
+//       }
+//     }
+//   }
+// }
 
 .sticky-social {
   display: inline-block;

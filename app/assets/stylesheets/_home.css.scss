@@ -10,6 +10,7 @@
     h1 {
       display: table-cell;
       vertical-align: middle;
+      color: #fff;
     }
 
     img {
@@ -20,6 +21,8 @@
   .title-area {
     max-width: 100%;
     position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9;
   }
 
   hr {
@@ -94,8 +97,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    min-height: 40rem;
-    margin-top:10rem;
+    min-height: 50rem;
     display: inline-block;
     width: 100%;
   }

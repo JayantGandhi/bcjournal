@@ -1,6 +1,30 @@
+.verticals {
+  span {
+    display: none;
+  }
+}
+
 // @media only screen and (max-width: 1000px) {
-//   .verticals-list {
-//     @extend .dropdown;
+//   .verticals {
+//     min-width:10rem;
+//     min-height: 4.5rem;
+//     display: inline-block;
+
+//     span {
+//       display: inline-block;
+//       line-height: 4.5rem;
+//       color: #fff;
+//     }
+
+//     .verticals-list {
+//       display: none;
+//     }
+
+//     &:hover {
+//       .verticals-list {
+//         display: inline-block !important;
+//       }
+//     }
 //   }
 // }
 
