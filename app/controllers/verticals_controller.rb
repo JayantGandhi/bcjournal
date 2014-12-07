@@ -44,10 +44,10 @@ class VerticalsController < ApplicationController
     respond_to do |format|
       if @vertical.update(vertical_params)
         format.html { redirect_to @vertical, notice: 'vertical was successfully updated.' }
-        format.json { head :no_content }
+        format.js
       else
         format.html { render action: 'edit' }
-        format.json { render json: @vertical.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -55,10 +55,10 @@ class VerticalsController < ApplicationController
   # DELETE /verticals/1
   # DELETE /verticals/1.json
   def destroy
-    @vertical.destroy
+    @vertical = Vertical.destroy(params[:id])
     respond_to do |format|
-      format.html { redirect_to verticals_url }
-      format.json { head :no_content }
+      format.html { redirect_to tasks_url }
+      format.js
     end
   end
 

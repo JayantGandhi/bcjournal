@@ -1,4 +1,5 @@
-<%= semantic_form_for Vertical.new, remote: true do |f| %>
+<%= semantic_form_for @vertical, remote: true do |f| %>
   <%= f.input :name %>
   <%= f.submit %>
+  <%= f.action :cancel, label: 'Cancel' %>
 <%- end -%>

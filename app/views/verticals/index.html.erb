@@ -1,9 +1,8 @@
 <h1>Verticals</h1>
 
-<ul>
+<ul id="verticalList">
   <%- for vertical in @verticals do -%>
-    <li><a href="#edit<%= vertical.id %>"><%= vertical.name %></a></li>
+    <%= render 'vertical', vertical: vertical %>
   <%- end -%>
 </ul>
 <%= link_to "Create Vertical", new_vertical_path, id: "newVerticalLink", remote: true %>
-<a href="#create">Let's make a new one!!!</a>
