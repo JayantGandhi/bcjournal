@@ -38,6 +38,7 @@
 
   .caption {
     text-align: justify;
+    padding-top: 0;
 
     h2 {
       font-weight: bold;
@@ -117,7 +118,6 @@
         margin-left: 24rem;
         width: 24rem;
         height: 42rem;
-        padding-top: 0;
       }
 
       h2 {
@@ -208,7 +208,6 @@
     .tile-large {
       .caption {
         top: 0;
-        padding-top: 0;
         position: relative;
         width: 21.6rem;
         height: 37.8rem;
@@ -219,6 +218,14 @@
         h2 {
           font-size: 2.4rem;
           line-height: 2.4rem;
+        }
+
+        h3 {
+          font-size: 2rem;
+        }
+
+        h4 {
+          font-size: 1.8rem;
         }
       }
 
