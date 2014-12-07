@@ -173,24 +173,20 @@
         height: 24rem;
         margin-top: 17.8rem;
 
-        span {
-          font-size: 1.4rem;
-        }
-      }
-
-      .title {
-        max-width: 24rem;
-
         h2 {
-          font-size: 2.4rem;
+          font-size: 1.6rem;
         }
 
         h3 {
-          font-size: 1.8rem;
+          font-size: 1.4rem;
         }
 
         h4 {
           font-size: 1.4rem;
+        }
+
+        span {
+          font-size: 1.2rem;
         }
       }
     }
@@ -204,6 +200,10 @@
         color: blue;
         margin-left: 45rem;
         z-index: -1;
+
+        h2 {
+          font-size: 3.2rem;
+        }
       }
 
       .overlay {
