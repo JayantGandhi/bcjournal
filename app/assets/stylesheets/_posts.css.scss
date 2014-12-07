@@ -64,15 +64,15 @@
     }
 
     .tile-large {
-      height: 42rem;
-      width: 74rem;
+      height: 37.8rem;
+      width: 66.6rem;
 
       .title {
-        max-width: 50rem;
+        max-width: 45rem;
       }
 
       .tile-image {
-        max-width: 50rem;
+        max-width: 45rem;
       }
     }
 
@@ -137,22 +137,22 @@
     }
 
     .tile-small {
-      height: 42rem;
+      height: 37.8rem;
 
       .tile-image {
-        max-height: 20rem;
+        max-height: 17.8rem;
       }
 
       .overlay {
-        max-height: 20rem;
+        max-height: 17.8rem;
       }
 
       .caption {
         position: relative;
         top: 0;
         width: 24rem;
-        height: 24rem;
-        margin-top: 20rem;
+        height: 20rem;
+        margin-top: 17.8rem;
 
         span {
           font-size: 1.4rem;
@@ -180,23 +180,23 @@
       .caption {
         top: 0;
         position: relative;
-        width: 24rem;
-        height: 42rem;
+        width: 21.6rem;
+        height: 37.8rem;
         color: blue;
-        margin-left: 50rem;
+        margin-left: 45rem;
         z-index: -1;
       }
 
       .overlay {
-        max-width: 50rem;
+        max-width: 45rem;
       }
 
       h2 {
-        max-width: 50rem;
+        max-width: 45rem;
       }
 
       h3 {
-        max-width: 50rem;
+        max-width: 45rem;
       }
     }
 
@@ -263,7 +263,35 @@
 }
 
 .right-side {
-  height: 40rem;
+  padding: 0;
+
+  .constant-links {
+    margin: 0;
+    width: 100%;
+
+    li {
+      padding: 1rem;
+
+      span {
+        color: #000;
+        width: 100%;
+      }
+
+      img {
+        max-width: 100%;
+        max-height: 20rem;
+      }
+
+      &:hover,
+      &:active {
+        background-color: lighten($main-color, 50%);
+
+        span {
+          color: #fff;
+        }
+      }
+    }
+  }
 
   &.sticky {
     position: fixed;
@@ -445,96 +473,63 @@ body.posts.show {
   }
 }
 
-// @media #{$medium-only} {
-//   .tile-wrapper{
-//     width: 100%;
+@media #{$medium-only} {
+  .tile-wrapper{
 
-//     .tile-large {
-//       height: 25.2rem;
-//       width: 44.4rem;
+    .tile-tall {
+      height: 40.66rem;
+      width: 40.66rem;
 
-//       .title {
-//         max-width: 30rem;
-//       }
+      .title {
+        max-width: 20.33rem;
+      }
 
-//       .tile-image {
-//         max-width: 30rem;
-//       }
+      .tile-image {
+        max-width: 20.33rem;
+        max-height: none;
+      }
 
-//       .caption {
-//         width: 14.4rem;
-//         height: 25.2rem;
-//         margin-left: 30rem;
-//       }
-//     }
+      .overlay {
+        max-width: 40.66rem;
+        max-height: none;
+      }
 
-//     .tile-wide,
-//     .tile-tall {
-//       height: 30rem;
-//       width: 30rem;
+      .caption {
+        margin: 0 0 0 20.66rem;
+        width: 20.66rem;
+        height: 40.66rem;
+      }
+    }
 
-//       .title {
-//         max-width: 15rem;
-//       }
+    .tile-wide {
+      height: 40.66rem;
+      width: 40.66rem;
 
-//       .tile-image {
-//         max-width: 15rem;
-//         max-height: none;
-//       }
+      .overlay {
+        max-height: 20.33rem;
+      }
 
-//       .overlay {
-//         max-width: 30rem;
-//         max-height: none;
-//       }
+      .tile-image {
+        max-height: 20.33rem;
+      }
 
-//       .caption {
-//         margin: 0 0 0 15rem;
-//         width: 15rem;
-//         height: 30rem;
-//       }
-//     }
+      .caption {
+        margin-top: 20.33rem;
+        position: relative;
+        height: 20.33rem;
+        width: 40.66rem;
+      }
 
-//     .tile-small {
-//       width: 25.2rem;
-//       height: 25.2rem;
+      h2 {
+        max-width: 40.66rem;
+      }
 
-//       .title {
-//         max-width: 25.2rem;
-//         padding-top: 0;
-
-//         h2 {
-//           font-size: 1.8rem;
-//         }
-
-//         h3 {
-//           font-size: 1.6rem;
-//         }
-
-//         h4 {
-//           font-size: 1.2rem;
-//         }
-//       }
-
-//       .tile-image {
-//         max-height: 12rem;
-//       }
-
-//       .caption {
-//         width: 25.2rem;
-//         height: 13.4rem;
-//         margin-top: 12rem;
-//         padding: 0.1rem 0.5rem;
-//         line-height: 2rem;
-
-//         span {
-//           font-size: 1.2rem;
-//           max-height: 14.4rem;
-//           overflow: hidden;
-//         }
-//       }
-//     }
-//   }
-// }
+      h3 {
+        max-width: 40.66rem;
+      }
+    }
+  }
+}
 
 .sticky-social {
   display: inline-block;
