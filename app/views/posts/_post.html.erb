@@ -6,22 +6,20 @@
     class_name += " mobile-only"
   else
 
+    blurb = truncate(post.blurb, length: 245, separator: ' ')
+
     if position == 0
       class_name = 'tile-large'
       image = post.cover_image.tile_large
-      blurb = post.blurb
     elsif position == 3
       class_name = 'tile-wide'
       image = post.cover_image.tile_wide
-      blurb = post.blurb
     elsif position == 2
       class_name = 'tile-tall'
       image = post.cover_image.tile_tall
-      blurb = post.blurb
     elsif position == 5
       class_name = 'tile-large'
       image = post.cover_image.tile_large
-      blurb = post.blurb
     else
       class_name = 'tile-small'
       image = post.cover_image.tile_small
