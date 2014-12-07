@@ -5,5 +5,5 @@
     <li><a href="#edit<%= vertical.id %>"><%= vertical.name %></a></li>
   <%- end -%>
 </ul>
-<%= link_to "Create Vertical", new_vertical_path, remote: true %>
+<%= link_to "Create Vertical", new_vertical_path, id: "newVerticalLink", remote: true %>
 <a href="#create">Let's make a new one!!!</a>

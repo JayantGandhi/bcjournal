@@ -30,10 +30,10 @@ class VerticalsController < ApplicationController
     respond_to do |format|
       if @vertical.save
         format.html { redirect_to @vertical, notice: 'vertical was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @vertical }
+        format.js
       else
         format.html { render action: 'new' }
-        format.json { render json: @vertical.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end

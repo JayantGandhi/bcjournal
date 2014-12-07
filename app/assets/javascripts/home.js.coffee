@@ -3,5 +3,5 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
   # hide arrows if only one slide
-  console.log 'yolo'
-  console.log($('.slick-track').children().length)
+  if $('.slick-slide').length <= 1
+    $('.slide-arrow').addClass('hide')
