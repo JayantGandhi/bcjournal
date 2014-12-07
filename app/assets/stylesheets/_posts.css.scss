@@ -104,11 +104,12 @@
         margin-left: 24rem;
         width: 24rem;
         height: 42rem;
+        padding-top: 0;
       }
 
       h2 {
         max-width: 24rem;
-        font-size: 2.6rem;
+        font-size: 2.4rem;
       }
 
       h3 {
@@ -141,12 +142,12 @@
       }
 
       h2 {
-        font-size: 2.6rem;
+        font-size: 2.4rem;
         max-width: 50rem;
       }
 
       h3 {
-        font-size: 2.2rem;
+        font-size: 2rem;
         max-width: 50rem;
       }
     }
@@ -178,11 +179,11 @@
         }
 
         h3 {
-          font-size: 1.4rem;
+          font-size: 1.2rem;
         }
 
         h4 {
-          font-size: 1.4rem;
+          font-size: 1.2rem;
         }
 
         span {
@@ -194,6 +195,7 @@
     .tile-large {
       .caption {
         top: 0;
+        padding-top: 0;
         position: relative;
         width: 21.6rem;
         height: 37.8rem;
@@ -202,7 +204,8 @@
         z-index: -1;
 
         h2 {
-          font-size: 3.2rem;
+          font-size: 2.8rem;
+          line-height: 2.8rem;
         }
       }
 
