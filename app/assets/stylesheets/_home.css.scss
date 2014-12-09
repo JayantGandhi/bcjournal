@@ -83,7 +83,7 @@
   .caption {
     top: -7rem;
     position: relative;
-    margin-left: 5rem;
+    padding-left: 5rem;
     @include transition(top, 250ms, ease-in-out);
 
     h1 {
