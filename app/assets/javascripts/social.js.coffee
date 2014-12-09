@@ -14,7 +14,7 @@ postToFeed = (title, desc, url, image) ->
   return
 window.fbAsyncInit = ->
   FB.init
-    appId: "591649337603308"
+    appId: "1495919264020538"
     xfbml: true
     version: "v2.2"
 
