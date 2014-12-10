@@ -84,12 +84,12 @@
     top: -7rem;
     position: relative;
     padding-left: 5rem;
+    background-color: rgba(255, 255, 255, 0.5);
     @include transition(top, 250ms, ease-in-out);
 
     h1 {
       color: #000000;
       display: block;
-      background-color: rgba(255, 255, 255, 0.5);
       padding: 0 1rem;
     }
 
