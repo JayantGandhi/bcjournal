@@ -108,6 +108,15 @@ class PostsController < ApplicationController
     end
   end
 
+  def vertical_sort
+    puts "ya betch"
+
+    respond_to do |format|
+      format.html {posts_path}
+      format.js
+    end
+  end
+
   private
 
     def post_params

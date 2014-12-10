@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
   post 'post/:id/publish', to: 'posts#publish', as: 'post_publish'
   post 'post/:id/unpublish', to: 'posts#unpublish', as: 'post_unpublish'
+  get 'posts/vertical/:search', to: 'posts#vertical_sort'
 
   # Editor Routes (once logged in)
   get 'editor-panel', to: 'editors#panel', as: 'editor_panel'

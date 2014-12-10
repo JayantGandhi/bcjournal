@@ -1,5 +1,9 @@
 <%-
   @verticals = verticals_list
+
+  if @current_vertical.nil?
+    @current_vertical = ''
+  end
 -%>
 
 <nav id="header" class="top-bar" data-topbar role="navigation">
@@ -31,7 +35,7 @@
       <li class="verticals large-only">
         <ul class="verticals-list large-only">
           <% for vertical in @verticals do %>
-            <li class="vertical"><a href="#"><%= vertical.name.titleize %></a></li>
+            <li class="vertical"><%= link_to vertical.name.titleize, controller: :posts, action: :vertical_sort, search: "#{@current_vertical} #{vertical.name.parameterize}", remote: true %></li>
           <% end %>
         </ul>
       </li>
