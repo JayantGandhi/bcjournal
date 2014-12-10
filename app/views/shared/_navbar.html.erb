@@ -35,7 +35,7 @@
       <li class="verticals large-only">
         <ul class="verticals-list large-only">
           <% for vertical in @verticals do %>
-            <li class="vertical"><%= link_to vertical.name.titleize, controller: :posts, action: :vertical_sort, search: "#{@current_vertical} #{vertical.name.parameterize}", remote: true %></li>
+            <li class="vertical"><%= link_to vertical.name.titleize, controller: :posts, action: :vertical_sort, search: "#{@current_vertical}+#{vertical.name.parameterize}", vertical_id: vertical.id, remote: true %></li>
           <% end %>
         </ul>
       </li>

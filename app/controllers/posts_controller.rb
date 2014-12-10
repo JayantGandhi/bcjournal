@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 
     @position = 0
 
-    @posts = Post.where(:published => true).paginate(:page => params[:page], per_page: 18).order('created_at DESC')
+    @posts = Post.published.paginate(:page => params[:page], per_page: 18).order('created_at DESC')
     @missing_images = 0
   end
 
@@ -109,7 +109,23 @@ class PostsController < ApplicationController
   end
 
   def vertical_sort
-    puts "ya betch"
+    search = params[:search]
+
+    @current_vertical = search
+
+    vertical_names = search.split('+')
+
+    @verticals = []
+
+    for vertical_name in vertical_names
+      @verticals.push(Vertical.where('name LIKE ?', vertical_name))
+    end
+
+    @posts = Post.joins(verticals: Vertical.find_by_id(params[:vertical_id]))
+
+    puts @verticals
+
+    puts @posts
 
     respond_to do |format|
       format.html {posts_path}

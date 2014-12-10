@@ -21,6 +21,10 @@ class Post < ActiveRecord::Base
     },
     presence: true
 
+  # scopes
+  scope :published, -> { where(published: true) }
+
+  # methods
   def to_param
     slug
   end
