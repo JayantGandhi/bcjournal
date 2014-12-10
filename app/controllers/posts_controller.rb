@@ -118,10 +118,14 @@ class PostsController < ApplicationController
     @verticals = []
 
     for vertical_name in vertical_names
-      @verticals.push(Vertical.where('name LIKE ?', vertical_name))
+      @verticals.push(Vertical.find_by_id(params[:vertical_id]))
     end
 
-    @posts = Post.joins(verticals: Vertical.find_by_id(params[:vertical_id]))
+    @posts = []
+
+    for vertical in @verticals
+      @posts.push(vertical.posts.published)
+    end
 
     puts @verticals
 
