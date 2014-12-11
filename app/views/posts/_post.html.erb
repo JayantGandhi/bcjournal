@@ -57,4 +57,14 @@
       <span class="desktop-only"><%= blurb %></span>
     </div>
   <%- end -%>
+  <span data-target="<%= post.id %>" class="desktop-only abstract-link">View Abstract</span>
+</div>
+
+<div id="<%= post.id %>" class="abstract-lightbox visibly-hidden">
+  <div class="abstract-content">
+    <span class="close">X</span>
+    <p>
+      <%= post.abstract %>
+    </p>
+  </div>
 </div>

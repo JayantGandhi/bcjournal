@@ -157,6 +157,8 @@ class PostsController < ApplicationController
         :photo_credit,
         :photo_url,
         :photo_title,
+        :abstract,
+        :notes,
         vertical_ids: [],
         sections_attributes: [
           :id,
