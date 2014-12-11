@@ -660,7 +660,6 @@ body.posts.show {
   .abstract-content {
     max-width: 50rem;
     max-height: 40rem;
-    overflow: scroll;
     margin: 0 auto;
     background: white;
     top: 50%;
@@ -683,7 +682,10 @@ body.posts.show {
     }
 
     p {
-      padding: 2rem;
+      margin: 2rem;
+      max-width: 46rem;
+      max-height: 36rem;
+      overflow-y: scroll;
     }
   }
 }
