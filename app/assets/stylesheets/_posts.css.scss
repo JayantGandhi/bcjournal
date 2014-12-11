@@ -452,6 +452,16 @@ article {
       }
     }
   }
+
+  .abstract {
+    p {
+      border-left: 1px solid;
+      padding: 0 10rem 0 5rem;
+      margin-left: 5rem;
+      font-style: italic;
+      color: $gray;
+    }
+  }
 }
 
 body.posts.show {
@@ -675,7 +685,7 @@ body.posts.show {
       left: 1rem;
       font-weight: bold;
       cursor: pointer;
-      color: #868181;
+      color: $gray;
 
       &:hover,
       &:active {

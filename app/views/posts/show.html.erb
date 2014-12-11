@@ -38,6 +38,10 @@
   </div>
 
   <div class="article-content">
+    <section class="abstract">
+      <h3>Abstract</h3>
+      <p><%= @post.abstract %></p>
+    </section>
     <% for section in @post.sections do %>
       <section id="<%= section.header.parameterize %>">
         <h3><%= section.header %></h2>
