@@ -44,7 +44,6 @@ gem 'passenger'
 
 # User Authentication
 gem 'devise'
-gem 'activeadmin', github: 'activeadmin'
 
 # Image Upload
 gem 'rmagick'
