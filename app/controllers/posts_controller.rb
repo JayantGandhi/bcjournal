@@ -121,15 +121,13 @@ class PostsController < ApplicationController
       @verticals.push(Vertical.find_by_id(params[:vertical_id]))
     end
 
-    @posts = []
+    # @posts = []
 
-    for vertical in @verticals
-      @posts.push(vertical.posts.published)
-    end
+    # for vertical in @verticals
+      # @posts.push(vertical.posts.published)
+    # end
 
-    puts @verticals
-
-    puts @posts
+    @posts = Vertical.find_by_id(params[:vertical_id]).posts.published
 
     respond_to do |format|
       format.html {posts_path}

@@ -1,1 +1,5 @@
 var $tileWrapper = $('#tileWrapper');
+$tileWrapper.children().remove();
+<% for post in @posts %>
+  $tileWrapper.append('<%= j render(post) %>')
+<%- end -%>
