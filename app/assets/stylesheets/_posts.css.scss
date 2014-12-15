@@ -114,10 +114,15 @@
         bottom: 0;
         right: 0;
         cursor: pointer;
+        color: #fff;
+        background-color: $main-color;
+        padding: 0.5rem;
+        text-transform: uppercase;
 
         &:hover,
         &:active {
-          text-decoration: underline;
+          background-color: darken($main-color, 10%);
+          color: darken(#fff, 10%);
         }
       }
     }
