@@ -4,6 +4,8 @@
   if @current_vertical.nil?
     @current_vertical = ''
   end
+
+  vertical_active = ''
 -%>
 
 <nav id="header" class="top-bar" data-topbar role="navigation">
@@ -35,8 +37,8 @@
       <li class="verticals large-only">
         <ul class="verticals-list large-only">
           <% for vertical in @verticals do %>
-            <li class="vertical">
-            <a href="/posts/vertical/<%= vertical.slug %>" data-remote="true"><%= vertical.name.titleize %></a>
+            <li class="vertical-link <%= vertical.slug %>">
+              <a href="#<%= vertical.slug %>" data-vertical="<%= vertical.slug %>"><%= vertical.name.titleize %></a>
             </li>
           <% end %>
         </ul>
