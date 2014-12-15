@@ -37,6 +37,7 @@ window.fbAsyncInit = ->
 $ ->
   $(".fb-share").click ->
     elem = $(this)
+    console.log 'WTF'
     FB.ui
       method: "share"
       href: elem.prop('href'),
