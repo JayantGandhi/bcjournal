@@ -54,3 +54,13 @@ $(function() {
     }
   });
 });
+
+    $('.fb-share').on('click', function(e){
+      FB.ui({
+        method: 'share_open_graph',
+        action_type: 'og.likes',
+        action_properties: JSON.stringify({
+            object: e.target.getAttribute('href'),
+        })
+      }, function(response){});
+    });

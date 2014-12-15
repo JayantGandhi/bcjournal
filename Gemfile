@@ -86,3 +86,6 @@ gem 'gibbon'
 
 # Bitly for url shortening
 gem 'bitly'
+
+# pg_search for searching
+gem 'pg_search'

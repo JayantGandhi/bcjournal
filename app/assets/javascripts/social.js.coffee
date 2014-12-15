@@ -31,11 +31,11 @@ window.fbAsyncInit = ->
   return
 ) document, "script", "facebook-jssdk"
 
-$ ->
-  $(".fb-share").click ->
-    elem = $(this)
-    postToFeed elem.data("title"), elem.data("desc"), elem.prop("href"), elem.data("image")
-    false
+# $ ->
+#   $(".fb-share").click ->
+#     elem = $(this)
+#     postToFeed elem.data("title"), elem.data("desc"), elem.prop("href"), elem.data("image")
+#     false
 
 ##############
 # Twitter JS #
