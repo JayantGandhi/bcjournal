@@ -15,4 +15,7 @@ class PagesController < ApplicationController
   def call_for_submissions
     render layout: false
   end
+
+  def privacy_policy
+  end
 end

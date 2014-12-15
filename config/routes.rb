@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   get 'most-recent', to: 'posts#index'
 
+  get 'privacy-policy', to: 'pages#privacy_policy'
+
   resource :slideshow
 
   devise_for :editors,
