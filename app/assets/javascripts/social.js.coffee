@@ -6,7 +6,7 @@ postToFeed = (title, desc, url, image) ->
   obj =
     method: "feed"
     link: url
-    picture: "http://www.url.com/images/" + image
+    picture: image
     name: title
     description: desc
 
@@ -31,11 +31,11 @@ window.fbAsyncInit = ->
   return
 ) document, "script", "facebook-jssdk"
 
-# $ ->
-#   $(".fb-share").click ->
-#     elem = $(this)
-#     postToFeed elem.data("title"), elem.data("desc"), elem.prop("href"), elem.data("image")
-#     false
+$ ->
+  $(".fb-share").click ->
+    elem = $(this)
+    postToFeed elem.data("title"), elem.data("desc"), elem.prop("href"), elem.data("image")
+    false
 
 ##############
 # Twitter JS #
