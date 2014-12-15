@@ -12,6 +12,10 @@ $facebook-hover: darken($facebook-blue, 10%);
 $main-color: $topbar-bg-color;
 $gray: #868181;
 
+.pagination {
+  visibility: hidden;
+}
+
 a:hover,
 a:active {
   // color: #2233BF !important;
