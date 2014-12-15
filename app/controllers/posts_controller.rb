@@ -113,21 +113,23 @@ class PostsController < ApplicationController
 
     @current_vertical = search
 
-    vertical_names = search.split('+')
+    vertical_slugs = search.split('+')
 
     @verticals = []
 
-    for vertical_name in vertical_names
-      @verticals.push(Vertical.find_by_id(params[:vertical_id]))
+    for vertical_slug in vertical_slugs
+      @verticals.push(Vertical.find_by_slug(vertical_slug))
     end
 
-    # @posts = []
+    @posts = []
 
-    # for vertical in @verticals
-      # @posts.push(vertical.posts.published)
-    # end
-
-    @posts = Vertical.find_by_id(params[:vertical_id]).posts.published
+    for vertical in @verticals
+      published_posts = vertical.posts.published
+      for post in published_posts
+        puts post.title
+        @posts.push(post)
+      end
+    end
 
     respond_to do |format|
       format.html {posts_path}

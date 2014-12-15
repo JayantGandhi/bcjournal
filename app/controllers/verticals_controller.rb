@@ -27,6 +27,9 @@ class VerticalsController < ApplicationController
   def create
     @vertical = Vertical.new(vertical_params)
 
+    @vertical.slug = @vertical.name.parameterize
+    puts @vertical.slug
+
     respond_to do |format|
       if @vertical.save
         format.html { redirect_to @vertical, notice: 'vertical was successfully created.' }

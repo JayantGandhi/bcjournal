@@ -36,7 +36,7 @@
         <ul class="verticals-list large-only">
           <% for vertical in @verticals do %>
             <li class="vertical">
-            <a href="/posts/vertical/<%= vertical.name.parameterize %>+<%= @current_vertical %>" data-remote="true" vertical_id="<%= vertical.id %>"><%= vertical.name.titleize %></a>
+            <a href="/posts/vertical/<%= vertical.slug %>" data-remote="true"><%= vertical.name.titleize %></a>
             </li>
           <% end %>
         </ul>

@@ -1,50 +1,52 @@
 <%-
-  position = (@position % 6)
-  class_name = ''
+  if !no_pattern
+    position = (@position % 6)
+    class_name = ''
 
-  if @slides.include? post
-    class_name += " mobile-only"
-  else
-
-    blurb = truncate(post.blurb, length: 245, separator: ' ')
-
-    if position == 0
-      class_name = 'tile-large'
-      image = post.cover_image.tile_large
-    elsif position == 3
-      class_name = 'tile-wide'
-      image = post.cover_image.tile_wide
-    elsif position == 2
-      class_name = 'tile-tall'
-      image = post.cover_image.tile_large
-    elsif position == 5
-      class_name = 'tile-large'
-      image = post.cover_image.tile_large
+    if @slides.include? post
+      class_name += " mobile-only"
     else
-      class_name = 'tile-small'
-      image = post.cover_image.tile_small
-      blurb = truncate(post.blurb, length: 140, separator: ' ')
+
+      if position == 0
+        class_name = 'tile-large'
+        image = post.cover_image.tile_large
+      elsif position == 3
+        class_name = 'tile-wide'
+        image = post.cover_image.tile_wide
+      elsif position == 2
+        class_name = 'tile-tall'
+        image = post.cover_image.tile_large
+      elsif position == 5
+        class_name = 'tile-large'
+        image = post.cover_image.tile_large
+      else
+        class_name = 'tile-small'
+        image = post.cover_image.tile_small
+      end
+
+      @position += 1
     end
 
-    @position += 1
-  end
+    if image.blank?
+      if @missing_images % 4 == 0
+        image = image_path 's.jpg'
+      elsif @missing_images % 4 == 0
+        image = 'images/a.jpg'
+      elsif @missing_images % 4 == 0
+        image = 'images/i.jpg'
+      else @missing_images % 4 == 0
+        image = image_path 's.jpg'
+      end
 
-  if image.blank?
-    if @missing_images % 4 == 0
-      image = image_path 's.jpg'
-    elsif @missing_images % 4 == 0
-      image = 'images/a.jpg'
-    elsif @missing_images % 4 == 0
-      image = 'images/i.jpg'
-    else @missing_images % 4 == 0
-      image = image_path 's.jpg'
+      @missing_images += 1
     end
-
-    @missing_images += 1
+  else
+    class_name = 'vertical-tile'
+    image = post.cover_image.tile_large
   end
 -%>
 
-<div class="tile <%= class_name %> <%= position %>">
+<div class="tile <%= class_name %>">
   <%= link_to post do %>
     <span class='tile-image' style="background-image:url(<%= image %>)"></span>
     <span class="overlay"></span>
@@ -54,7 +56,7 @@
       <h2><%= post.title %></h2>
       <h3><%= post.subtitle %></h3>
       <h4>By <%= post.by_line %></h4>
-      <span class="desktop-only"><%= blurb %></span>
+      <span class="desktop-only"><%= post.blurb %></span>
     </div>
   <%- end -%>
   <span data-target="<%= post.id %>" class="desktop-only abstract-link">View Abstract</span>
