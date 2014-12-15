@@ -626,10 +626,6 @@ body.posts.show {
 .sticky-social {
   display: inline-block;
 
-  // TEMPORARY
-  display: none !important;
-  // TEMPORARY
-
   .social-list {
     .social-item {
       list-style: none;
@@ -639,7 +635,7 @@ body.posts.show {
       width: 11rem;
       cursor: pointer;
 
-      a {
+      span {
         color: $white;
       }
 
