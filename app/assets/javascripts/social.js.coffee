@@ -12,6 +12,9 @@ postToFeed = (title, desc, url, image) ->
 
   FB.ui obj, callback
   return
+
+
+
 window.fbAsyncInit = ->
   FB.init
     appId: "385604281606707"
@@ -34,8 +37,13 @@ window.fbAsyncInit = ->
 $ ->
   $(".fb-share").click ->
     elem = $(this)
-    postToFeed elem.data("title"), elem.data("desc"), elem.prop("href"), elem.data("image")
-    false
+    FB.ui
+      method: "share_open_graph"
+      action_type: "og.likes"
+      action_properties: JSON.stringify(object: elem.prop("href"))
+    , (response) ->
+    # postToFeed elem.data("title"), elem.data("desc"), elem.prop("href"), elem.data("image")
+    # false
 
 ##############
 # Twitter JS #
