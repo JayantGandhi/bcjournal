@@ -16,7 +16,8 @@ jQuery ->
 
         if url && $window.scrollTop() > $document.height() - $window.height() - 50
           $('.pagination').replaceWith('<div class="loader pagination"><img src="/assets/icons/ajax-loader.gif"></div>')
-          $.getScript url
+          $.getScript url, ->
+            do setAbstractListeners
 
       do $window.scroll
 
@@ -73,3 +74,16 @@ jQuery ->
     throttledProgress = _.throttle(checkProgress, 33)
 
     $window.on 'scroll', throttledProgress
+
+  # Set listener on abstract link
+  setAbstractListeners = ->
+    $('.abstract-link').on 'click', (e) ->
+      targetID = $(e.target).data('target')
+      $target = $('#' + targetID)
+      # show abstract lightbox on click
+      $target.addClass('shown').removeClass('visibly-hidden')
+
+      $target.find('.close').on 'click', ->
+        $target.removeClass('shown').addClass('visibly-hidden')
+      $target.on 'click', ->
+        $target.removeClass('shown').addClass('visibly-hidden')

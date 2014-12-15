@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 
     @position = 0
 
-    @posts = Post.published.paginate(:page => params[:page], per_page: 18).order('created_at DESC')
+    @posts = Post.published.paginate(:page => params[:page], per_page: 18).order('publish_date DESC')
     @missing_images = 0
   end
 
@@ -111,25 +111,15 @@ class PostsController < ApplicationController
   def vertical_sort
     search = params[:search]
 
-    @current_vertical = search
+    @current_vertical = Vertical.find_by_slug(search)
 
-    vertical_slugs = search.split('+')
+    @posts = Post.published.
+              includes(:verticals).
+              where('verticals.id' => @current_vertical.id).
+              paginate(:page => params[:page], per_page: 18).
+              order('publish_date DESC')
 
-    @verticals = []
-
-    for vertical_slug in vertical_slugs
-      @verticals.push(Vertical.find_by_slug(vertical_slug))
-    end
-
-    @posts = []
-
-    for vertical in @verticals
-      published_posts = vertical.posts.published
-      for post in published_posts
-        puts post.title
-        @posts.push(post)
-      end
-    end
+    # TODO: Make this just add verticals to the search params...
 
     respond_to do |format|
       format.html {posts_path}

@@ -659,9 +659,12 @@ body.posts.show {
     background: rgba(0,0,0,.5);
     top: 0;
     left: 0;
+    opacity: 0;
 
     &.shown {
       z-index: 99999;
+      opacity: 1;
+      @include transition(opacity 300ms ease-in-out);
     }
   }
 
