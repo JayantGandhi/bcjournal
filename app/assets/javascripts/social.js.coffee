@@ -36,12 +36,21 @@ window.fbAsyncInit = ->
 
 $ ->
   $(".fb-share").click ->
-    elem = $(this)
+    $elem = $(this)
     console.log 'WTF'
     FB.ui
-      method: "share"
-      href: elem.prop('href'),
+      method: "share_open_graph"
+      action_type: "og.likes"
+      action_properties: JSON.stringify(
+        object: {
+          link: $elem.prop('href'),
+          picture: $elem.data('image'),
+          name: $elem.data('title'),
+          description: $elem.data('desc')
+        }
+      )
     , (response) ->
+
     # postToFeed elem.data("title"), elem.data("desc"), elem.prop("href"), elem.data("image")
     # false
 
