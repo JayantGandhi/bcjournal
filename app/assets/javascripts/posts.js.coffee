@@ -78,7 +78,6 @@ jQuery ->
   # Set listener on abstract link
   setAbstractListeners = ->
     $('.abstract-link').on 'click', (e) ->
-      console.log 'hey boi'
       targetID = $(e.target).data('target')
       $target = $('#' + targetID)
       # show abstract lightbox on click
@@ -88,3 +87,5 @@ jQuery ->
         $target.removeClass('shown').addClass('visibly-hidden')
       $target.on 'click', ->
         $target.removeClass('shown').addClass('visibly-hidden')
+
+  do setAbstractListeners
