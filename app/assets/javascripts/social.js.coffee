@@ -35,19 +35,21 @@ window.fbAsyncInit = ->
 ) document, "script", "facebook-jssdk"
 
 $ ->
-  $(".fb-share").click ->
-    $elem = $(this)
+  $(".fbshare").on 'click', (e) ->
+    e.preventDefault()
+    $elem = $(e)
     console.log 'WTF'
-    FB.ui
-      method: "share_open_graph"
-      action_type: "og.likes"
-      object: {
-        link: $elem.prop('href'),
-        picture: $elem.data('image'),
-        name: $elem.data('title'),
-        description: $elem.data('desc')
-      }
-    , (response) ->
+    window.open('https://www.facebook.com/sharer/sharer.php?u=' + location.href, 'sharer', 'width=626,height=436');
+    # FB.ui
+    #   method: "share_open_graph"
+    #   action_type: "og.likes"
+    #   object: {
+    #     link: $elem.prop('href'),
+    #     picture: $elem.data('image'),
+    #     name: $elem.data('title'),
+    #     description: $elem.data('desc')
+    #   }
+    # , (response) ->
 
     # postToFeed elem.data("title"), elem.data("desc"), elem.prop("href"), elem.data("image")
     # false

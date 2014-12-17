@@ -33,7 +33,7 @@
   <div class="sticky-social">
     <ul class="social-list">
       <li class="social-item facebook">
-        <a class="fb-share" data-title="<%= @post.title %>" data-image="<%= @post.cover_image.thumb %>" data-desc="<%= @post.blurb %>" href="<%= request.original_url %>"><span class="social-text">Share on</span><span class="icon-facebook"></span></a>
+        <a class="fbshare" data-title="<%= @post.title %>" data-image="<%= @post.cover_image.thumb %>" data-desc="<%= @post.blurb %>" href="https://www.facebook.com/sharer/sharer.php?u=<%= request.original_url %>" target="_blank"><span class="social-text">Share on</span><span class="icon-facebook"></span></a>
       </li>
       <li class="social-item twitter">Tweet</li>
     </ul>
