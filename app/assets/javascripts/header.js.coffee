@@ -9,6 +9,8 @@ $(window).on 'load', ->
   $rightBar = $('.right-side')
   $headerOffset = $header.offset().top if $header.length
   $rightBarOffset = $rightBar.offset().top if $rightBar.length
+  $stickySocial = $('.sticky-social')
+  $stickySocialOffset = $stickySocial.offset().top if $stickySocial.length
 
   checkSticky = ->
     scrollTop = $(window).scrollTop()
@@ -27,6 +29,14 @@ $(window).on 'load', ->
       else
         if not $rightBar.hasClass('sticky')
           $rightBar.addClass('sticky')
+
+    if $stickySocial.length
+      if scrollTop < $stickySocialOffset
+        if $stickySocial.hasClass('sticky')
+          $stickySocial.removeClass('sticky')
+      else
+        if not $stickySocial.hasClass('sticky')
+          $stickySocial.addClass('sticky')
 
   do checkSticky
 

@@ -631,6 +631,13 @@ body.posts.show {
 
 .sticky-social {
   display: inline-block;
+  max-width: 11rem;
+
+  &.sticky {
+    .social-list {
+      margin: 0;
+    }
+  }
 
   .social-list {
     .social-item {

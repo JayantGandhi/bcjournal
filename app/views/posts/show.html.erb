@@ -38,10 +38,9 @@
       <li class="social-item twitter">
       <a class="tweet-this" href="https://twitter.com/share?text=<%= CGI::escape(@post.blurb) %><%= CGI::escape(@hashtags) %>&url=<%= CGI::escape(@bitly_url) %>"><span class="social-text">Share on</span><span class="icon-twitter"></span></a>
       </li>
+      <li class="social-item"><%= render 'cite' %></li>
     </ul>
   </div>
-
-  <%= render 'cite' %>
 
   <div class="article-content">
     <% if !@post.abstract.blank? %>
