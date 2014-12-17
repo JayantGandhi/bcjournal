@@ -4,9 +4,10 @@
        "page":document.title,
        "site":"The SAIS Europe Journal of Global Affairs",
        "url":document.URL,
-       "date":"<%= @post.publish_date %>",
+       "date":"<%= @post.publish_date.to_formatted_s(:long) %>",
        "authors":"<%= @post.by_line %>"
    };
+   console.log(EBcitation);
    EBversion  = "1.0";
    document.write(unescape("%3Cscript src='http://media.easybib.com/citethis/"+EBversion+"/widget_mini.js' type='text/javascript'%3E%3C/script%3E"));
 /* ]]> */
