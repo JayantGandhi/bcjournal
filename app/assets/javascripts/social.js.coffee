@@ -41,13 +41,11 @@ $ ->
     FB.ui
       method: "share_open_graph"
       action_type: "og.likes"
-      action_properties: JSON.stringify(
-        object: {
-          link: $elem.prop('href'),
-          picture: $elem.data('image'),
-          name: $elem.data('title'),
-          description: $elem.data('desc')
-        }
+      object: {
+        link: $elem.prop('href'),
+        picture: $elem.data('image'),
+        name: $elem.data('title'),
+        description: $elem.data('desc')
       )
     , (response) ->
 
