@@ -629,43 +629,92 @@ body.posts.show {
   }
 }
 
-.sticky-social {
-  display: inline-block;
-  max-width: 11rem;
-
-  &.sticky {
-    .social-list {
-      margin: 0;
-    }
+@media #{$small-only} {
+  .article-content .abstract p {
+    padding: 0 0.5rem 0 0.25rem;
+    margin-left: 1rem;
   }
 
-  .social-list {
-    .social-item {
-      list-style: none;
-      height: 4rem;
-      padding: 0 1rem;
-      line-height: 4rem;
-      width: 11rem;
-      cursor: pointer;
+  .sticky-social {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    max-height: 5rem;
 
-      a {
-        color: $white;
-      }
+    .social-list {
+      display: inline-block;
+      width: 100%;
+      margin: 0;
 
+      .social-item {
+        display: inline;
+        height: 5rem;
+        width: 50%;
+        text-align: center;
 
-      &.facebook {
-        background-color: $facebook-blue;
+        a {
+          color: #fff;
+          font-size: 2.4rem;
+          line-height: 5rem;
+        }
 
-        &:hover {
-          background-color: $facebook-hover;
+        &.facebook {
+          background-color: $facebook-blue;
+          float: left;
+        }
+
+        &.twitter {
+          background-color: $twitter-blue;
+          float: right;
+        }
+
+        &.easy-bib {
+          display: none;
         }
       }
+    }
+  }
+}
 
-      &.twitter {
-        background-color: $twitter-blue;
+@media #{$medium-up} {
+  .sticky-social {
+    display: inline-block;
+    max-width: 11rem;
 
-        &:hover {
-          background-color: $twitter-hover;
+    &.sticky {
+      .social-list {
+        margin: 0;
+      }
+    }
+
+    .social-list {
+      .social-item {
+        list-style: none;
+        height: 4rem;
+        padding: 0 1rem;
+        line-height: 4rem;
+        width: 11rem;
+        cursor: pointer;
+
+        a {
+          color: $white;
+        }
+
+
+        &.facebook {
+          background-color: $facebook-blue;
+
+          &:hover {
+            background-color: $facebook-hover;
+          }
+        }
+
+        &.twitter {
+          background-color: $twitter-blue;
+
+          &:hover {
+            background-color: $twitter-hover;
+          }
         }
       }
     }
