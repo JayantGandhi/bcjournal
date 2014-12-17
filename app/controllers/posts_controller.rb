@@ -9,6 +9,9 @@ class PostsController < ApplicationController
     # shorten the url with bitly
     @bitly_url = Bitly.client.shorten(request.original_url).short_url
 
+    # construct hashtags
+    @hashtags = " ##{@post.tags.join(' #')}"
+
     # Set the page title
     @page_title = @post.title
     @page_description = @post.blurb.slice(0..154)

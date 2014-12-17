@@ -653,6 +653,14 @@ body.posts.show {
           background-color: $facebook-hover;
         }
       }
+
+      &.twitter {
+        background-color: $twitter-blue;
+
+        &:hover {
+          background-color: $twitter-hover;
+        }
+      }
     }
   }
 }

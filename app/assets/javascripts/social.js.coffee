@@ -34,26 +34,12 @@ window.fbAsyncInit = ->
   return
 ) document, "script", "facebook-jssdk"
 
+# social listeners
 $ ->
   $(".fbshare").on 'click', (e) ->
     e.preventDefault()
-    $elem = $(e)
-    console.log 'WTF'
     window.open('https://www.facebook.com/sharer/sharer.php?u=' + location.href, 'sharer', 'width=626,height=436');
-    # FB.ui
-    #   method: "share_open_graph"
-    #   action_type: "og.likes"
-    #   object: {
-    #     link: $elem.prop('href'),
-    #     picture: $elem.data('image'),
-    #     name: $elem.data('title'),
-    #     description: $elem.data('desc')
-    #   }
-    # , (response) ->
 
-    # postToFeed elem.data("title"), elem.data("desc"), elem.prop("href"), elem.data("image")
-    # false
-
-##############
-# Twitter JS #
-##############
+  $(".tweet-this").on 'click', (e) ->
+    e.preventDefault()
+    window.open(this.href, 'sharer', 'width=626,height=436')
