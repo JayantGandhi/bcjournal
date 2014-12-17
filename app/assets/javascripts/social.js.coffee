@@ -46,7 +46,7 @@ $ ->
         picture: $elem.data('image'),
         name: $elem.data('title'),
         description: $elem.data('desc')
-      )
+      }
     , (response) ->
 
     # postToFeed elem.data("title"), elem.data("desc"), elem.prop("href"), elem.data("image")
