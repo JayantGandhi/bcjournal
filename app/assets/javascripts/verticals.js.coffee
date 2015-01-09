@@ -7,5 +7,6 @@ $ ->
   $verticalLinks.on 'click', (e) ->
     $vertical = $(e.target)
     url = '/posts/vertical/' + $vertical.data('vertical')
+    $('.pagination').remove()
     $.getScript url, ->
       $vertical.parent().addClass('active')

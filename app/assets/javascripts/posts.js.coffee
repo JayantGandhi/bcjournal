@@ -14,7 +14,7 @@ jQuery ->
       $window.scroll ->
         url = $('.pagination .next_page').attr('href')
 
-        if url && $window.scrollTop() > $document.height() - $window.height() - 50
+        if url && $window.scrollTop() > $document.height() - $window.height() - 50 && $('.pagination').length # make sure pagination still there
           $('.pagination').replaceWith('<div class="loader pagination"><img src="/assets/icons/ajax-loader.gif"></div>')
           $.getScript url, ->
             do setAbstractListeners
