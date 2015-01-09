@@ -30,6 +30,12 @@
             <h3><%= post.subtitle %></h3>
             <span><%= post.blurb %></span>
           </div>
+          <%- if !post.publish_date.blank? -%>
+            <span class="date"><%= post.publish_date.strftime("%Y") %></span>
+          <%- end -%>
+        <%- end -%>
+        <%- if !post.abstract.blank? -%>
+          <span data-target="<%= post.id %>" class="desktop-only abstract-link">View Abstract</span>
         <%- end -%>
       </div>
     <% end %>
