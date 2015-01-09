@@ -25,9 +25,9 @@
           <span class='tile-image' style="background-image:url(<%= post.cover_image %>)"></span>
           <span class="overlay"></span>
           <div class="caption">
+            <h4>By <%= post.by_line %></h4>
             <h2><%= post.title %></h2>
             <h3><%= post.subtitle %></h3>
-            <h4>By <%= post.by_line %></h4>
             <span><%= post.blurb %></span>
           </div>
         <%- end -%>
