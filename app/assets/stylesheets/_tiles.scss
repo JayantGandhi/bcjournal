@@ -1,5 +1,6 @@
 #tileWrapper {
   width: 100.5rem;
+  float: none;
 }
 
 .tile {
@@ -7,6 +8,7 @@
   height: 45rem;
   display: inline-block;
   margin: 3rem 3.3rem 0 0;
+  float: left;
 
   &.row-end {
     margin-right: 0;
