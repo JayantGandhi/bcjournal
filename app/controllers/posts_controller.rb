@@ -23,9 +23,13 @@ class PostsController < ApplicationController
 
   def index
     @position = 0
-
-    @posts = Post.published.paginate(:page => params[:page], per_page: 18).order('publish_date DESC')
     @missing_images = 0
+
+    @first_posts = Post.published.order('publish_date DESC').limit(3)
+
+    @posts = Post.published.paginate(:page => params[:page], per_page: 18).offset(3).order('publish_date DESC')
+
+
   end
 
   def new
