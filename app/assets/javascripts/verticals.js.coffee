@@ -6,11 +6,19 @@ $ ->
 
   $verticalLinks.on 'click', (e) ->
     $vertical = $(e.target)
-    console.log document.URL
-    verticalName = $vertical.data('vertical')
-    url = '/posts/vertical/' + verticalName
-    $('.pagination').remove()
-    $.getScript url, ->
-      $('.vertical-link').removeClass('active')
-      $('.' + verticalName).addClass('active')
-      history.pushState(null, '', url)
+    $verticalWrapper = $vertical.parent()
+
+    # deactivate vertical if already active
+    if $verticalWrapper.hasClass('active')
+      $verticalWrapper.removeClass('active')
+      window.location.href='/posts'
+
+    else
+      console.log 'nup...'
+      verticalName = $vertical.data('vertical')
+      url = '/posts/vertical/' + verticalName
+      $('.pagination').remove()
+      $.getScript url, ->
+        $('.vertical-link').removeClass('active')
+        $('.' + verticalName).addClass('active')
+        history.pushState(null, '', url)

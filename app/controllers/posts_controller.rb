@@ -114,6 +114,7 @@ class PostsController < ApplicationController
 
   def vertical_sort
     @position = 0
+    @missing_images = 0
 
     search = params[:search]
 
