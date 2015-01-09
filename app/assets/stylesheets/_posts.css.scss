@@ -781,8 +781,12 @@ body.posts.show {
     width: 100%;
     display: inline;
 
+    .top-tile:nth-child(2) {
+      margin: 3rem 7% 1rem;
+    }
+
     .top-tile {
-      width: 30%;
+      width: 26rem;
       height: 40rem;
 
       .tile-image {
