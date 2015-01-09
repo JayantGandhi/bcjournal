@@ -1,3 +1,13 @@
+#header {
+  height: 10rem;
+
+  .logo-image {
+    img {
+      height: 10rem;
+    }
+  }
+}
+
 .verticals {
   span {
     display: none;
@@ -13,6 +23,7 @@
 
 .sticky {
   position: fixed;
+  height: 4.5rem;
   z-index: 10;
   right: 0;
   left: 0;
