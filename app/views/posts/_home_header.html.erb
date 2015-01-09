@@ -1,18 +1,5 @@
 <%= content_for :pre_container do %>
   <section id="homeHeader row">
-    <div class="row title-area" data-equalizer>
-      <div class="title small-10 columns" data-equalizer-watch>
-        <%= image_tag 'logo.png', {alt: 'The SAIS Europe Journal of Global Affairs'} %>
-        <h1>The SAIS Europe Journal</br>of Global Affairs</h1>
-      </div>
-      <div class="right small-2 columns" data-equalizer-watch>
-        <ul>
-          <li><div class="fb-like" data-href="https://www.facebook.com/saisjournal" data-layout="button" data-action="like" data-show-faces="true" data-share="false"></div></li>
-          <li><a href="https://twitter.com/saisjournal" class="twitter-follow-button" data-show-count="false">Follow @saisjournal</a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
-        </ul>
-      </div>
-    </div>
     <div class="slideshow">
       <% for post in @slides do %>
         <div>
