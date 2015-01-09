@@ -10,8 +10,18 @@
     else
 
       if position == 0
-        class_name = 'tile-large'
+        if @every_other
+          class_name = 'tile-large inverted'
+        else
+          class_name = 'tile-large'
+        end
+
+        @every_other = !@every_other
+
         image = post.cover_image.tile_large
+      elsif position == 3
+        class_name = 'tile-small row-end'
+        image = post.cover_image.tile_small
       else
         class_name = 'tile-small'
         image = post.cover_image.tile_small
@@ -46,9 +56,9 @@
     <span class="title">
     </span>
     <div class="caption">
+      <h4>By <%= post.by_line %></h4>
       <h2><%= post.title %></h2>
       <h3><%= post.subtitle %></h3>
-      <h4>By <%= post.by_line %></h4>
       <span class="desktop-only"><%= post.blurb %></span>
     </div>
     <%- if !post.publish_date.blank? -%>

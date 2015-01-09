@@ -24,8 +24,9 @@ class PostsController < ApplicationController
   def index
     @position = 0
     @missing_images = 0
+    @every_other = false
 
-    @posts = Post.published.paginate(:page => params[:page], per_page: 18).order('publish_date DESC')
+    @posts = Post.published.paginate(:page => params[:page], per_page: 24).order('publish_date DESC')
   end
 
   def new
@@ -115,6 +116,7 @@ class PostsController < ApplicationController
   def vertical_sort
     @position = 0
     @missing_images = 0
+    @every_other = false
 
     search = params[:search]
 

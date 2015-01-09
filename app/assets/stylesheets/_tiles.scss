@@ -1,15 +1,84 @@
 .tile {
-  margin: 3rem 1rem 1rem;
-  position: relative;
+  width: 30rem;
+  height: 45rem;
+  display: inline-block;
+  margin: 3rem 3.3rem 0 0;
+
+  &.row-end {
+    margin-right: 0;
+  }
 
   .tile-image {
-    width: 100%;
-    z-index: -9;
-    position: absolute;
-    display: inline-block;
+    width: 30rem;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    height: 20rem;
+    position: absolute;
+  }
+
+  .caption {
+    position: absolute;
+    margin-top: 20rem;
+    height: 25rem;
+    width: 30rem;
+
+    .abstract-link {
+      display: inline;
+      position: absolute;
+      font-size: 1rem;
+      bottom: 0;
+      right: 0;
+      cursor: pointer;
+      color: #fff;
+      background-color: $main-color;
+      padding: 0.5rem;
+      text-transform: uppercase;
+
+      &:hover,
+      &:active {
+        background-color: darken($main-color, 10%);
+        color: darken(#fff, 10%);
+      }
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    h3 {
+      font-size: 1.6rem;
+      font-style: italic;
+    }
+
+    h4 {
+      font-size: 1.4rem;
+      text-transform: uppercase;
+    }
+
+    span {
+      color: $jet;
+    }
+  }
+
+  .overlay {
+    width: 30rem;
+    height: 20rem;
+    @include opacity(0);
+    background-color: rgba(0,0,0,0.25);
+    display: inline-block;
+    position: absolute;
+    @include transition(opacity, 250ms, ease-in-out);
+  }
+
+  &:hover,
+  &:active {
+    background-color: lighten($main-color, 50%);
+
+    .overlay {
+      @include opacity(1);
+    }
   }
 
   .date {
@@ -19,332 +88,295 @@
     padding-left: .5rem;
     color: $jet;
   }
+}
 
-  .title {
-    position: absolute;
-    padding: 0.5rem;
+.tile-large {
+  width: 100rem;
+
+  .tile-image {
+    width: 60rem;
+    height: 45rem;
   }
 
   .caption {
-    text-align: left;
-    padding-top: 0;
-    position: absolute;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 100%;
+    width: 40rem;
+    height: 45rem;
+    margin-top: 0;
+    margin-left: 60rem;
+  }
 
-    h2 {
-      font-weight: bold;
-      color: #fff;
-    }
+  .overlay {
+    width: 60rem;
+    height: 45rem;
+  }
 
-    h3 {
-      font-style: italic;
-      color: #fff;
-    }
+}
 
-    h4 {
-      font-size: 1.4rem;
-      text-transform: uppercase;
-      color: #fff;
-    }
+.tile-large.inverted {
+  .tile-image,
+  .overlay {
+    margin-left: 40rem;
+  }
 
-    span {
-      font-size: 1.4rem;
-      line-height: 1.4rem;
-      color: #fff;
-    }
+  .caption {
+    margin: 0;
   }
 }
 
-@media #{$medium-up} {
+// @media #{$medium-up} {
 
-  .tile-wrapper {
-    float: none;
-    margin: 0 auto;
+//   .tile-wrapper {
+//     float: none;
+//     margin: 0 auto;
 
-    padding: 1rem 0;
-    max-width: 100rem;
+//     padding: 1rem 0;
+//     max-width: 100rem;
 
-    .tile {
-      float: left;
-      display: inline-block;
-      width: 33rem;
-      height: 20rem;
-      margin: 3rem 1rem 1rem;
-      min-height: auto;
+//     .tile {
+//       float: left;
+//       display: inline-block;
+//       width: 33rem;
+//       height: 20rem;
+//       margin: 3rem 1rem 1rem;
+//       min-height: auto;
 
-      .tile-image {
-        width: inherit;
-        height: inherit;
-        z-index: 1;
-      }
+//       .tile-image {
+//         width: inherit;
+//         height: inherit;
+//         z-index: 1;
+//       }
 
-      .overlay {
-        z-index: 1;
-      }
+//       .overlay {
+//         z-index: 1;
+//       }
 
-      .caption {
-        background-color: transparent;
+//       .caption {
+//         background-color: transparent;
 
-        h2,
-        h3,
-        h4,
-        span {
-          color: #000;
-        }
-      }
+//         h2,
+//         h3,
+//         h4,
+//         span {
+//           color: #000;
+//         }
+//       }
 
-      .caption span {
-        color: #000;
-      }
+//       .caption span {
+//         color: #000;
+//       }
 
-      .abstract-link {
-        display: inline;
-        position: absolute;
-        font-size: 1rem;
-        bottom: 0;
-        right: 0;
-        cursor: pointer;
-        color: #fff;
-        background-color: $main-color;
-        padding: 0.5rem;
-        text-transform: uppercase;
 
-        &:hover,
-        &:active {
-          background-color: darken($main-color, 10%);
-          color: darken(#fff, 10%);
-        }
-      }
-    }
+//     }
 
-    .tile-large {
-      height: 40.66rem;
-      width: 66.6rem;
+//     .tile-large {
+//       height: 40.66rem;
+//       width: 66.6rem;
 
-      .title {
-        max-width: 45rem;
-        bottom: 0;
-      }
+//       .title {
+//         max-width: 45rem;
+//         bottom: 0;
+//       }
 
-      .tile-image {
-        max-width: 45rem;
-      }
+//       .tile-image {
+//         max-width: 45rem;
+//       }
 
-      .date {
-        left: 45rem;
-      }
-    }
+//       .date {
+//         left: 45rem;
+//       }
+//     }
 
-    .tile-tall {
-      height: 42rem;
-      width: 50rem;
+//     .tile-tall {
+//       height: 42rem;
+//       width: 50rem;
 
-      .title {
-        bottom: 0;
-      }
+//       .title {
+//         bottom: 0;
+//       }
 
-      .date {
-        left: 24rem;
-      }
+//       .date {
+//         left: 24rem;
+//       }
 
-      .overlay {
-        max-width: 24rem;
-      }
+//       .overlay {
+//         max-width: 24rem;
+//       }
 
-      .tile-image {
-        max-width: 24rem;
-      }
+//       .tile-image {
+//         max-width: 24rem;
+//       }
 
-      .caption {
-        position: relative;
-        margin-left: 24rem;
-        width: 24rem;
-        height: 42rem;
-      }
+//       .caption {
+//         position: relative;
+//         margin-left: 24rem;
+//         width: 24rem;
+//         height: 42rem;
+//       }
 
-      h2 {
-        max-width: 24rem;
-        font-size: 2.2rem;
-      }
+//       h2 {
+//         max-width: 24rem;
+//         font-size: 2.2rem;
+//       }
 
-      h3 {
-        max-width: 24rem;
-        font-size: 2rem;
-      }
-    }
+//       h3 {
+//         max-width: 24rem;
+//         font-size: 2rem;
+//       }
+//     }
 
-    .tile-wide {
-      width: 50rem;
-      height: 42rem;
+//     .tile-wide {
+//       width: 50rem;
+//       height: 42rem;
 
-      .title {
-        bottom: 50%;
-      }
+//       .title {
+//         bottom: 50%;
+//       }
 
-      .overlay {
-        max-height: 20rem;
-      }
+//       .overlay {
+//         max-height: 20rem;
+//       }
 
-      .tile-image {
-        max-height: 20rem;
-      }
+//       .tile-image {
+//         max-height: 20rem;
+//       }
 
-      .caption {
-        margin-top: 20rem;
-        position: relative;
-        height: 20rem;
-        width: 50rem;
-      }
+//       .caption {
+//         margin-top: 20rem;
+//         position: relative;
+//         height: 20rem;
+//         width: 50rem;
+//       }
 
-      h2 {
-        font-size: 2.2rem;
-        max-width: 50rem;
-      }
+//       h2 {
+//         font-size: 2.2rem;
+//         max-width: 50rem;
+//       }
 
-      h3 {
-        font-size: 2rem;
-        max-width: 50rem;
-      }
-    }
+//       h3 {
+//         font-size: 2rem;
+//         max-width: 50rem;
+//       }
+//     }
 
-    .tile-small {
-      height: 40.66rem;
+//     .tile-small {
+//       height: 40.66rem;
 
-      .tile-image {
-        max-height: 20.33rem;
-      }
+//       .tile-image {
+//         max-height: 20.33rem;
+//       }
 
-      .overlay {
-        max-height: 20.33rem;
-      }
+//       .overlay {
+//         max-height: 20.33rem;
+//       }
 
-      .title {
-        bottom: 50%;
-      }
+//       .title {
+//         bottom: 50%;
+//       }
 
-      .caption {
-        position: relative;
-        top: 0;
-        width: 33rem;
-        height: 20.33rem;
-        margin-top: 20.33rem;
+//       .caption {
+//         position: relative;
+//         top: 0;
+//         width: 33rem;
+//         height: 20.33rem;
+//         margin-top: 20.33rem;
 
-        h2 {
-          font-size: 1.6rem;
-        }
+//         h2 {
+//           font-size: 1.6rem;
+//         }
 
-        h3 {
-          font-size: 1.2rem;
-        }
+//         h3 {
+//           font-size: 1.2rem;
+//         }
 
-        h4 {
-          font-size: 1.2rem;
-        }
+//         h4 {
+//           font-size: 1.2rem;
+//         }
 
-        span {
-          font-size: 1.2rem;
-        }
-      }
-    }
+//         span {
+//           font-size: 1.2rem;
+//         }
+//       }
+//     }
 
-    .tile-large {
-      .caption {
-        top: 0;
-        position: relative;
-        width: 21.6rem;
-        height: 40.66rem;
-        color: blue;
-        margin-left: 45rem;
+//     .tile-large {
+//       .caption {
+//         top: 0;
+//         position: relative;
+//         width: 21.6rem;
+//         height: 40.66rem;
+//         color: blue;
+//         margin-left: 45rem;
 
-        h2 {
-          font-size: 2.4rem;
-          line-height: 2.4rem;
-        }
+//         h2 {
+//           font-size: 2.4rem;
+//           line-height: 2.4rem;
+//         }
 
-        h3 {
-          font-size: 2rem;
-        }
+//         h3 {
+//           font-size: 2rem;
+//         }
 
-        h4 {
-          font-size: 1.8rem;
-        }
-      }
+//         h4 {
+//           font-size: 1.8rem;
+//         }
+//       }
 
-      .overlay {
-        max-width: 45rem;
-      }
+//       .overlay {
+//         max-width: 45rem;
+//       }
 
-      h2 {
-        max-width: 45rem;
-      }
+//       h2 {
+//         max-width: 45rem;
+//       }
 
-      h3 {
-        max-width: 45rem;
-      }
-    }
+//       h3 {
+//         max-width: 45rem;
+//       }
+//     }
 
-    .title {
-      position: static;
-    }
+//     .title {
+//       position: static;
+//     }
 
-    a {
-      width: inherit;
-      height: inherit;
-      display: inline-block;
-    }
+//     a {
+//       width: inherit;
+//       height: inherit;
+//       display: inline-block;
+//     }
 
-    .overlay {
-      @include opacity(0);
-      background-color: rgba(0,0,0,0.25);
-      width: inherit;
-      height: inherit;
-      display: inline-block;
-      position: absolute;
-      padding: 0;
-      @include transition(opacity, 250ms, ease-in-out);
-    }
 
-    .tile:hover,
-    .tile:active {
-      background-color: lighten($main-color, 50%);
 
-      .overlay {
-        @include opacity(1);
-      }
+//       .title{
+//         h2,
+//         h3,
+//         h4 {
+//           color: #fff;
+//         }
+//       }
+//     }
 
-      .title{
-        h2,
-        h3,
-        h4 {
-          color: #fff;
-        }
-      }
-    }
+//     .caption {
+//       position: absolute;
+//       bottom: 0;
+//       width: 100%;
+//       padding: 0 0.5rem;
 
-    .caption {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      padding: 0 0.5rem;
+//       span {
+//         color: #fff;
+//       }
+//     }
 
-      span {
-        color: #fff;
-      }
-    }
+//     .title {
+//       display: block;
+//       position: absolute;
 
-    .title {
-      display: block;
-      position: absolute;
-
-      h2 {
-        color: #000;
-        @include transition(color, 250ms, ease-in-out);
-      }
-    }
-  }
-}
+//       h2 {
+//         color: #000;
+//         @include transition(color, 250ms, ease-in-out);
+//       }
+//     }
+//   }
+// }
 
 .right-side {
   position: absolute;
