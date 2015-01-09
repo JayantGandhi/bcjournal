@@ -786,6 +786,20 @@ body.posts.show {
       .tile-image {
         width: 100%;
       }
+
+      .caption {
+        max-height: 20rem;
+
+        h2 {
+          font-size: 1.8rem;
+        }
+        h3 {
+          font-size: 1.6rem;
+        }
+        h4 {
+          font-size: 1.4rem;
+        }
+      }
     }
   }
 }
