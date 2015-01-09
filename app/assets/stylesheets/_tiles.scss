@@ -1,5 +1,5 @@
 #tileWrapper {
-  width: 100.5rem;
+  width: 105rem;
   float: none;
   margin: 0 auto;
 }
@@ -8,7 +8,7 @@
   width: 30rem;
   height: 45rem;
   display: inline-block;
-  margin: 3rem 3.3rem 0 0;
+  margin: 3rem 5rem 0 0;
   float: left;
 
   &.row-end {
@@ -81,7 +81,7 @@
 
   &:hover,
   &:active {
-    background-color: lighten($main-color, 50%);
+    background-color: rgba(120, 169, 253, 0.25);
 
     .overlay {
       @include opacity(1);
