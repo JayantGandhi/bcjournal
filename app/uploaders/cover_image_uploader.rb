@@ -54,6 +54,10 @@ class CoverImageUploader < CarrierWave::Uploader::Base
     process resize_to_fit: [1920, 1080]
   end
 
+  version :facebook do
+    process resize_to_fit: [600, 315]
+  end
+
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_white_list
