@@ -781,7 +781,11 @@ body.posts.show {
     width: 100%;
 
     .top-tile {
+      width: 30%;
 
+      .tile-image {
+        width: 100%;
+      }
     }
   }
 }
