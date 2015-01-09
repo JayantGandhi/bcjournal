@@ -32,6 +32,12 @@
     background-position: center;
   }
 
+  .date {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
   .title {
     position: absolute;
     padding: 0.5rem;
@@ -143,6 +149,10 @@
       .tile-image {
         max-width: 45rem;
       }
+
+      .date {
+        left: 45rem;
+      }
     }
 
     .tile-tall {
@@ -151,6 +161,10 @@
 
       .title {
         bottom: 0;
+      }
+
+      .date {
+        left: 24rem;
       }
 
       .overlay {

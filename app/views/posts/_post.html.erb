@@ -61,7 +61,7 @@
       <span class="desktop-only"><%= post.blurb %></span>
     </div>
     <%- if !post.publish_date.blank? -%>
-      <span><%= post.publish_date.strftime("%y") %></span>
+      <span class="date"><%= post.publish_date.strftime("%Y") %></span>
     <%- end -%>
   <%- end -%>
   <%- if !post.abstract.blank? -%>
