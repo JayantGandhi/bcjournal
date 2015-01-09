@@ -2,7 +2,7 @@
   no_pattern ||= false
 
   if !no_pattern
-    position = (@position % 4)
+    position = ((@position + 1) % 4)
     class_name = ''
 
     if @slides.include? post
