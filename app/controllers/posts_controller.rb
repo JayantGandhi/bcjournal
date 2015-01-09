@@ -4,9 +4,6 @@ class PostsController < ApplicationController
   before_action :set_slideshow, only: [:index, :vertical_sort]
 
   def show
-    # no nav for now - waiting to have full site ready
-    @no_nav = true
-
     # shorten the url with bitly
     @bitly_url = Bitly.client.shorten(request.original_url).short_url
 
