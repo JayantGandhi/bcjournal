@@ -1,9 +1,17 @@
 #header {
   height: 10rem;
 
-  .logo-image {
+  .logo-big {
     img {
       height: 10rem;
+    }
+  }
+
+  .logo-half {
+    display: none;
+
+    img {
+      height: 4.5rem;
     }
   }
 
@@ -46,8 +54,12 @@
 #header.sticky {
   height: 4.5rem;
 
-  .logo-image {
+  .logo-big {
     display: none;
+  }
+
+  .logo-half {
+    display: inline-block;
   }
 
   .top-bar-section {
