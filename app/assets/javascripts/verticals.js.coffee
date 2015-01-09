@@ -6,7 +6,9 @@ $ ->
 
   $verticalLinks.on 'click', (e) ->
     $vertical = $(e.target)
-    url = '/posts/vertical/' + $vertical.data('vertical')
+    verticalName = $vertical.data('vertical')
+    url = '/posts/vertical/' + verticalName
     $('.pagination').remove()
     $.getScript url, ->
-      $vertical.parent().addClass('active')
+      $('.vertical-link').removeClass('active')
+      $('.' + verticalName).addClass('active')
