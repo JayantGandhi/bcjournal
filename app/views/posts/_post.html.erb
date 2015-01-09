@@ -2,7 +2,7 @@
   no_pattern ||= false
 
   if !no_pattern
-    position = (@position % 6)
+    position = (@position % 4)
     class_name = ''
 
     if @slides.include? post
@@ -10,15 +10,6 @@
     else
 
       if position == 0
-        class_name = 'tile-large'
-        image = post.cover_image.tile_large
-      elsif position == 3
-        class_name = 'tile-wide'
-        image = post.cover_image.tile_wide
-      elsif position == 2
-        class_name = 'tile-tall'
-        image = post.cover_image.tile_large
-      elsif position == 5
         class_name = 'tile-large'
         image = post.cover_image.tile_large
       else

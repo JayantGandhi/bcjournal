@@ -18,28 +18,7 @@
       </div>
     <% end %>
   </div>
-  <div class="desktop-only first-three">
-    <% for post in @first_posts %>
-      <div class="top-tile tile">
-        <%= link_to post do %>
-          <span class='tile-image' style="background-image:url(<%= post.cover_image %>)"></span>
-          <span class="overlay"></span>
-          <div class="caption">
-            <h4>By <%= post.by_line %></h4>
-            <h2><%= post.title %></h2>
-            <h3><%= post.subtitle %></h3>
-            <span><%= post.blurb %></span>
-          </div>
-          <%- if !post.publish_date.blank? -%>
-            <span class="date"><%= post.publish_date.strftime("%Y") %></span>
-          <%- end -%>
-        <%- end -%>
-        <%- if !post.abstract.blank? -%>
-          <span data-target="<%= post.id %>" class="desktop-only abstract-link">View Abstract</span>
-        <%- end -%>
-      </div>
-    <% end %>
-  </div>
+
   <%= render @posts %>
 </section>
 
