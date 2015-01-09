@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_editor!, only: [:new, :edit, :destroy]
   before_action :set_post, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
+  before_action :set_slideshow, only: [:index, :vertical_sort]
 
   def show
     # no nav for now - waiting to have full site ready
@@ -21,9 +22,6 @@ class PostsController < ApplicationController
   end
 
   def index
-    @slideshow = Slideshow.first()
-    @slides = @slideshow.posts
-
     @position = 0
 
     @posts = Post.published.paginate(:page => params[:page], per_page: 18).order('publish_date DESC')
@@ -115,6 +113,8 @@ class PostsController < ApplicationController
   end
 
   def vertical_sort
+    @position = 0
+
     search = params[:search]
 
     @current_vertical = Vertical.find_by_slug(search)
@@ -128,7 +128,7 @@ class PostsController < ApplicationController
     # TODO: Make this just add verticals to the search params...
 
     respond_to do |format|
-      format.html {posts_path}
+      format.html {render 'index'}
       format.js
     end
   end
@@ -180,6 +180,11 @@ class PostsController < ApplicationController
         puts "here ya go"
         puts post_params[:photo_url]
       end
+    end
+
+    def set_slideshow
+      @slideshow = Slideshow.first()
+      @slides = @slideshow.posts
     end
 
 end
