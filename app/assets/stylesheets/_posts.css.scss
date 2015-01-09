@@ -783,13 +783,16 @@ body.posts.show {
 
     .top-tile {
       width: 30%;
+      height: 40rem
 
       .tile-image {
         width: 100%;
+        max-height: 20rem
       }
 
       .caption {
         max-height: 20rem;
+        margin-top: 20rem;
 
         h2 {
           font-size: 1.8rem;
