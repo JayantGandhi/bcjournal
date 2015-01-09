@@ -19,7 +19,7 @@
 }
 
 .tile {
-  margin: 1rem 0;
+  margin: 3rem 0 1rem;
   position: relative;
 
   .tile-image {
@@ -83,7 +83,7 @@
       display: inline-block;
       width: 24rem;
       height: 20rem;
-      margin: 1rem;
+      margin: 3rem 0 1rem;
       min-height: auto;
 
       .tile-image {
@@ -791,7 +791,7 @@ body.posts.show {
       }
 
       .caption {
-        max-height: 20rem;
+        height: 20rem;
         margin-top: 20rem;
 
         h2 {
