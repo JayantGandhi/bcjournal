@@ -23,7 +23,6 @@
 
 .sticky {
   position: fixed;
-  height: 4.5rem;
   z-index: 10;
   right: 0;
   left: 0;
@@ -32,4 +31,8 @@
   & + #content {
     margin-top: 4.5rem;
   }
+}
+
+#header.sticky {
+  height: 4.5rem;
 }
