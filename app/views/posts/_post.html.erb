@@ -60,6 +60,9 @@
       <h4>By <%= post.by_line %></h4>
       <span class="desktop-only"><%= post.blurb %></span>
     </div>
+    <%- if !post.publish_date.blank? -%>
+      <span><%= post.publish_date.strftime("%y") %></span>
+    <%- end -%>
   <%- end -%>
   <%- if !post.abstract.blank? -%>
     <span data-target="<%= post.id %>" class="desktop-only abstract-link">View Abstract</span>
