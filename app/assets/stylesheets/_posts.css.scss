@@ -72,6 +72,9 @@
 @media #{$medium-up} {
 
   .tile-wrapper {
+    float: none;
+    margin: 0 auto;
+
     padding: 1rem 0;
     max-width: 105rem;
 
@@ -348,6 +351,8 @@
 }
 
 .right-side {
+  position: absolute;
+  right: 0;
   padding: 0;
 
   .constant-links {
@@ -573,6 +578,7 @@ body.posts.show {
 
 @media #{$medium-only} {
   .tile-wrapper{
+    margin-right: 30rem;
 
     .tile-tall {
       height: 40.66rem;
