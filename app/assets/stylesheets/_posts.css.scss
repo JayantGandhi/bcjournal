@@ -157,6 +157,10 @@ body.posts.show {
 }
 
 @media #{$small-only} {
+  body.posts.show .article-content {
+    padding: 1rem;
+  }
+
   .article-content .abstract p {
     padding: 0 0.5rem 0 0.25rem;
     margin-left: 1rem;
@@ -166,6 +170,7 @@ body.posts.show {
     width: 100%;
     position: fixed;
     bottom: 0;
+    top: auto;
     max-height: 5rem;
 
     .social-list {
@@ -209,6 +214,8 @@ body.posts.show {
     max-width: 11rem;
 
     &.sticky {
+      top: 4.5rem;
+
       .social-list {
         margin: 0;
       }
