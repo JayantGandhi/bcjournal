@@ -1,6 +1,8 @@
 #header {
   height: 10rem;
   z-index: 99999;
+  // For chrome blinking shiz
+  -webkit-transform: translate3d(0,0,0);
 
   .logo-big {
     img {
