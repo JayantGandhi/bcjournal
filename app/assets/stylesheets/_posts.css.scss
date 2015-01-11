@@ -156,50 +156,6 @@ body.posts.show {
   }
 }
 
-
-@media only screen and (max-width: #{upper-bound($small-range)}) {
-  .tile-wrapper {
-    width: 100%;
-    padding: 0;
-
-    .tile {
-      min-height: 23rem;
-
-      .tile-image {
-        padding-bottom: 79%;
-      }
-    }
-
-    .title {
-      background-color: rgba(0,0,0,0.75);
-      width: 100%;
-
-      h2 {
-        color: #fff;
-      }
-    }
-  }
-
-  body.posts.show .content-container .article-content {
-    padding: 1.5rem;
-  }
-
-  article {
-    h1 {
-      font-weight: bold;
-      font-size: 3.5rem;
-    }
-
-    h2 {
-      font-size: 2.5rem;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-    }
-  }
-}
-
 @media #{$small-only} {
   .article-content .abstract p {
     padding: 0 0.5rem 0 0.25rem;
