@@ -24,7 +24,7 @@
     <%- end -%>
   </div>
   <div class="publish-date">
-    <%= @post.publish_date.to_formatted_s(:long) if !@post.publish_date.nil? %>
+    <%= @post.publish_date.to_formatted_s(:long) if !@post.publish_date.blank? %>
   </div>
   <div class="photo-credit">
     <a href="<%= @post.photo_url %>" target="_blank"><%= @post.photo_credit %></a>
