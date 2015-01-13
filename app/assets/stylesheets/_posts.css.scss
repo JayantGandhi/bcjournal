@@ -105,7 +105,12 @@ body.posts.show {
   }
 
   .article-content {
-    padding: 1rem 20rem 0;
+    max-width: 75rem;
+    margin: 0 auto;
+
+    p {
+      text-align: justify;
+    }
   }
 }
 
