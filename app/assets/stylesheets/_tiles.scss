@@ -26,6 +26,12 @@
     .caption {
       position: relative;
       background-color: rgba(0,0,0,.5);
+
+      h2,
+      h3,
+      h4 {
+        color: #fff;
+      }
     }
   }
 }
