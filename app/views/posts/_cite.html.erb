@@ -4,7 +4,7 @@
        "page":document.title,
        "site":"The SAIS Europe Journal of Global Affairs",
        "url":document.URL,
-       "date":"<%= @post.publish_date.to_formatted_s(:long) %>",
+       "date":"<%= @post.publish_date.to_formatted_s(:long) if !@post.publish_date.blank? %>",
        "authors":"<%= @post.by_line %>"
    };
    console.log(EBcitation);
