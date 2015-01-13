@@ -1,3 +1,10 @@
+$facebook-blue: #3b5998;
+$facebook-hover: darken($facebook-blue, 10%);
+$twitter-blue: #4099FF;
+$twitter-hover: darken($twitter-blue, 10%);
+$main-color: $topbar-bg-color;
+$gray: #868181;
+
 html {
   font-size: 62.5%;
 
@@ -5,14 +12,25 @@ html {
   p {
     font-size: 1.6rem;
   }
-}
 
-$facebook-blue: #3b5998;
-$facebook-hover: darken($facebook-blue, 10%);
-$twitter-blue: #4099FF;
-$twitter-hover: darken($twitter-blue, 10%);
-$main-color: $topbar-bg-color;
-$gray: #868181;
+  footer {
+    float: left;
+    height: 5rem;
+    width: 100%;
+    background-color: $main-color;
+    color: #fff;
+    margin-top: 1rem;
+
+    div {
+      line-height: 5rem;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+}
 
 .pagination {
   visibility: hidden;

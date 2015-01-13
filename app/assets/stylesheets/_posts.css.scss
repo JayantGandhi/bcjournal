@@ -117,7 +117,8 @@ body.posts.show {
 .author-bio {
   color: gray;
   font-style: italic;
-  padding: 0 10rem;
+  max-width: 70rem;
+  margin: 0 auto;
   text-align: center;
 }
 

@@ -32,6 +32,11 @@
     <% if editor_signed_in? %>
       <%= render partial: 'shared/admin_tools' %>
     <% end %>
+
+    <!-- footer -->
+    <%= render "layouts/footer" %>
+    <!-- end footer -->
+
     <%= javascript_include_tag "application" %>
 
     <!-- Google Analytics -->
