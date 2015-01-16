@@ -23,6 +23,19 @@ html {
 
     div {
       line-height: 5rem;
+
+      .si {
+        bottom: .1rem;
+      }
+
+      .gn {
+        top: .1rem;
+      }
+
+      .si,
+      .gn {
+        position: relative;
+      }
     }
 
     a {
