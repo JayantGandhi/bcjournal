@@ -1,0 +1,24 @@
+@media print {
+  #preContainer {
+    display: none;
+  }
+
+  nav {
+    display: none;
+  }
+
+  footer {
+    display: none;
+  }
+
+  article {
+    .print-only {
+      display: block !important;
+    }
+
+    .vertical-tags,
+    .sticky-social {
+      display: none;
+    }
+  }
+}

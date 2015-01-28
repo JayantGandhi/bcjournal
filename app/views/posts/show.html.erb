@@ -23,6 +23,7 @@
       <a href="#"><span class="label"><%= vertical.name %></span></a>
     <%- end -%>
   </div>
+  <div class="print-only">Published in The SAIS Journal of Global Affairs</div>
   <div class="publish-date">
     <%= @post.publish_date.to_formatted_s(:long) if !@post.publish_date.blank? %>
   </div>

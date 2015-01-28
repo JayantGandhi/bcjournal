@@ -8,7 +8,8 @@
     <meta name="description" content="<%= @page_description ? @page_description : 'A graduate student publication of the Johns Hopkins University\'s School of Advanced International Studies' %>" />
     <%= content_for :head %>
     <%= favicon_link_tag 'favicon.ico' %>
-    <%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag "application" %>
+    <%= stylesheet_link_tag 'print', media: 'print' %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <!--[if (gte IE 6)&(lte IE 8)]>
       <%= javascript_include_tag "vendor/selectivizr.min" %>
