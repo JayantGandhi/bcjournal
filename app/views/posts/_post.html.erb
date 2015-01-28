@@ -68,6 +68,9 @@
   <%- if !post.abstract.blank? -%>
     <span data-target="<%= post.id %>" class="desktop-only abstract-link">View Abstract</span>
   <%- end -%>
+  <%- if post.book_review -%>
+    <span class="book-review desktop-only">Book Review</span>
+  <%- end -%>
 </div>
 
 <div id="<%= post.id %>" class="abstract-lightbox visibly-hidden">
