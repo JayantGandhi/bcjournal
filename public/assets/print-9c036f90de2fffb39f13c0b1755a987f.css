@@ -1,0 +1,48 @@
+@media print {
+  /* line 2, /home/jayant/Code/bcjournal/app/assets/stylesheets/print.css.scss */
+  #preContainer {
+    display: none;
+  }
+
+  /* line 6, /home/jayant/Code/bcjournal/app/assets/stylesheets/print.css.scss */
+  nav {
+    display: none;
+  }
+
+  /* line 10, /home/jayant/Code/bcjournal/app/assets/stylesheets/print.css.scss */
+  footer {
+    display: none;
+  }
+
+  /* line 14, /home/jayant/Code/bcjournal/app/assets/stylesheets/print.css.scss */
+  article {
+    margin: 1in;
+  }
+  /* line 17, /home/jayant/Code/bcjournal/app/assets/stylesheets/print.css.scss */
+  article .print-only {
+    display: block !important;
+  }
+  /* line 22, /home/jayant/Code/bcjournal/app/assets/stylesheets/print.css.scss */
+  article .title h1 {
+    font-size: 2em;
+  }
+  /* line 28, /home/jayant/Code/bcjournal/app/assets/stylesheets/print.css.scss */
+  article .vertical-tags,
+  article .sticky-social {
+    display: none;
+  }
+  /* line 32, /home/jayant/Code/bcjournal/app/assets/stylesheets/print.css.scss */
+  article .cover-image {
+    background: none !important;
+  }
+
+  /* line 37, /home/jayant/Code/bcjournal/app/assets/stylesheets/print.css.scss */
+  #logoutPrompt {
+    display: none;
+  }
+
+  /* line 41, /home/jayant/Code/bcjournal/app/assets/stylesheets/print.css.scss */
+  .editor-tools {
+    display: none;
+  }
+}

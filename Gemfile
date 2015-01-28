@@ -58,7 +58,7 @@ gem 'ckeditor'
 # gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git'
 
 # Zurb Foundation because I want this to be easy :D
-gem 'foundation-rails'
+gem 'foundation-rails', '5.4.3.1'
 
 # Bourbon for css3 mixins
 gem 'bourbon'
