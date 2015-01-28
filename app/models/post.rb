@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
 
+  before_save :clean_notes
+
   mount_uploader :cover_image, CoverImageUploader
 
   has_many :sections, -> { order 'position ASC' }
@@ -36,4 +38,26 @@ class Post < ActiveRecord::Base
       all
     end
   end
+
+  private
+    def clean_notes
+      if self.sections.blank?
+        # No need to do anything
+        return
+      end
+
+      self.sections.each_with_index.map { |section, index|
+        # puts 'OIM IN A SEKSHUN'
+        section_html = Nokogiri::HTML(section.body)
+        # puts section_html
+        section_links = section_html.css("a[href*='bcjournal.org']")
+        # puts section_links
+        for link in section_links
+          linkNumber = link.content.gsub(/[\[\]]+/, '')
+          link['href'] = "note_#{linkNumber}"
+        end
+        self.sections[index].body = section_html.to_s
+        puts self.sections[index].body
+      }
+    end
 end

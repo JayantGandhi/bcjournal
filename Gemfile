@@ -89,3 +89,6 @@ gem 'bitly'
 
 # pg_search for searching
 gem 'pg_search'
+
+# Nokogiri for html parsing
+gem 'nokogiri'

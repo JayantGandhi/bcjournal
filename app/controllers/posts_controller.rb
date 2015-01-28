@@ -174,10 +174,8 @@ class PostsController < ApplicationController
     def check_photo_url
       if post_params[:photo_url].start_with?("http://", "https://")
         # do nothing
-        puts 'WTF M8??'
       else
         post_params[:photo_url].prepend("http://")
-        puts "here ya go"
         puts post_params[:photo_url]
       end
     end

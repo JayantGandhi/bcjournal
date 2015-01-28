@@ -215,6 +215,7 @@ DEPENDENCIES
   mini_magick
   nested_form
   newrelic_rpm
+  nokogiri
   passenger
   pg
   pg_search
