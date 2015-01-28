@@ -57,12 +57,15 @@
         </div>
       </section>
     <%- end -%>
-    <div id="notes" class="notes">
-      <%= raw @post.notes %>
-    </div>
-    <div class="author-bio">
+    <%- if !@post.notes.blank? -%>
+      <section id="notes" class="notes">
+        <h3>Notes &amp; References</h3>
+        <%= raw @post.notes %>
+      </section>
+    <%- end -%>
+    <section class="author-bio">
       <%= @post.author_bio %>
-    </div>
+    </section>
   </div>
 
   <% if editor_signed_in? %>
