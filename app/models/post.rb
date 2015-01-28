@@ -52,7 +52,13 @@ class Post < ActiveRecord::Base
 
         for link in section_links
           linkNumber = link.content.gsub(/[\[\]]+/, '')
+          if linkNumber != /\A[-+]?\d+\z/
+            puts linkNumber
+            linkNumber = to_decimal(linkNumber)
+            puts linkNumber
+          end
           link['href'] = "#note_#{linkNumber}"
+          link.content = "[#{linkNumber}]"
         end
 
         self.sections[index].body = section_html.to_s
@@ -72,5 +78,32 @@ class Post < ActiveRecord::Base
       }
 
       self.notes = notes_html.to_s
+    end
+
+    def to_decimal value
+      @base_digits = {
+        1    => 'I',
+        4    => 'IV',
+        5    => 'V',
+        9    => 'IX',
+        10   => 'X',
+        40   => 'XL',
+        50   => 'L',
+        90   => 'XC',
+        100  => 'C',
+        400  => 'CD',
+        500  => 'D',
+        900  => 'CM',
+        1000 => 'M'
+      }
+      value = value.upcase
+      result = 0
+      @base_digits.values.reverse.each do |roman|
+        while value.start_with? roman
+          value = value.slice(roman.length, value.length)
+          result += @base_digits.key roman
+        end
+      end
+      result
     end
 end
