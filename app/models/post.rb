@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
 
-  before_save :clean_notes
+  before_save :clean_notes, :mark_notes
 
   mount_uploader :cover_image, CoverImageUploader
 
@@ -47,19 +47,30 @@ class Post < ActiveRecord::Base
       end
 
       self.sections.each_with_index.map { |section, index|
-        # puts 'OIM IN A SEKSHUN'
         section_html = Nokogiri::HTML(section.body)
-        # puts section_html
         section_links = section_html.css("a[href*='bcjournal.org'], a[href*='#note_']")
-        # puts section_links
+
         for link in section_links
           linkNumber = link.content.gsub(/[\[\]]+/, '')
           link['href'] = "#note_#{linkNumber}"
-          puts link
         end
-        # puts section_html
+
         self.sections[index].body = section_html.to_s
-        # puts self.sections[index].body
       }
+    end
+
+    def mark_notes
+      if self.notes.blank?
+        # do nada
+      end
+
+      notes_html = Nokogiri::HTML(self.notes)
+      the_notes = notes_html.css("li")
+
+      the_notes.each_with_index.map { |note, index|
+        note['id'] = "note_#{index + 1}"
+      }
+
+      self.notes = notes_html.to_s
     end
 end
