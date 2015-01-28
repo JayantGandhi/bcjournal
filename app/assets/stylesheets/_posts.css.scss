@@ -103,14 +103,14 @@ body.posts.show {
   main.content-container {
     padding: 0;
   }
+}
 
-  .article-content {
-    max-width: 75rem;
-    margin: 0 auto;
+article .article-content {
+  max-width: 75rem;
+  margin: 0 auto;
 
-    p {
-      text-align: justify;
-    }
+  p {
+    text-align: justify;
   }
 }
 
