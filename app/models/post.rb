@@ -50,14 +50,16 @@ class Post < ActiveRecord::Base
         # puts 'OIM IN A SEKSHUN'
         section_html = Nokogiri::HTML(section.body)
         # puts section_html
-        section_links = section_html.css("a[href*='bcjournal.org']")
+        section_links = section_html.css("a[href*='bcjournal.org'], a[href*='#note_']")
         # puts section_links
         for link in section_links
           linkNumber = link.content.gsub(/[\[\]]+/, '')
-          link['href'] = "note_#{linkNumber}"
+          link['href'] = "#note_#{linkNumber}"
+          puts link
         end
+        # puts section_html
         self.sections[index].body = section_html.to_s
-        puts self.sections[index].body
+        # puts self.sections[index].body
       }
     end
 end
