@@ -1,17 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic);
 
 @font-face {
-  font-family: 'fontello';
-  src: font-url('fontello.eot');
-  src: font-url('fontello.eot?#iefix') format('embedded-opentype'),
-    font-url('fontello.svg#fontello') format('svg'),
-    font-url('fontello.woff') format('woff'),
-    font-url('fontello.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'Helvetica Neue';
   src: font-url('HelveticaNeue.eot');
   src: font-url('HelveticaNeue.eot?#iefix') format('embedded-opentype'),
@@ -80,4 +69,4 @@
 @import "fontello/fontello-embedded";
 @import "fontello/fontello-ie7-codes";
 @import "fontello/fontello-ie7";
-@import "fontello/fontello";
+// @import "fontello/fontello";

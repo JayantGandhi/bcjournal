@@ -23,7 +23,11 @@ class PostsController < ApplicationController
     @missing_images = 0
     @every_other = false
 
-    @posts = Post.published.paginate(:page => params[:page], per_page: 24).order('publish_date DESC')
+    if params[:search]
+      @posts = Post.search(params[:search]).paginate(:page => params[:page], per_page: 24).order('publish_date DESC')
+    else
+      @posts = Post.published.paginate(:page => params[:page], per_page: 24).order('publish_date DESC')
+    end
   end
 
   def new

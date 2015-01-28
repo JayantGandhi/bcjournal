@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   resources :posts
 
+  post 'posts/search', to: 'posts#search'
+
   post 'post/:id/publish', to: 'posts#publish', as: 'post_publish'
   post 'post/:id/unpublish', to: 'posts#unpublish', as: 'post_unpublish'
   get 'posts/vertical/:search', to: 'posts#vertical_sort'

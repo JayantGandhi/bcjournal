@@ -35,6 +35,18 @@
     <!-- Right Nav Section -->
     <ul class="right">
       <li class="has-dropdown">
+        <a class="icon-search search-button" href="#"></a>
+        <ul class="dropdown">
+          <li class="search-form">
+            <%= form_tag posts_path, :method => "get", id: "search-form" do %>
+              <%= label_tag :search, "Search for:", class: "visually-hidden" %>
+              <%= text_field_tag :search, params[:search], placeholder: "Search the Journal" %>
+              <%= submit_tag("Search") %>
+            <% end %>
+          </li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
         <a href="/about" class=".about-button">About</a>
         <ul class="dropdown">
           <li><a href="/about">About Us</a></li>
@@ -47,19 +59,10 @@
     <!-- Left Nav Section -->
     <ul class="left">
       <li><a href="/most-recent">Most Recent</a></li>
-      <li class="verticals large-only">
-        <ul class="verticals-list large-only">
-          <% for vertical in @verticals do %>
-            <li class="vertical-link <%= vertical.slug %>">
-              <a href="#<%= vertical.slug %>" data-vertical="<%= vertical.slug %>"><%= vertical.name.titleize %></a>
-            </li>
-          <% end %>
-        </ul>
-      </li>
-      <li class="has-dropdown medium-down"><a>Sections</a>
+      <li class="has-dropdown"><a>Sections</a>
         <ul class="dropdown">
           <% for vertical in @verticals do %>
-            <li class="vertical"><a href="#"><%= vertical.name.titleize %></a></li>
+            <li class="vertical-link"><a href="#<%= vertical.slug %>" data-vertical="<%= vertical.slug %>"><%= vertical.name.titleize %></a></li>
           <% end %>
         </ul>
       </li>

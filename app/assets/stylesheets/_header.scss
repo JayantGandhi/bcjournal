@@ -10,6 +10,28 @@
     }
   }
 
+  .search-button {
+    &:after {
+      display: none !important;
+    }
+  }
+
+  .search-form {
+    min-width: 50rem;
+    min-height: 10rem;
+
+    input[type=text] {
+      width: 100%;
+      height: 10rem;
+      top: 0;
+      font-size: 4rem;
+    }
+
+    input[type=submit] {
+      @extend .visually-hidden;
+    }
+  }
+
   .logo-half {
     display: none;
 
