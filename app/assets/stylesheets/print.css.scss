@@ -12,13 +12,33 @@
   }
 
   article {
+    margin: 1in;
+
     .print-only {
       display: block !important;
+    }
+
+    .title {
+      h1 {
+        font-size: 2em;
+      }
     }
 
     .vertical-tags,
     .sticky-social {
       display: none;
     }
+
+    .cover-image {
+      background: none !important;
+    }
+  }
+
+  #logoutPrompt {
+    display: none;
+  }
+
+  .editor-tools {
+    display: none;
   }
 }
