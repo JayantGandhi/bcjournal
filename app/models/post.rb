@@ -52,8 +52,7 @@ class Post < ActiveRecord::Base
 
         for link in section_links
           linkNumber = link.content.gsub(/[\[\]]+/, '')
-          if linkNumber == /\A[-+]?\d+\z/
-            puts 'shoudn\'t be here...'
+          if linkNumber !~ /\A\d+\z/
             linkNumber = to_decimal(linkNumber)
           end
           link['href'] = "#note_#{linkNumber}"
