@@ -41,7 +41,7 @@
             <%= form_tag posts_path, :method => "get", id: "search-form" do %>
               <%= label_tag :search, "Search for:", class: "visually-hidden" %>
               <%= text_field_tag :search, params[:search], placeholder: "Search the Journal" %>
-              <%= submit_tag("Search") %>
+              <%= submit_tag "Search", name: nil %>
             <% end %>
           </li>
         </ul>
