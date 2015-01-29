@@ -56,6 +56,7 @@ class Post < ActiveRecord::Base
             linkNumber = to_decimal(linkNumber)
           end
           link['href'] = "#note_#{linkNumber}"
+          link['id'] = "anchor_note_#{linkNumber}"
           link.content = "[#{linkNumber}]"
         end
 
@@ -72,7 +73,9 @@ class Post < ActiveRecord::Base
       the_notes = notes_html.css("li")
 
       the_notes.each_with_index.map { |note, index|
-        note['id'] = "note_#{index + 1}"
+        noteNumber = index + 1
+        note['id'] = "note_#{noteNumber}"
+        note.after("<a class='return' href='#anchor_note_#{noteNumber}'>&#xe808;</a>")
       }
 
       self.notes = notes_html.to_s
