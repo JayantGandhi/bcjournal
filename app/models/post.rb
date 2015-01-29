@@ -75,7 +75,7 @@ class Post < ActiveRecord::Base
       the_notes.each_with_index.map { |note, index|
         noteNumber = index + 1
         note['id'] = "note_#{noteNumber}"
-        note.after("<a class='return' href='#anchor_note_#{noteNumber}'>&#xe808;</a>")
+        note.after("<a class='return icon-up-circled2' href='#anchor_note_#{noteNumber}'></a>")
       }
 
       self.notes = notes_html.to_s
