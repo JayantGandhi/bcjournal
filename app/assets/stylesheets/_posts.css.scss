@@ -354,4 +354,11 @@ article .article-content {
   ol li {
     list-style: decimal;
   }
+
+  .return {
+    &:before {
+      content: '\e808';
+      display: inline-block;
+    }
+  }
 }
