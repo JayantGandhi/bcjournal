@@ -356,9 +356,10 @@ article .article-content {
   }
 
   .return {
-    &:before {
-      content: '\e808';
-      display: inline-block;
+    cursor: pointer;
+
+    &:hover {
+      color: lighten($black, 20%);
     }
   }
 }
