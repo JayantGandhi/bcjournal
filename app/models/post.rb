@@ -77,7 +77,7 @@ class Post < ActiveRecord::Base
         note['id'] = "note_#{noteNumber}"
 
         # add a return button if it's not there
-        if !note.css('.return')
+        if !note.at_css('.return')
           note << "<span class='return icon-angle-up'><a href='#anchor_note_#{noteNumber}'></a></span>"
         end
       }
