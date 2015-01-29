@@ -67,9 +67,17 @@ class Post < ActiveRecord::Base
     def mark_notes
       if self.notes.blank?
         # do nada
+        return
       end
 
       notes_html = Nokogiri::HTML(self.notes)
+
+      # if there is no list don't show it until it's fixed
+      if notes_html.at_css('ol, ul')
+        self.notes = ''
+        return
+      end
+
       the_notes = notes_html.css("li")
 
       the_notes.each_with_index.map { |note, index|
