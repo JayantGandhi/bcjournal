@@ -1,0 +1,30 @@
+/* line 1, /home/jayant/Code/bcjournal/app/assets/stylesheets/_forms.scss */
+.inline-errors {
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+/* line 9, /home/jayant/Code/bcjournal/app/assets/stylesheets/_forms.scss */
+.text-area-with-limit {
+  resize: none;
+}
+/* line 12, /home/jayant/Code/bcjournal/app/assets/stylesheets/_forms.scss */
+.text-area-with-limit + .char-counter {
+  top: -1.6rem;
+  position: relative;
+}
+
+/* line 18, /home/jayant/Code/bcjournal/app/assets/stylesheets/_forms.scss */
+.form-checkbox {
+  max-width: 10rem;
+}
+
+/* line 27, /home/jayant/Code/bcjournal/app/assets/stylesheets/_forms.scss */
+.error input {
+  box-shadow: 0px 0px 1.5rem #BB0000 inset;
+}
+
+/* line 33, /home/jayant/Code/bcjournal/app/assets/stylesheets/_forms.scss */
+.actions .button {
+  min-width: 15.5rem;
+}

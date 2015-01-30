@@ -21,6 +21,7 @@ module Bcjournal
     # config.i18n.default_locale = :de
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.assets.enabled = true
+    config.assets.precompile += %w( *.js )
     config.assets.precompile += Ckeditor.assets
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
     config.assets.precompile += Ckeditor.assets

@@ -1,0 +1,86 @@
+/* line 1, /home/jayant/Code/bcjournal/app/assets/stylesheets/_editor.scss */
+#logoutPrompt {
+  height: 8rem;
+  width: 8rem;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+}
+/* line 9, /home/jayant/Code/bcjournal/app/assets/stylesheets/_editor.scss */
+#logoutPrompt a {
+  line-height: 4rem;
+  width: 8rem;
+  height: 4rem;
+}
+
+/* line 16, /home/jayant/Code/bcjournal/app/assets/stylesheets/_editor.scss */
+.editor-tools {
+  position: fixed;
+  top: 4.5rem;
+  right: 0;
+  width: 5rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+/* line 25, /home/jayant/Code/bcjournal/app/assets/stylesheets/_editor.scss */
+.filters {
+  position: fixed;
+  right: 0;
+}
+
+/* line 30, /home/jayant/Code/bcjournal/app/assets/stylesheets/_editor.scss */
+.pagination {
+  float: left;
+}
+
+/* line 35, /home/jayant/Code/bcjournal/app/assets/stylesheets/_editor.scss */
+.list-of-posts li:last-child {
+  float: left !important;
+}
+
+/* line 41, /home/jayant/Code/bcjournal/app/assets/stylesheets/_editor.scss */
+.post-tools li {
+  min-width: 15rem;
+}
+/* line 44, /home/jayant/Code/bcjournal/app/assets/stylesheets/_editor.scss */
+.post-tools li a {
+  width: 100%;
+}
+
+/* line 51, /home/jayant/Code/bcjournal/app/assets/stylesheets/_editor.scss */
+.manage_posts .tools {
+  margin-top: 1rem;
+}
+/* line 55, /home/jayant/Code/bcjournal/app/assets/stylesheets/_editor.scss */
+.manage_posts .post-title {
+  text-align: center;
+}
+/* line 58, /home/jayant/Code/bcjournal/app/assets/stylesheets/_editor.scss */
+.manage_posts .post-title .button-group {
+  margin: 0 auto;
+  display: inline-block;
+}
+/* line 62, /home/jayant/Code/bcjournal/app/assets/stylesheets/_editor.scss */
+.manage_posts .post-title .button-group .button {
+  font-size: 1.4rem;
+  padding: 2rem 1rem;
+}
+/* line 70, /home/jayant/Code/bcjournal/app/assets/stylesheets/_editor.scss */
+.manage_posts .filters span {
+  font-size: 2rem;
+}
+/* line 74, /home/jayant/Code/bcjournal/app/assets/stylesheets/_editor.scss */
+.manage_posts .filters .filter .current {
+  color: #000;
+}
+/* line 77, /home/jayant/Code/bcjournal/app/assets/stylesheets/_editor.scss */
+.manage_posts .filters .filter .current.asc:after {
+  content: '\2191';
+}
+/* line 81, /home/jayant/Code/bcjournal/app/assets/stylesheets/_editor.scss */
+.manage_posts .filters .filter .current.desc:after {
+  content: '\2193';
+}
