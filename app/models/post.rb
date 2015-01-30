@@ -57,7 +57,7 @@ class Post < ActiveRecord::Base
           end
           link['href'] = "#note_#{linkNumber}"
           link['id'] = "anchor_note_#{linkNumber}"
-          link.content = "[#{linkNumber}]"
+          link.content = "<sup>[#{linkNumber}]</sup>"
         end
 
         self.sections[index].body = section_html.to_s
