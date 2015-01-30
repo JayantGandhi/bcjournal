@@ -216,6 +216,7 @@ article .article-content {
 
 @media #{$medium-up} {
   .sticky-social {
+    position: absolute;
     display: inline-block;
     max-width: 11rem;
 
