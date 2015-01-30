@@ -364,3 +364,8 @@ article .article-content {
     }
   }
 }
+
+a[href*='note'] {
+  font-size: .75em;
+  vertical-align: top;
+}
