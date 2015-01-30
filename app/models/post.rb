@@ -73,7 +73,7 @@ class Post < ActiveRecord::Base
       notes_html = Nokogiri::HTML(self.notes)
 
       # if there is no list don't show it until it's fixed
-      if notes_html.at_css('ol, ul')
+      if !notes_html.at_css('ol, ul')
         self.notes = ''
         return
       end
