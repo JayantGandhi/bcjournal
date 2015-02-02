@@ -114,7 +114,13 @@
     .book-review {
       @extend .abstract-link;
 
-      background-color: #9D001B;
+      background-color: $book-review-color;
+
+      &:hover,
+      &:active {
+        background-color: $book-review-color;
+        color: #fff;
+      }
     }
 
     .overlay {
