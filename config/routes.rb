@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   resources :posts
   resources :book_reviews
 
+  get 'book-reviews/:id', to: 'book_reviews#show', as: 'book_review_path'
+
   post 'posts/search', to: 'posts#search'
 
   post 'post/:id/publish', to: 'posts#publish', as: 'post_publish'

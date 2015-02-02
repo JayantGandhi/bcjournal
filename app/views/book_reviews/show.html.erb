@@ -1,0 +1,92 @@
+<% content_for :head do %>
+    <meta property="og:title" content="<%= @book_review.title %>">
+    <meta property="og:image" content="<%= @book_review.cover_image.facebook %>">
+    <meta property="og:description" content="<%= @book_review.blurb %>">
+    <meta property="og:url" content="<%= request.original_url %>">
+<% end %>
+
+<article>
+  <% if @book_review.archived? %>
+    <!-- <div class="archive-tag">From the Archive</div> -->
+  <%- end -%>
+  <section class="book-cover cover-image" style="background-image:url(<%= @book_review.cover_image.cover %>)">
+  </section>
+  <section>
+    <div class="title">
+      <h1><%= @book_review.title %></h1>
+      <h2><%= @book_review.subtitle %></h3>
+      <h5>By <%= @book_review.by_line %></h5>
+      <span class="visibly-hidden"><%= @book_review.photo_title %></span>
+    </div>
+  </section>
+
+  <div class="vertical-tags">
+    <% for vertical in @book_review.verticals do %>
+      <a href="#"><span class="label"><%= vertical.name %></span></a>
+    <%- end -%>
+  </div>
+  <div class="print-only">Published in The SAIS Journal of Global Affairs</div>
+  <div class="publish-date">
+    <%= @book_review.publish_date.to_formatted_s(:long) if !@book_review.publish_date.blank? %>
+  </div>
+  <div class="photo-credit">
+    <a href="<%= @book_review.photo_url %>" target="_blank"><%= @book_review.photo_credit %></a>
+  </div>
+
+  <div class="sticky-social">
+    <ul class="social-list">
+      <li class="social-item facebook">
+        <a class="fbshare" data-title="<%= @book_review.title %>" data-image="<%= @book_review.cover_image.thumb %>" data-desc="<%= @book_review.blurb %>" href="https://www.facebook.com/sharer/sharer.php?u=<%= request.original_url %>" target="_blank"><span class="social-text">Share on</span><span class="icon-facebook"></span></a>
+      </li>
+      <li class="social-item twitter">
+      <a class="tweet-this" href="https://twitter.com/share?text=<%= CGI::escape(@book_review.blurb) %><%= CGI::escape(@hashtags) %>&url=<%= CGI::escape(@bitly_url) %>"><span class="social-text">Share on</span><span class="icon-twitter"></span></a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="article-content">
+    <% if !@book_review.abstract.blank? %>
+      <section class="abstract">
+        <h3>Abstract</h3>
+        <p><%= @book_review.abstract %></p>
+      </section>
+    <%- end -%>
+    <% for section in @book_review.sections do %>
+      <section id="<%= section.header.parameterize %>">
+        <h3><%= section.header %></h2>
+        <div>
+          <%= raw section.body %>
+        </div>
+      </section>
+    <%- end -%>
+    <%- if !@book_review.notes.blank? -%>
+      <section id="notes" class="notes">
+        <h3>Notes &amp; References</h3>
+        <%= raw @book_review.notes %>
+      </section>
+    <%- end -%>
+    <section class="author-bio">
+      <%= @book_review.author_bio %>
+    </section>
+  </div>
+
+  <% if editor_signed_in? %>
+    <div class="editor-tools">
+      <%= link_to 'Edit', edit_book_review_path %>
+    </div>
+  <%- end -%>
+</article>
+
+<%- if @book_review.sections.length > 1 -%>
+  <div class="section-navigator desktop-only">
+    <div class="progress-bar"></div>
+    <ul>
+      <%- for section in @book_review.sections do -%>
+        <li><a href="#<%= section.header.parameterize %>"><%= truncate(section.header, length: 20, omission: '...') %></a></li>
+      <%- end -%>
+      <%- if !@book_review.notes.blank? -%>
+        <li><a href="#notes">Notes</a></li>
+      <%- end -%>
+    </ul>
+  </div>
+<%- end -%>

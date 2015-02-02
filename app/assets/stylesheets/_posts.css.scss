@@ -65,6 +65,12 @@ article {
     background-position: center;
     width: 100%;
     background-color: $main-color;
+
+    &.book-cover {
+      max-width: 60rem;
+      min-height: 45rem;
+      margin: 0 auto;
+    }
   }
 
   p {
