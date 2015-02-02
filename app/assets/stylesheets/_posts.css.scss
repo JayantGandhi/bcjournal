@@ -104,6 +104,16 @@ article {
   }
 }
 
+.book-info {
+  max-width: 60rem;
+  margin: 0 auto;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+}
+
 body.posts.show {
   main.content-container {
     padding: 0;
@@ -173,6 +183,10 @@ article .article-content {
     padding: 1rem;
   }
 
+  .book-info h1 {
+    font-size: 5.5rem;
+  }
+
   .article-content .abstract p {
     padding: 0 0.5rem 0 0.25rem;
     margin-left: 1rem;
@@ -184,6 +198,7 @@ article .article-content {
     bottom: 0;
     top: auto;
     max-height: 5rem;
+    left: 0;
 
     .social-list {
       display: inline-block;
@@ -221,16 +236,6 @@ article .article-content {
 }
 
 @media #{$medium-up} {
-  .book-info {
-    max-width: 60rem;
-    margin: 0 auto;
-    text-align: center;
-
-    p {
-      margin: 0;
-    }
-  }
-
   .sticky-social {
     position: absolute;
     display: inline-block;
