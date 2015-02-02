@@ -26,14 +26,14 @@ class BookReviewsController < ApplicationController
   end
 
   def create
-    @book_review = Post.new(post_params)
+    @book_review = Post.new(book_review_params)
     @book_review.slug = @book_review.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#|\,|\.|\%|\;|\:/, '')
 
     check_photo_url
 
     respond_to do |format|
       if @book_review.save
-        format.html { redirect_to @book_review, notice: 'post was successfully created.' }
+        format.html { redirect_to book_review_path(@book_review), notice: 'post was successfully created.' }
         format.json { head :no_content }
       else
         format.html { render action: 'new' }
@@ -49,12 +49,12 @@ class BookReviewsController < ApplicationController
   def update
     @book_review.slug = @book_review.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#|\,|\;|\:/, '')
 
-    check_photo_url
-    puts post_params[:photo_url]
+    check_book_url
+    puts book_review_params[:photo_url]
 
     respond_to do |format|
-      if @book_review.update(post_params)
-        format.html { redirect_to @book_review, notice: 'post was successfully updated.' }
+      if @book_review.update(book_review_params)
+        format.html { redirect_to book_review_path(@book_review), notice: 'post was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -77,7 +77,7 @@ class BookReviewsController < ApplicationController
 
       respond_to do |format|
         if @book_review.save
-          format.html { redirect_to @book_review, notice: 'post was successfully updated.' }
+          format.html { redirect_to book_review_path(@book_review), notice: 'post was successfully updated.' }
           format.json { head :no_content }
         else
           format.html { redirect_to manage_book_reviews_path, notice: 'something went wrong' }
@@ -104,7 +104,7 @@ class BookReviewsController < ApplicationController
 
   private
     def book_review_params
-      params[:book_review].permit(
+      params[:post].permit(
         :title,
         :by_line,
         :subtitle,
@@ -142,4 +142,12 @@ class BookReviewsController < ApplicationController
       @book_review = Post.find_by_slug(params[:id])
     end
 
+    def check_book_url
+      if book_review_params[:link_to_book].start_with?("http://", "https://")
+        # do nothing
+      else
+        book_review_params[:link_to_book].prepend("http://")
+        puts book_review_params[:link_to_book]
+      end
+    end
 end

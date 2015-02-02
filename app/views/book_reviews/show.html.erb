@@ -11,12 +11,16 @@
   <%- end -%>
   <section class="book-cover cover-image" style="background-image:url(<%= @book_review.cover_image.cover %>)">
   </section>
-  <section>
+  <section class="book-info">
     <div class="title">
       <h1><%= @book_review.title %></h1>
       <h2><%= @book_review.subtitle %></h3>
-      <h5>By <%= @book_review.by_line %></h5>
-      <span class="visibly-hidden"><%= @book_review.photo_title %></span>
+      <h5>By <%= @book_review.author %></h5>
+      <div>
+        <p>Published By: <%= @book_review.publisher %></p>
+        <p>On: <%= @book_review.book_publish_date.to_formatted_s(:long) if !@book_review.book_publish_date.blank? %></p>
+        <p><a href="<%= @book_review.link_to_book %>">Buy Here</a> $<%= @book_review.price %></p>
+      </div>
     </div>
   </section>
 

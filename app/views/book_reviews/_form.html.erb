@@ -1,5 +1,5 @@
 <%- @i = 0 -%>
-<%= semantic_nested_form_for @book_review, multipart: true do |f| %>
+<%= semantic_nested_form_for @book_review, url: {controller: 'book_reviews', action: 'update'}, multipart: true do |f| %>
   <%= f.inputs "Book Review", multipart: true do %>
     <%= f.input :title, required: true %>
     <%= f.input :subtitle %>
