@@ -25,13 +25,19 @@ Rails.application.routes.draw do
     path_names: {sign_in: "login", sign_out: "logout", sign_up: "register"}
 
   mount Ckeditor::Engine => '/ckeditor'
+
   resources :posts
+  resources :book_reviews
 
   post 'posts/search', to: 'posts#search'
 
   post 'post/:id/publish', to: 'posts#publish', as: 'post_publish'
   post 'post/:id/unpublish', to: 'posts#unpublish', as: 'post_unpublish'
   get 'posts/vertical/:search', to: 'posts#vertical_sort'
+
+  post 'book_review/:id/publish', to: 'book_reviews#publish', as: 'book_review_publish'
+  post 'book_review/:id/unpublish', to: 'book_reviews#unpublish', as: 'book_review_unpublish'
+
 
   # Editor Routes (once logged in)
   get 'editor-panel', to: 'editors#panel', as: 'editor_panel'

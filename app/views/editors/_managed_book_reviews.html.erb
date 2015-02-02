@@ -1,0 +1,29 @@
+<%- for book_review in @book_reviews -%>
+  <li class="row panel column small-10">
+    <div class="post-title column small-3">
+      <h5><%= book_review.title %></h5>
+      <ul class="button-group round">
+        <li><%= link_to 'Edit', edit_book_review_path(book_review), class: 'button success' %></li>
+        <li><%= link_to 'View', book_review_path(book_review), class: 'button' %></li>
+      </ul>
+    </div>
+    <div class="post-created-date column small-2">
+      Created: <%= book_review.created_at.to_formatted_s(:long) %>
+    </div>
+    <div class="post-published-date column small-2">
+      Published: <%= book_review.publish_date.to_formatted_s(:long) if book_review.publish_date? %>
+    </div>
+    <ul class="button-group round right post-tools">
+      <li class="post-publish">
+        <%- if book_review.published? -%>
+          <%= link_to 'Unpublish', book_review_unpublish_path(book_review), method: :post, class: 'button' %>
+        <%- else -%>
+          <%= link_to 'Publish', book_review_publish_path(book_review), method: :post, class: 'button'%>
+        <%- end -%>
+      </li>
+      <li class="post-delete">
+        <%= link_to 'Delete Post', book_review_path(book_review), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button alert' %>
+      </li>
+    </ul>
+  </li>
+<%- end -%>

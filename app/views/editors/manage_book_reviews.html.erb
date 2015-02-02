@@ -1,0 +1,15 @@
+<div class="tools">
+  <span><%= link_to 'Create a Post', new_book_review_path, class: "button success round" %></span>
+</div>
+
+<ul class="list-of-posts">
+  <%= render 'managed_book_reviews' %>
+</ul>
+<ul class="filters column small-2 panel callout">
+  <span>Sort By:</span>
+  <li class="filter"><%= sortable 'title' %></li>
+  <li class="filter"><%= sortable 'created_at', "Created On" %></li>
+  <li class="filter"><%= sortable 'published', "Published?" %></li>
+</ul>
+
+<%= will_paginate @book_reviews %>

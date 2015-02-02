@@ -1,16 +1,15 @@
 <%- @i = 0 -%>
-<%= semantic_nested_form_for @post, multipart: true do |f| %>
-  <%= f.inputs "Post", multipart: true do %>
+<%= semantic_nested_form_for @book_review, multipart: true do |f| %>
+  <%= f.inputs "Book Review", multipart: true do %>
     <%= f.input :title, required: true %>
     <%= f.input :subtitle %>
     <%= f.input :by_line, required: true %>
     <%= f.input :blurb, required: true, input_html: {rows: 3, max_length: 100, class: 'text-area-with-limit'} %>
-    <span id="img_preview" style="background-image:url(<%= @post.cover_image %>)"></span>
+    <span id="img_preview" style="background-image:url(<%= @book_review.cover_image %>)"></span>
     <%= f.input :cover_image, as: :file%>
     <%= f.input :photo_credit %>
     <%= f.input :photo_url %>
     <%= f.input :photo_title %>
-    <%= f.input :abstract %>
     <%= f.semantic_fields_for :sections do |s| %>
       <%- @i += 1 -%>
       <%= s.input :header %>
@@ -20,13 +19,9 @@
     <%- end -%>
     <%= f.link_to_add 'Add A Section', :sections, class: 'button success radius' %>
     <%= f.input :notes, as: :ckeditor %>
-    <%= f.input :author_bio, input_html: {rows: 5, max_length: 1000, class: 'text-area-with-limit'} %>
-    <%= f.input :verticals, as: :check_boxes, collection: Vertical.all %>
     <%= f.input :tag_list %>
     <%= f.input :publish_date, as: :date_picker %>
-    <div data-tooltip aria-haspopup='true' class="has-tip form-checkbox" title="Check this box if the post is a book review">
-      <%= f.input :book_review %>
-    </div>
+    <%= f.hidden_field :book_review, value: true %>
     <div data-tooltip aria-haspopup='true' class="has-tip form-checkbox" title="Check this box if the post an archive post">
       <%= f.input :archived %>
     </div>

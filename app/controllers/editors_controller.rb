@@ -7,7 +7,7 @@ class EditorsController < ApplicationController
   end
 
   def manage_book_reviews
-    @posts = Post.book_review.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:page => params[:page])
+    @book_reviews = Post.book_review.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:page => params[:page])
   end
 
   def panel
