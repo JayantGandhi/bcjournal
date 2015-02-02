@@ -1,5 +1,5 @@
 <% content_for :head do %>
-    <meta property="og:title" content="<%= @post.title %>">
+    <meta property="og:title" content="<%= @post.title %><%= " - #{@post.subtitle}" if !@post.subtitle.blank? %>">
     <meta property="og:image" content="<%= @post.cover_image.facebook %>">
     <meta property="og:description" content="<%= @post.blurb %>">
     <meta property="og:url" content="<%= request.original_url %>">
