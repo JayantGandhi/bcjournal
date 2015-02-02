@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   # Editor Routes (once logged in)
   get 'editor-panel', to: 'editors#panel', as: 'editor_panel'
   get 'editor/posts', to: 'editors#manage_posts', as: 'manage_posts'
+  get 'editor/book_reviews', to: 'editors#manage_book_reviews', as: 'manage_book_reviews'
   post 'editor/create', to: 'editors#create', as: 'editor_create_path'
   resources :editors
 

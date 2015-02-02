@@ -3,7 +3,11 @@ class EditorsController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def manage_posts
-    @posts = Post.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:page => params[:page])
+    @posts = Post.not_book_review.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:page => params[:page])
+  end
+
+  def manage_book_reviews
+    @posts = Post.book_review.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:page => params[:page])
   end
 
   def panel

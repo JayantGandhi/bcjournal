@@ -25,6 +25,8 @@ class Post < ActiveRecord::Base
 
   # scopes
   scope :published, -> { where(published: true) }
+  scope :not_book_review, -> { where(book_review: false) }
+  scope :book_review, -> { where(book_review: true) }
 
   # methods
   def to_param

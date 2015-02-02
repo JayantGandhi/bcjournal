@@ -24,7 +24,9 @@
     <%= f.input :verticals, as: :check_boxes, collection: Vertical.all %>
     <%= f.input :tag_list %>
     <%= f.input :publish_date, as: :date_picker %>
-    <%= f.hidden_field :book_review, value: false %>
+    <div data-tooltip aria-haspopup='true' class="has-tip form-checkbox" title="Check this box if the post is a book review">
+      <%= f.input :book_review %>
+    </div>
     <div data-tooltip aria-haspopup='true' class="has-tip form-checkbox" title="Check this box if the post an archive post">
       <%= f.input :archived %>
     </div>
