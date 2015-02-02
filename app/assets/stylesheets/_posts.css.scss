@@ -91,8 +91,7 @@ article {
   .abstract {
     p {
       border-left: 1px solid;
-      padding: 0 10rem 0 5rem;
-      margin-left: 5rem;
+      padding: 0 5rem 0 5rem;
       font-style: italic;
       color: $gray;
     }
@@ -106,11 +105,12 @@ body.posts.show {
 }
 
 article .article-content {
-  max-width: 75rem;
+  max-width: 55rem;
   margin: 0 auto;
 
   p {
     text-align: justify;
+    text-indent: 1.5rem;
   }
 }
 
