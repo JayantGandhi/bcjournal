@@ -4,6 +4,10 @@ class PostsController < ApplicationController
   before_action :set_slideshow, only: [:index, :vertical_sort]
 
   def show
+    if @post.book_review
+      redirect_to book_review_path(@post)
+    end
+
     # shorten the url with bitly
     @bitly_url = Bitly.client.shorten(request.original_url).short_url
 
