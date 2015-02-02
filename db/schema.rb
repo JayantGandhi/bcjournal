@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150202105446) do
+ActiveRecord::Schema.define(version: 20150202122614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,22 +57,27 @@ ActiveRecord::Schema.define(version: 20150202105446) do
     t.string   "cover_image"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "published",    default: false
+    t.boolean  "published",         default: false
     t.text     "blurb"
     t.integer  "slideshow_id"
     t.integer  "weight"
     t.string   "slug"
     t.integer  "vertical_id"
     t.string   "subtitle"
-    t.boolean  "book_review",  default: false
+    t.boolean  "book_review",       default: false
     t.date     "publish_date"
-    t.boolean  "archived",     default: false
+    t.boolean  "archived",          default: false
     t.text     "author_bio"
     t.string   "photo_credit"
     t.string   "photo_url"
     t.string   "photo_title"
     t.text     "abstract"
     t.text     "notes"
+    t.string   "author"
+    t.string   "publisher"
+    t.date     "book_publish_date"
+    t.float    "price"
+    t.string   "link_to_book"
   end
 
   create_table "posts_slideshows", id: false, force: true do |t|

@@ -3,7 +3,12 @@
   <%= f.inputs "Book Review", multipart: true do %>
     <%= f.input :title, required: true %>
     <%= f.input :subtitle %>
-    <%= f.input :by_line, required: true %>
+    <%= f.input :author, required: true %>
+    <%= f.input :publisher, required: true %>
+    <%= f.input :link_to_book %>
+    <%= f.input :price %>
+    <%= f.input :book_publish_date, as: :date_picker, required: true %>
+    <%= f.input :by_line %>
     <%= f.input :blurb, required: true, input_html: {rows: 3, max_length: 100, class: 'text-area-with-limit'} %>
     <span id="img_preview" style="background-image:url(<%= @book_review.cover_image %>)"></span>
     <%= f.input :cover_image, as: :file%>

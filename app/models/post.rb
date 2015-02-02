@@ -15,7 +15,6 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :verticals, allow_destroy: true
 
   validates :title, presence: true
-  validates :by_line, presence: true
   validates :blurb, presence: true, length: {maximum: 400}
   validates :slug,
     uniqueness: {
