@@ -60,6 +60,10 @@ class PostsController < ApplicationController
   end
 
   def edit
+    if @post.book_review
+      redirect_to edit_book_review_path(@post)
+    end
+
     @post = Post.find_by_slug(params[:id])
   end
 
