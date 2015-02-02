@@ -62,7 +62,7 @@
       <li class="has-dropdown"><a>Sections</a>
         <ul class="dropdown">
           <% for vertical in @verticals do %>
-            <li class="vertical-link"><a href="#<%= vertical.slug %>" data-vertical="<%= vertical.slug %>"><%= vertical.name.titleize %></a></li>
+            <li class="vertical-link"><a href="/posts/vertical/<%= vertical.slug %>" data-vertical="<%= vertical.slug %>"><%= vertical.name.titleize %></a></li>
           <% end %>
         </ul>
       </li>
