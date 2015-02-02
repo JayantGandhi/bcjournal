@@ -221,6 +221,16 @@ article .article-content {
 }
 
 @media #{$medium-up} {
+  .book-info {
+    max-width: 60rem;
+    margin: 0 auto;
+    text-align: center;
+
+    p {
+      margin: 0;
+    }
+  }
+
   .sticky-social {
     position: absolute;
     display: inline-block;

@@ -11,30 +11,9 @@
   <%- end -%>
   <section class="book-cover cover-image" style="background-image:url(<%= @book_review.cover_image.cover %>)">
   </section>
-  <section class="book-info">
-    <div class="title">
-      <h1><%= @book_review.title %></h1>
-      <h2><%= @book_review.subtitle %></h3>
-      <h5>By <%= @book_review.author %></h5>
-      <div>
-        <p>Published By: <%= @book_review.publisher %></p>
-        <p>On: <%= @book_review.book_publish_date.to_formatted_s(:long) if !@book_review.book_publish_date.blank? %></p>
-        <p><a href="<%= @book_review.link_to_book %>">Buy Here</a> $<%= @book_review.price %></p>
-      </div>
-    </div>
-  </section>
-
-  <div class="vertical-tags">
-    <% for vertical in @book_review.verticals do %>
-      <a href="#"><span class="label"><%= vertical.name %></span></a>
-    <%- end -%>
-  </div>
   <div class="print-only">Published in The SAIS Journal of Global Affairs</div>
   <div class="publish-date">
     <%= @book_review.publish_date.to_formatted_s(:long) if !@book_review.publish_date.blank? %>
-  </div>
-  <div class="photo-credit">
-    <a href="<%= @book_review.photo_url %>" target="_blank"><%= @book_review.photo_credit %></a>
   </div>
 
   <div class="sticky-social">
@@ -47,6 +26,23 @@
       </li>
     </ul>
   </div>
+
+  <section class="book-info">
+    <div class="title">
+      <h1><%= @book_review.title %></h1>
+      <h2><%= @book_review.subtitle %></h3>
+      <h5>By <%= @book_review.author %></h5>
+      <div>
+        <p>Published By: <%= @book_review.publisher %></p>
+        <p>On: <%= @book_review.book_publish_date.to_formatted_s(:long) if !@book_review.book_publish_date.blank? %></p>
+        <p><a href="<%= @book_review.link_to_book %>">Buy Here</a> $<%= @book_review.price %></p>
+        <%- if @book_review.by_line -%>
+          <p>Reviewed By: <%= @book_review.by_line %></p>
+        <%- end -%>
+      </div>
+    </div>
+  </section>
+
 
   <div class="article-content">
     <% if !@book_review.abstract.blank? %>
