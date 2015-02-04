@@ -243,6 +243,7 @@ article .article-content {
     max-width: 11rem;
 
     &.sticky {
+      position: fixed;
       top: 4.5rem;
 
       .social-list {
