@@ -9,7 +9,7 @@
   <span>Sort By:</span>
   <li class="filter"><%= sortable 'title' %></li>
   <li class="filter"><%= sortable 'created_at', "Created On" %></li>
-  <li class="filter"><%= sortable 'published', "Published?" %></li>
+  <li class="filter"><%= sortable 'publish_date', "Publish Date" %></li>
   <li class="filter">
     <%= form_tag '/editor/posts' do %>
       <%= label_tag :search, "Search for:" %>
