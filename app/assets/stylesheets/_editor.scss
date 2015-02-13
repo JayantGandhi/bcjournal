@@ -31,6 +31,13 @@
   float: left;
 }
 
+body.edit,
+body.new {
+  .slick-list {
+    display: none;
+  }
+}
+
 .list-of-posts {
   li.row:last-child {
     float: left !important;

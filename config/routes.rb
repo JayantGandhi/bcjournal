@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :issues
+
   resources :verticals
 
   devise_for :subscribers,

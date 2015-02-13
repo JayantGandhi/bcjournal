@@ -20,3 +20,7 @@ $ ->
     no_results_text: "Nada, niente, rien",
     max_selected_options: 5
   })
+
+  $('#issue_post_ids').chosen({
+    no_results_text: "Nada, niente, rien"
+  })

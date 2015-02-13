@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150202122614) do
+ActiveRecord::Schema.define(version: 20150213132854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,17 @@ ActiveRecord::Schema.define(version: 20150202122614) do
   add_index "editors", ["email"], name: "index_editors_on_email", unique: true, using: :btree
   add_index "editors", ["reset_password_token"], name: "index_editors_on_reset_password_token", unique: true, using: :btree
 
+  create_table "issues", force: true do |t|
+    t.date     "year"
+    t.string   "title"
+    t.string   "featured"
+    t.string   "editorial_team"
+    t.string   "credits"
+    t.string   "cover_image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "posts", force: true do |t|
     t.string   "title"
     t.string   "by_line"
@@ -78,6 +89,7 @@ ActiveRecord::Schema.define(version: 20150202122614) do
     t.date     "book_publish_date"
     t.float    "price"
     t.string   "link_to_book"
+    t.text     "tags",              default: [],    array: true
   end
 
   create_table "posts_slideshows", id: false, force: true do |t|

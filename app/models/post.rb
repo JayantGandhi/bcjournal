@@ -4,6 +4,8 @@ class Post < ActiveRecord::Base
 
   mount_uploader :cover_image, CoverImageUploader
 
+  belongs_to :issue
+
   has_many :sections, -> { order 'position ASC' }
 
   has_and_belongs_to_many :verticals
