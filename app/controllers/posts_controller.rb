@@ -28,7 +28,7 @@ class PostsController < ApplicationController
     @every_other = false
 
     if params[:search]
-      @posts = Post.search(params[:search]).paginate(:page => params[:page], per_page: 23).order('publish_date DESC')
+      @posts = Post.search(params[:search]).published.paginate(:page => params[:page], per_page: 23).order('publish_date DESC')
     else
       @posts = Post.published.paginate(:page => params[:page], per_page: 23).order('publish_date DESC')
     end
