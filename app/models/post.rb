@@ -34,7 +34,7 @@ class Post < ActiveRecord::Base
 
   def self.search(search)
     if search
-      where('lower(title) LIKE ?', "%#{search.downcase}%")
+      where('lower(title) LIKE ? OR lower(blurb) LIKE ?', "%#{search.downcase}%", "%#{search.downcase}%")
     else
       all
     end
