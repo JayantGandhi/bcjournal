@@ -35,6 +35,7 @@ Rails.application.routes.draw do
 
   post 'editor/posts', to: 'editors#manage_posts'
   post 'editor/book-reviews', to: 'editors#manage_book_reviews'
+  post 'editor/issues', to: 'editors#manage_issues'
 
   post 'post/:id/publish', to: 'posts#publish', as: 'post_publish'
   post 'post/:id/unpublish', to: 'posts#unpublish', as: 'post_unpublish'
@@ -48,7 +49,8 @@ Rails.application.routes.draw do
   get 'editor-panel', to: 'editors#panel', as: 'editor_panel'
   get 'editor/posts', to: 'editors#manage_posts', as: 'manage_posts'
   get 'editor/book_reviews', to: 'editors#manage_book_reviews', as: 'manage_book_reviews'
-  post 'editor/create', to: 'editors#create', as: 'editor_create_path'
+  get 'editor/issues', to: 'editors#manage_issues', as: 'manage_issues'
+
   resources :editors
 
   root 'posts#index'

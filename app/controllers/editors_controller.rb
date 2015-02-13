@@ -10,6 +10,10 @@ class EditorsController < ApplicationController
     @book_reviews = Post.book_review.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:page => params[:page])
   end
 
+  def manage_issues
+    @issues = Issue.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:page => params[:page])
+  end
+
   def panel
 
   end

@@ -1,0 +1,21 @@
+<div class="tools">
+  <span><%= link_to 'Create an Issue', new_issue_path, class: "button success round" %></span>
+</div>
+
+<ul class="list-of-posts">
+  <%= render 'managed_issues' %>
+</ul>
+<ul class="filters column small-2 panel callout">
+  <span>Sort By:</span>
+  <li class="filter"><%= sortable 'title' %></li>
+  <li class="filter"><%= sortable 'year', "Year" %></li>
+  <li class="filter">
+    <%= form_tag '/editor/posts' do %>
+      <%= label_tag :search, "Search for:" %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search for a post" %>
+      <%= submit_tag "Search", name: nil %>
+    <%- end -%>
+  </li>
+</ul>
+
+<%= will_paginate @issues %>

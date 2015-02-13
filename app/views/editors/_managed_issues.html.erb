@@ -1,0 +1,19 @@
+<%- for issue in @issues -%>
+  <li class="row panel column small-10">
+    <div class="post-title column small-3">
+      <h5><%= issue.title %></h5>
+      <ul class="button-group round">
+        <li><%= link_to 'Edit', edit_issue_path(issue), class: 'button success' %></li>
+        <li><%= link_to 'View', issue, class: 'button' %></li>
+      </ul>
+    </div>
+    <div class="post-created-date column small-2">
+      Year: <%= issue.year.strftime('%Y') %>
+    </div>
+    <ul class="button-group round right post-tools">
+      <li class="post-delete">
+        <%= link_to 'Delete Issue', issue, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button alert' %>
+      </li>
+    </ul>
+  </li>
+<%- end -%>

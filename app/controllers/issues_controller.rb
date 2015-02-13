@@ -1,15 +1,16 @@
 class IssuesController < ApplicationController
+  before_action :set_issue, only: [:show, :edit, :update, :destroy]
+  before_action :get_posts, only: [:new, :edit]
 
   def index
     @issues = Issue.all.order(:year)
   end
 
   def show
-    @issue = Issue.find_by_slug(params[:issue])
+
   end
 
   def new
-    @posts = Post.where(published: true).order('created_at DESC')
     @issue = Issue.new
   end
 
@@ -37,7 +38,11 @@ class IssuesController < ApplicationController
   end
 
   def destroy
-
+    @issue.destroy
+    respond_to do |format|
+      format.html { redirect_to manage_issues_path }
+      format.json { head :no_content }
+    end
   end
 
   private
@@ -53,6 +58,14 @@ class IssuesController < ApplicationController
           :id,
         ]
       )
+    end
+
+    def set_issue
+      @issue = Issue.find_by_slug(params[:id])
+    end
+
+    def get_posts
+      @posts = Post.where(published: true).order('created_at DESC')
     end
 
 end
