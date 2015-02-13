@@ -1,6 +1,0 @@
-$('.list-of-posts').append('<%= j render(partial: "editors/managed_posts", locals: {posts: @posts}) %>');
-<% if @posts.next_page %>
-  $('.pagination').replaceWith('<%= j will_paginate(@posts) %>');
-<% else %>
-  $('.pagination').remove();
-<% end %>

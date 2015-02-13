@@ -10,12 +10,12 @@ jQuery ->
 
   infiniteScroll = ->
     # infinite pagination
-    if $('.pagination').length
+    if $('.pagination').length and !$('body').hasClass('editors')
       $window.scroll ->
         url = $('.pagination .next_page').attr('href')
 
         if url && $window.scrollTop() > $document.height() - $window.height() - 50 && $('.pagination').length # make sure pagination still there
-          $('.pagination').replaceWith('<div class="loader pagination"><%= image_tag "icons/ajax-loader.gif" %></div>')
+          $('.pagination').replaceWith('<div class="loader pagination"><img src="icons/ajax-loader.gif" ></div>')
           $.getScript url, ->
             do setAbstractListeners
 
