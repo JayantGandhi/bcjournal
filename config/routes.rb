@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   post 'posts/search', to: 'posts#search'
 
   post 'editor/posts', to: 'editors#manage_posts'
+  post 'editor/book-reviews', to: 'editors#manage_book_reviews'
 
   post 'post/:id/publish', to: 'posts#publish', as: 'post_publish'
   post 'post/:id/unpublish', to: 'posts#unpublish', as: 'post_unpublish'
