@@ -14,7 +14,18 @@ class IssuesController < ApplicationController
   end
 
   def create
+    @issue = Issue.new(issue_params)
+    @issue.slug = "issue-#{@issue.year.strftime('%Y')}"
 
+    respond_to do |format|
+      if @issue.save
+        format.html { redirect_to @issue, notice: 'issue was successfully created.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @issue.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def edit

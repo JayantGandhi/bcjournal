@@ -1,3 +1,16 @@
 <%= semantic_form_for @issue, multipart: true do |f| %>
+  <%= f.input :title, required: true %>
+  <%= f.input :year, required: true, as: :date_picker %>
+  <span id="img_preview" style="background-image:url(<%= @issue.cover_image %>)"></span>
+  <%= f.input :cover_image, as: :file%>
+  <%= f.input :featured %>
+  <%= f.input :credits %>
   <%= f.input :posts, collection: @posts, input_html: {multiple: true} %>
+
+  <%= f.actions do %>
+    <%= f.submit %>
+    <li class="cancel">
+      <a href="/editor-panel">Cancel</a>
+    </li>
+  <%- end -%>
 <%- end -%>

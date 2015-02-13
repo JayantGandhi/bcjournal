@@ -21,6 +21,10 @@ $ ->
     max_selected_options: 5
   })
 
+  $("#issue_cover_image").change ->
+    readURL this
+    return
+
   $('#issue_post_ids').chosen({
     no_results_text: "Nada, niente, rien"
   })
