@@ -10,6 +10,13 @@
   <li class="filter"><%= sortable 'title' %></li>
   <li class="filter"><%= sortable 'created_at', "Created On" %></li>
   <li class="filter"><%= sortable 'published', "Published?" %></li>
+  <li class="filter">
+    <%= form_tag '/editor/posts' do %>
+      <%= label_tag :search, "Search for:" %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search for a post" %>
+      <%= submit_tag "Search", name: nil %>
+    <%- end -%>
+  </li>
 </ul>
 
 <%= will_paginate @posts %>
