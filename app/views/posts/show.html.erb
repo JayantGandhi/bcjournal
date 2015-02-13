@@ -20,7 +20,7 @@
 
   <div class="vertical-tags">
     <% for vertical in @post.verticals do %>
-      <a href="#"><span class="label"><%= vertical.name %></span></a>
+      <a href="/posts/vertical/<%= vertical.name.parameterize %>"><span class="label"><%= vertical.name %></span></a>
     <%- end -%>
   </div>
   <div class="print-only">Published in The SAIS Journal of Global Affairs</div>
