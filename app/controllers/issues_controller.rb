@@ -34,7 +34,17 @@ class IssuesController < ApplicationController
   end
 
   def update
+    @issue.slug = "issue-#{@issue.year.strftime('%Y')}"
 
+    respond_to do |format|
+      if @issue.update(issue_params)
+        format.html { redirect_to @issue, notice: 'issue was successfully created.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @issue.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
@@ -54,9 +64,7 @@ class IssuesController < ApplicationController
         :credits,
         :featured,
         :cover_image,
-        posts_attributes: [
-          :id,
-        ]
+        post_ids: []
       )
     end
 
