@@ -74,6 +74,20 @@
   background-color: $main-color;
 
   @include transition(width 300ms ease-in-out);
+
+  ul {
+    margin-top: 5rem;
+
+    li {
+      border-bottom: 1px dotted black;
+      padding: 1rem 0;
+
+      a {
+        font-size: 2.2rem;
+        color: #fff;
+      }
+    }
+  }
 }
 
 #mobile-nav:target {
@@ -88,10 +102,6 @@
   line-height: 4.5rem;
   color: #fff;
 }
-
-// #mobile-nav:target + .page-wrap {
-//   width: 80%;
-// }
 
 .verticals {
   span {

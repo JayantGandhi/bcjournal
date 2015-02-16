@@ -20,11 +20,18 @@
   <body class="<%= controller_name %> <%= action_name  %> <%= "no-nav" if @no_nav %>">
     <div id="fb-root"></div>
 
-    <nav id="mobile-nav" class="mobile-only">
-      <ul>
-        <li><a href="/posts">Most Recent</a></li>
-      </ul>
-    </nav>
+    <%- if !@no_nav -%>
+      <%- @verticals = verticals_list -%>
+      <nav id="mobile-nav" class="mobile-only">
+        <ul>
+          <li><a href="/posts">Most Recent</a></li>
+          <% for vertical in @verticals do %>
+            <li class="vertical-link"><a href="/posts/vertical/<%= vertical.slug %>" data-vertical="<%= vertical.slug %>"><%= vertical.name.titleize %></a></li>
+          <% end %>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
+    <%- end -%>
 
     <div class="page-wrap">
 
