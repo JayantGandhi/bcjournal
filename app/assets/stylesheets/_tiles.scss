@@ -13,8 +13,19 @@
 
   .tile {
     width: 100%;
+    position: relative;
     max-height: 25rem;
     min-height: 23rem;
+
+    a {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+
+      .caption {
+        height: 100%;
+      }
+    }
 
     .tile-image {
       width: 100%;
