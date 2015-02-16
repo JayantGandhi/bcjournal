@@ -11,26 +11,26 @@
     <meta name="citation_journal_title" content="The SAIS Europe Journal of Global Affairs">
 <% end %>
 
-<article>
+<article itemscope itemtype="http://schema.org/ScholarlyArticle">
   <% if @post.archived? %>
     <!-- <div class="archive-tag">From the Archive</div> -->
   <%- end -%>
   <section class="title-area cover-image" style="background-image:url(<%= @post.cover_image.cover %>)">
     <div class="title">
-      <h1><%= @post.title %></h1>
+      <h1 itemprop="name"><%= @post.title %></h1>
       <h2><%= @post.subtitle %></h3>
-      <h5>By <%= @post.by_line %></h5>
+      <h5 itemprop="author">By <%= @post.by_line %></h5>
       <span class="visibly-hidden"><%= @post.photo_title %></span>
     </div>
   </section>
 
   <div class="vertical-tags">
     <% for vertical in @post.verticals do %>
-      <a href="/posts/vertical/<%= vertical.name.parameterize %>"><span class="label"><%= vertical.name %></span></a>
+      <a href="/posts/vertical/<%= vertical.name.parameterize %>"><span itemprop="about" class="label"><%= vertical.name %></span></a>
     <%- end -%>
   </div>
-  <div class="print-only">Published in The SAIS Journal of Global Affairs</div>
-  <div class="publish-date">
+  <div class="print-only">Published in <strong itemProp="publisher">The SAIS Journal of Global Affairs</strong></div>
+  <div class="publish-date" itemprop="datePublished">
     <%= @post.publish_date.to_formatted_s(:long) if !@post.publish_date.blank? %>
   </div>
   <div class="photo-credit">
@@ -49,6 +49,8 @@
     </ul>
   </div>
 
+  <%= render 'cite' %>
+
   <%- if @post.posts.length > 1 -%>
     <div class="related-articles desktop-only">
       <h3>Related Articles</h3>
@@ -66,15 +68,15 @@
     </div>
   <%- end -%>
 
-  <div class="article-content">
+  <div class="article-content" itemprop="articleBody">
     <% if !@post.abstract.blank? %>
-      <section class="abstract">
+      <section class="abstract" itemprop="description">
         <h3>Abstract</h3>
         <p><%= @post.abstract %></p>
       </section>
     <%- end -%>
     <% for section in @post.sections do %>
-      <section id="<%= section.header.parameterize %>">
+      <section id="<%= section.header.parameterize %>" itemprop="articleSection">
         <h3><%= section.header %></h2>
         <div>
           <%= raw section.body %>
