@@ -6,6 +6,11 @@ $main-color: $topbar-bg-color;
 $gray: #868181;
 $book-review-color: #9D001B;
 
+.page-wrap {
+  width: 100%;
+  float: right;
+}
+
 html {
   font-size: 62.5%;
 

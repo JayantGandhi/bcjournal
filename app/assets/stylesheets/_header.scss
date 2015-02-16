@@ -61,6 +61,27 @@
   }
 }
 
+#mobile-nav {
+  /* Collapsed */
+  width: 0;
+
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+
+  @include transition(width 300ms ease-in-out);
+}
+
+#mobile-nav:target {
+  width: 20%;
+}
+
+#mobile-nav:target + .page-wrap {
+  width: 80%;
+}
+
 .verticals {
   span {
     display: none;
