@@ -1,0 +1,26 @@
+<% content_for :head do %>
+    <meta property="og:title" content="<%= @issue.title %> - <%= @issue.year.strftime('%Y') %>">
+    <meta property="og:image" content="<%= @issue.cover_image.facebook %>">
+    <meta property="og:description" content="<%= @issue.featured %>">
+    <meta property="og:url" content="<%= request.original_url %>">
+<% end %>
+
+<article>
+  <section class="title-area cover-image" style="background-image:url(<%= @issue.cover_image.cover %>)">
+    <div class="title">
+      <h1><%= @issue.title %></h1>
+      <h2><%= @issue.year.strftime('%Y') %></h3>
+    </div>
+  </section>
+  <section class="issue-info">
+    <h3 class="featured">Featured: <%= @issue.featured %></h3>
+    <h4 class="credits">Credits: <%= @issue.credits %></h4>
+  </section>
+  <section class="article-list">
+    <ul>
+      <%- for post in @issue.posts -%>
+        <li><%= link_to "#{post.title}", post %></li>
+      <%- end -%>
+    </ul>
+  </section>
+</article>
