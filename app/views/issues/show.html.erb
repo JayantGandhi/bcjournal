@@ -17,8 +17,9 @@
     <h4 class="credits">Credits: <%= @issue.credits %></h4>
   </section>
   <section class="article-list">
+    <h3>Articles:</h3>
     <ul>
-      <%- for post in @issue.posts -%>
+      <%- for post in @issue.posts.order('title ASC') -%>
         <li><%= link_to "#{post.title}", post %></li>
       <%- end -%>
     </ul>

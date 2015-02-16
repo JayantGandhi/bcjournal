@@ -1,0 +1,18 @@
+<section id="tileWrapper" class="tile-wrapper small-10 columns">
+  <%- for issue in @issues -%>
+    <div class="tile-large tile">
+      <%= link_to issue do %>
+        <span class='tile-image' style="background-image:url(<%= issue.cover_image %>)"></span>
+        <span class="overlay"></span>
+        <div class="caption">
+          <h2><%= issue.title %></h2>
+          <h3><%= issue.year.strftime('%Y') %></h3>
+          <span class="desktop-only"><%= issue.featured %></span>
+        </div>
+      <%- end -%>
+    </div>
+  <%- end -%>
+</section>
+
+
+<%= will_paginate @issues %>

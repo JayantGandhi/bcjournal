@@ -3,7 +3,7 @@ class IssuesController < ApplicationController
   before_action :get_posts, only: [:new, :edit]
 
   def index
-    @issues = Issue.all.order(:year)
+    @issues = Issue.all.paginate(:page => params[:page], per_page: 10).order(:year)
   end
 
   def show
