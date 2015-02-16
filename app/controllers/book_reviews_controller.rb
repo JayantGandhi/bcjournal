@@ -21,8 +21,6 @@ class BookReviewsController < ApplicationController
     @book_review = Post.new
 
     @verticals = Verticals::VERTICALS
-
-    puts @verticals
   end
 
   def create
@@ -50,7 +48,6 @@ class BookReviewsController < ApplicationController
     @book_review.slug = @book_review.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#|\,|\;|\:/, '')
 
     check_book_url
-    puts book_review_params[:photo_url]
 
     respond_to do |format|
       if @book_review.update(book_review_params)
@@ -147,7 +144,6 @@ class BookReviewsController < ApplicationController
         # do nothing
       else
         book_review_params[:link_to_book].prepend("http://")
-        puts book_review_params[:link_to_book]
       end
     end
 end

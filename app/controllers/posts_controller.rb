@@ -38,8 +38,6 @@ class PostsController < ApplicationController
     @post = Post.new
 
     @verticals = Verticals::VERTICALS
-
-    puts @verticals
   end
 
   def create
@@ -71,7 +69,6 @@ class PostsController < ApplicationController
     @post.slug = @post.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#|\,|\;|\:/, '')
 
     check_photo_url
-    puts post_params[:photo_url]
 
     respond_to do |format|
       if @post.update(post_params)
@@ -188,7 +185,6 @@ class PostsController < ApplicationController
         # do nothing
       else
         post_params[:photo_url].prepend("http://")
-        puts post_params[:photo_url]
       end
     end
 

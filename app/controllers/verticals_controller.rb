@@ -28,7 +28,6 @@ class VerticalsController < ApplicationController
     @vertical = Vertical.new(vertical_params)
 
     @vertical.slug = @vertical.name.parameterize
-    puts @vertical.slug
 
     respond_to do |format|
       if @vertical.save
