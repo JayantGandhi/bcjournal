@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get "sitemap.xml" => "sitemap#index", as: "sitemap", defaults: { format: "xml" }
+
   resources :issues
 
   resources :verticals
