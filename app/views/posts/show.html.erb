@@ -19,7 +19,7 @@
     <div class="title">
       <h1 itemprop="name"><%= @post.title %></h1>
       <h2><%= @post.subtitle %></h3>
-      <h5 itemprop="author">By <%= @post.by_line %></h5>
+      <h5>By <span itemprop="author"><%= @post.by_line %></span></h5>
       <span class="visibly-hidden"><%= @post.photo_title %></span>
     </div>
   </section>
