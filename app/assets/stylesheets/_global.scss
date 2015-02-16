@@ -64,6 +64,12 @@ a:active {
   min-height: 100rem;
 }
 
+@media #{$small-only} {
+  .content-container {
+    overflow: hidden;
+  }
+}
+
 .inline {
   display: inline;
 }
