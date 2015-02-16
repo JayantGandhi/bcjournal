@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :verticals
 
+  get 'home/*', to: redirect('/')
+
   devise_for :subscribers,
     controllers: {registrations: 'subscribers/registrations'},
     path_names: {sign_in: "login", sign_out: "logout", sign_up: "subscribe"}
