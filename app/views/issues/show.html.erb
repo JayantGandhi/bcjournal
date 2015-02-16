@@ -19,7 +19,7 @@
   <section class="article-list">
     <h3>Articles:</h3>
     <ul>
-      <%- for post in @issue.posts.order('title ASC') -%>
+      <%- for post in @issue.posts -%>
         <li><%= link_to "#{post.title}", post %></li>
       <%- end -%>
     </ul>
