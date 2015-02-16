@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :verticals
 
   get 'home/*', to: redirect('/')
+  get '/:year/*', to: redirect('/'), contraints: {year: /\b\d{4}\b/}
+  get '/:volume/*', to: redirect('/'), contraints: {volume: /volume/}
+
 
   devise_for :subscribers,
     controllers: {registrations: 'subscribers/registrations'},
