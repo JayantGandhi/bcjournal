@@ -42,6 +42,7 @@ $(document).ready(function(){
 // animate scroll to
 $(function() {
   $('a[href*=#]:not([href=#]):not([href=#mobile-nav])').click(function() {
+    console.log('HEYA');
     if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');

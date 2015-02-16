@@ -40,6 +40,11 @@ $(window).on 'load', ->
 
   do checkSticky
 
+  $('.page-wrap').on 'click', (e) ->
+    if $('#mobile-nav').width() > 0
+      e.preventDefault()
+      window.location.hash = ''
+
   stickyScroll = _.throttle(checkSticky, 33)
 
   $(window).on 'scroll', stickyScroll
