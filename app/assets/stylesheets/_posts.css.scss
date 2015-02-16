@@ -397,9 +397,16 @@ a[href*='note_'] {
 }
 
 .related-articles {
-  position: fixed;
-  top: 20rem;
-  left: 0;
+  position: absolute;
+  display: inline-block;
+  margin-top: 20rem;
+
+  &.sticky {
+    position: fixed;
+    top: 20rem;
+    left: 0;
+    margin-top: 0;
+  }
 
   ul {
     list-style: none;

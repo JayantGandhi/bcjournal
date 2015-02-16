@@ -11,6 +11,7 @@ $(window).on 'load', ->
   $rightBarOffset = $rightBar.offset().top if $rightBar.length
   $stickySocial = $('.sticky-social')
   $stickySocialOffset = $stickySocial.offset().top if $stickySocial.length
+  $relatedArticles = $('.related-articles')
 
   checkSticky = ->
     scrollTop = $(window).scrollTop()
@@ -34,9 +35,11 @@ $(window).on 'load', ->
       if scrollTop < $stickySocialOffset
         if $stickySocial.hasClass('sticky')
           $stickySocial.removeClass('sticky')
+          $relatedArticles.removeClass('sticky') if $relatedArticles.length
       else
         if not $stickySocial.hasClass('sticky')
           $stickySocial.addClass('sticky')
+          $relatedArticles.addClass('sticky') if $relatedArticles.length
 
   do checkSticky
 
