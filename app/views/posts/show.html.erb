@@ -7,7 +7,7 @@
     <!-- for google scholar -->
     <meta name="citation_title" content="<%= @post.title %><%= " - #{@post.subtitle}" if !@post.subtitle.blank? %>">
     <meta name="citation_author" content="<%= @post.by_line %>">
-    <meta name="citation_publication_date" content="<%= @post.publish_date.strftime('%m/%d/%Y') %>">
+    <meta name="citation_publication_date" content="<%= @post.publish_date.strftime('%m/%d/%Y') if !@post.publish_date.blank? %>">
     <meta name="citation_journal_title" content="The SAIS Europe Journal of Global Affairs">
 <% end %>
 
@@ -45,12 +45,12 @@
       <li class="social-item twitter">
       <a class="tweet-this" href="https://twitter.com/share?text=<%= CGI::escape(@post.blurb) %><%= CGI::escape(@hashtags) %>&url=<%= CGI::escape(@bitly_url) %>"><span class="social-text">Share on</span><span class="icon-twitter"></span></a>
       </li>
-      <li class="social-item easy-bib"><%= render 'cite' %></li>
+      <li class="social-item cite"><a href="#cite">Cite</a></li>
     </ul>
   </div>
 
   <%- if @post.posts.length > 1 -%>
-    <div class="related-articles">
+    <div class="related-articles desktop-only">
       <h3>Related Articles</h3>
       <ul>
         <%- for article in @post.posts -%>
