@@ -52,7 +52,7 @@
             <%= link_to article do%>
               <div class="related-article" style="background-image:url('<%= article.cover_image.tile_small %>')">
               </div>
-              <div class="title"><%= article.title %></div>
+              <div class="title"><%= truncate(article.title, length: 47, omission: '...') %></div>
             <%- end -%>
           </li>
         <%- end -%>
