@@ -3,6 +3,12 @@
     <meta property="og:image" content="<%= @post.cover_image.facebook %>">
     <meta property="og:description" content="<%= @post.blurb %>">
     <meta property="og:url" content="<%= request.original_url %>">
+
+    <!-- for google scholar -->
+    <meta name="citation_title" content="<%= @post.title %><%= " - #{@post.subtitle}" if !@post.subtitle.blank? %>">
+    <meta name="citation_author" content="<%= @post.by_line %>">
+    <meta name="citation_publication_date" content="<%= @post.publish_date.strftime('%m/%d/%Y') %>">
+    <meta name="citation_journal_title" content="The SAIS Europe Journal of Global Affairs">
 <% end %>
 
 <article>
