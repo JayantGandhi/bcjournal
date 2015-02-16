@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150213143156) do
+ActiveRecord::Schema.define(version: 20150216101753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,16 +69,16 @@ ActiveRecord::Schema.define(version: 20150213143156) do
     t.string   "cover_image"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "published",         default: false
+    t.boolean  "published",           default: false
     t.text     "blurb"
     t.integer  "slideshow_id"
     t.integer  "weight"
     t.string   "slug"
     t.integer  "vertical_id"
     t.string   "subtitle"
-    t.boolean  "book_review",       default: false
+    t.boolean  "book_review",         default: false
     t.date     "publish_date"
-    t.boolean  "archived",          default: false
+    t.boolean  "archived",            default: false
     t.text     "author_bio"
     t.string   "photo_credit"
     t.string   "photo_url"
@@ -90,8 +90,9 @@ ActiveRecord::Schema.define(version: 20150213143156) do
     t.date     "book_publish_date"
     t.float    "price"
     t.string   "link_to_book"
-    t.text     "tags",              default: [],    array: true
+    t.text     "tags",                default: [],    array: true
     t.integer  "issue_id"
+    t.integer  "related_article_ids", default: [],    array: true
   end
 
   create_table "posts_slideshows", id: false, force: true do |t|
@@ -102,6 +103,11 @@ ActiveRecord::Schema.define(version: 20150213143156) do
   create_table "posts_verticals", id: false, force: true do |t|
     t.integer "post_id"
     t.integer "vertical_id"
+  end
+
+  create_table "related_articles", id: false, force: true do |t|
+    t.integer "post_a_id", null: false
+    t.integer "post_b_id", null: false
   end
 
   create_table "sections", force: true do |t|

@@ -175,7 +175,7 @@ class PostsController < ApplicationController
           :position,
           :_destroy
         ],
-
+        post_ids: [],
       )
     end
 

@@ -11,6 +11,11 @@ class Post < ActiveRecord::Base
   has_and_belongs_to_many :verticals
   has_and_belongs_to_many :slideshows
 
+  has_and_belongs_to_many(:posts,
+    :join_table => "related_articles",
+    :foreign_key => "post_a_id",
+    :association_foreign_key => "post_b_id")
+
   acts_as_taggable
 
   accepts_nested_attributes_for :sections, allow_destroy: true
