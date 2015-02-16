@@ -395,3 +395,32 @@ a[href*='note_'] {
   font-size: .75em;
   vertical-align: top;
 }
+
+.related-articles {
+  position: fixed;
+  top: 20rem;
+  left: 0;
+
+  ul {
+    list-style: none;
+    display: inline-block;
+    width: 24rem;
+    margin: 1rem;
+
+    li {
+      list-style: none;
+      display: inline-block;
+
+      .related-article {
+        height: 10rem;
+        width: 10rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: $main-color;
+
+        color: #fff;
+      }
+    }
+  }
+}

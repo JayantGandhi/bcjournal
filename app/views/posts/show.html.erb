@@ -43,6 +43,21 @@
     </ul>
   </div>
 
+  <div class="related-articles">
+    <h3>Related Articles</h3>
+    <ul>
+      <%- for article in @post.posts -%>
+        <li>
+          <%= link_to article do%>
+            <div class="related-article" style="background-image:url('<%= article.cover_image.tile_small %>')">
+            </div>
+            <div class="title"><%= article.title %></div>
+          <%- end -%>
+        </li>
+      <%- end -%>
+    </ul>
+  </div>
+
   <div class="article-content">
     <% if !@post.abstract.blank? %>
       <section class="abstract">
