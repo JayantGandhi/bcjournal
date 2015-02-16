@@ -62,8 +62,11 @@
     </script>
 
     <!-- date input polyfill -->
-    <script src="bower_components/better-dom/dist/better-dom.js"></script>
-    <script src="bower_components/better-i18n-plugin/dist/better-i18n-plugin.js"></script>
-    <script src="bower_components/better-dateinput-polyfill/dist/better-dateinput-polyfill.js"></script>
+    <script src="http://cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js"></script>
+    <script>
+      webshims.setOptions('waitReady', false);
+      webshims.setOptions('forms-ext', {types: 'date'});
+      webshims.polyfill('forms forms-ext');
+    </script>
   </body>
 </html>
