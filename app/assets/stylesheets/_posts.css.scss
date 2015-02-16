@@ -187,6 +187,18 @@ article .article-content {
     padding: 1rem;
   }
 
+  .title-area {
+    max-width: 100vw;
+
+    h1 {
+      font-size: 4.5rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
+
   .book-info h1 {
     font-size: 5.5rem;
   }
