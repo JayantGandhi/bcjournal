@@ -1,0 +1,6 @@
+$('.tile-wrapper').append('<%= j render(@issues) %>');
+<% if @issues.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate(@issues) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>
