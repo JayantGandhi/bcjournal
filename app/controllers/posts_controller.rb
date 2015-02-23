@@ -164,6 +164,7 @@ class PostsController < ApplicationController
         :photo_title,
         :abstract,
         :notes,
+        :article_type,
         vertical_ids: [],
         sections_attributes: [
           :id,

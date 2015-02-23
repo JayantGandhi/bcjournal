@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150223112834) do
+ActiveRecord::Schema.define(version: 20150223152823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -93,9 +93,13 @@ ActiveRecord::Schema.define(version: 20150223112834) do
     t.date     "book_publish_date"
     t.float    "price"
     t.string   "link_to_book"
-    t.text     "tags",                default: [],    array: true
+    t.text     "tags",                default: [],                   array: true
     t.integer  "issue_id"
-    t.integer  "related_article_ids", default: [],    array: true
+    t.integer  "related_article_ids", default: [],                   array: true
+    t.boolean  "interview",           default: false
+    t.boolean  "commentary",          default: false
+    t.boolean  "research",            default: true
+    t.string   "article_type",        default: "scholarly research"
   end
 
   create_table "posts_slideshows", id: false, force: true do |t|
