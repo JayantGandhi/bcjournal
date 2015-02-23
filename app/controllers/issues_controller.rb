@@ -16,7 +16,7 @@ class IssuesController < ApplicationController
 
   def create
     @issue = Issue.new(issue_params)
-    @issue.slug = "issue-#{@issue.year.strftime('%Y')}"
+    @issue.slug = "vol-#{@issue.year.strftime('%y')}-iss-01"
 
     respond_to do |format|
       if @issue.save
@@ -34,7 +34,7 @@ class IssuesController < ApplicationController
   end
 
   def update
-    @issue.slug = "issue-#{@issue.year.strftime('%Y')}"
+    @issue.slug = "vol-#{@issue.year.strftime('%y')}-iss-01"
 
     respond_to do |format|
       if @issue.update(issue_params)

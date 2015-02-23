@@ -17,4 +17,8 @@ class Issue < ActiveRecord::Base
     end
   end
 
+  def update_slug
+    self.slug = "vol-#{self.year.strftime('%y')}-iss-#{self.issue_no}"
+  end
+
 end
