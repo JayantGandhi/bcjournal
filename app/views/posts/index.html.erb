@@ -1,6 +1,6 @@
 <%= render partial: 'home_header' %>
 
-<section id="tileWrapper" class="tile-wrapper small-10 columns">
+<section id="tileWrapper" class="tile-wrapper small-10 columns no-pre-header">
   <div class="mobile-only slides">
     <% for slide in @slides %>
       <div class="tile">
@@ -21,15 +21,5 @@
 
   <%= render @posts %>
 </section>
-
-<!-- <section class="right-side small-2 columns desktop-only">
-  <div>
-    <ul class="constant-links">
-      <li>
-        <a href="/call-for-submissions"><%= image_tag('logo_white.png') %><span>The SAIS Europe Journal of Global Affairs is <em>now accepting</em> submissions.</span></a>
-      </li>
-    </ul>
-  </div>
-</section> -->
 
 <%= will_paginate @posts %>

@@ -2,6 +2,14 @@ class BookReviewsController < ApplicationController
   before_action :authenticate_editor!, only: [:new, :edit, :destroy]
   before_action :set_book_review, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
 
+  def index
+    @book_reviews = Post.published.book_review.paginate(:page => params[:page], per_page: 23).order('publish_date DESC')
+    @position = 0
+    @missing_images = 0
+    @every_other = false
+    @slides = nil
+  end
+
   def show
     # shorten the url with bitly
     @bitly_url = Bitly.client.shorten(request.original_url).short_url

@@ -5,7 +5,7 @@
     position = ((@position + 1) % 4)
     class_name = ''
 
-    if @slides.include? post
+    if !@slides.nil? && @slides.include?(post)
       class_name += " hide-important"
     else
 
@@ -70,7 +70,7 @@
     <span data-target="<%= post.id %>" class="desktop-only abstract-link">View Abstract</span>
   <%- end -%>
   <%- if post.book_review -%>
-    <span class="book-review desktop-only icon-book">Book Review</span>
+    <span class="book-review desktop-only"><span class="icon-book"></span>Book Review</span>
   <%- end -%>
 </div>
 

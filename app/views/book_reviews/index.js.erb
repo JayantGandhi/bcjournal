@@ -1,0 +1,6 @@
+$('.tile-wrapper').append('<%= j render(@book_reviews) %>');
+<% if @book_reviews.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate(@book_reviews) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>
