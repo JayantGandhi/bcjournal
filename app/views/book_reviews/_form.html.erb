@@ -27,6 +27,7 @@
     <%= f.input :tag_list %>
     <%= f.input :publish_date, as: :date_picker %>
     <%= f.hidden_field :book_review, value: true %>
+    <%= f.hidden_field :article_type, value: 'book review' %>
     <div data-tooltip aria-haspopup='true' class="has-tip form-checkbox" title="Check this box if the post an archive post">
       <%= f.input :archived %>
     </div>
