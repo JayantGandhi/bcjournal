@@ -11,4 +11,8 @@
 .icon-info:before { content: '\e809'; } /* '' */
 .icon-mail:before { content: '\e80a'; } /* '' */
 .icon-menu:before { content: '\e80b'; } /* '' */
+.icon-book:before { content: '\e80c'; } /* '' */
+.icon-chat-alt:before { content: '\e80d'; } /* '' */
 .icon-ok:before { content: '\e80e'; } /* '' */
+.icon-at:before { content: '\e80f'; } /* '' */
+.icon-graduation-cap:before { content: '\e810'; } /* '' */
