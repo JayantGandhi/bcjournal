@@ -52,6 +52,7 @@
 <div class="tile <%= class_name %>">
   <%= link_to post do %>
     <span class='tile-image' style="background-image:url(<%= image %>)"></span>
+    <span></span>
     <span class="overlay"></span>
     <span class="title">
     </span>
@@ -69,7 +70,7 @@
     <span data-target="<%= post.id %>" class="desktop-only abstract-link">View Abstract</span>
   <%- end -%>
   <%- if post.book_review -%>
-    <span class="book-review desktop-only">Book Review</span>
+    <span class="book-review desktop-only icon-book">Book Review</span>
   <%- end -%>
 </div>
 
