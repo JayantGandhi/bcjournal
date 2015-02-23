@@ -64,6 +64,8 @@ class IssuesController < ApplicationController
         :credits,
         :featured,
         :cover_image,
+        :issue_no,
+        :pdf,
         post_ids: []
       )
     end

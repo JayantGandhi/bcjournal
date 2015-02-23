@@ -1,3 +1,13 @@
 // Place all the styles related to the issues controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.issues {
+  .content-container {
+    padding: 0;
+  }
+
+  article {
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+}
