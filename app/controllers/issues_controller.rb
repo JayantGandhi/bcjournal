@@ -39,7 +39,12 @@ class IssuesController < ApplicationController
   end
 
   def update
+    puts @issue.volume
+    puts @issue.issue_no
     @issue.slug = "vol-#{@issue.volume}-iss-#{@issue.issue_no}"
+
+    puts @issue.slug
+    puts "^^^^^"
 
     respond_to do |format|
       if @issue.update(issue_params)
