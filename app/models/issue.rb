@@ -1,7 +1,7 @@
 class Issue < ActiveRecord::Base
 
-  after_create :update_slug
-  after_update :update_slug
+  before_create :update_slug
+  before_save :update_slug
 
   mount_uploader :cover_image, CoverImageUploader
   mount_uploader :pdf, AttachmentUploader
