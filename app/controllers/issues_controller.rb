@@ -16,7 +16,12 @@ class IssuesController < ApplicationController
 
   def create
     @issue = Issue.new(issue_params)
-    @issue.slug = "vol-#{@issue.year.strftime('%y')}-iss-01"
+    @issue.slug = "vol-#{@issue.volume}-iss-#{@issue.issue_no}"
+
+    # make sure this is the only one with the volume and issue
+    if Issue.find_by_slug(@issue.slug)
+
+    end
 
     respond_to do |format|
       if @issue.save
@@ -34,7 +39,7 @@ class IssuesController < ApplicationController
   end
 
   def update
-    @issue.slug = "vol-#{@issue.year.strftime('%y')}-iss-01"
+    @issue.slug = "vol-#{@issue.volume}-iss-#{@issue.issue_no}"
 
     respond_to do |format|
       if @issue.update(issue_params)
@@ -65,6 +70,7 @@ class IssuesController < ApplicationController
         :featured,
         :cover_image,
         :issue_no,
+        :volume,
         :pdf,
         post_ids: []
       )

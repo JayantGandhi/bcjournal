@@ -5,7 +5,8 @@
   <%= f.input :cover_image, as: :file%>
   <%= f.input :featured %>
   <%= f.input :credits, as: :ckeditor %>
-  <%= f.input :issue_no %>
+  <%= f.input :volume, required: true %>
+  <%= f.input :issue_no, required: true, input_html: {value: 1} %>
   <%= f.input :posts, collection: @posts, input_html: {multiple: true} %>
   <%= f.input :pdf, as: :file %>
 

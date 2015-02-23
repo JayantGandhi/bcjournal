@@ -7,13 +7,13 @@
 
 <article>
   <section class="title-area cover-image book-cover" style="background-image:url(<%= @issue.cover_image.cover %>)">
-    <div class="title">
+    <div class="title visually-hidden">
       <h1><%= @issue.title %></h1>
       <h2><%= @issue.year.strftime('%Y') %></h3>
     </div>
   </section>
   <section class="download-tools">
-    <div><a href="<%= @issue.pdf %>" target='_blank'>Download PDF</a></div>
+    <div><a href="<%= @issue.pdf %>" target='_blank'>Download PDF</a><span class="volume-issue right">Volume: <%= @issue.volume %> Issue: <%= @issue.issue_no %></span></div>
   </section>
   <section class="issue-info">
     <h3 class="featured">Featured: <%= @issue.featured %></h3>
