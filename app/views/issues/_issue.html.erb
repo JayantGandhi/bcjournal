@@ -1,4 +1,4 @@
-<div class="tile-large tile <%= "inverted" if index % 2 == 0 %>">
+<div class="tile-large tile <%= "inverted" if @position % 2 == 0 %>">
   <%= link_to issue do %>
     <span class='tile-image' style="background-image:url(<%= issue.cover_image %>)"></span>
     <span class="overlay"></span>
@@ -9,3 +9,4 @@
     </div>
   <%- end -%>
 </div>
+<%- @position += 1 -%>

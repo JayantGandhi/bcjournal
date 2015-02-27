@@ -27,4 +27,10 @@
       <%- end -%>
     </ul>
   </section>
+
+  <% if editor_signed_in? %>
+    <div class="editor-tools desktop-only">
+      <%= link_to 'Edit', edit_issue_path %>
+    </div>
+  <%- end -%>
 </article>

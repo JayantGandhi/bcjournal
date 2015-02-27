@@ -13,5 +13,14 @@
 
   .tile-image {
     background-size: contain;
+    max-width: 27rem;
+    margin-left: 12rem;
+    border: 1px solid lightslategray;
+  }
+
+  .tile-large.inverted {
+    .tile-image {
+      margin-left: 46rem;
+    }
   }
 }
