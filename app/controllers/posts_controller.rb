@@ -42,7 +42,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.slug = @post.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#|\,|\.|\%|\;|\:/, '')
+    @post.build_slug
 
     check_photo_url
 
@@ -66,7 +66,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post.slug = @post.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#|\,|\;|\:/, '')
+    @post.build_slug
 
     check_photo_url
 

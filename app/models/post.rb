@@ -47,6 +47,15 @@ class Post < ActiveRecord::Base
     end
   end
 
+  def build_slug
+    self.slug = self.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#|\,|\.|\%|\;|\:/, '')
+
+    # make sure it's unique, if not add the year
+    if !Post.find_by_slug(self.slug).nil?
+      self.slug += "-#{self.publish_date.strftime('%Y')}"
+    end
+  end
+
   private
     def clean_notes
       if self.sections.blank?
