@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150223152823) do
+ActiveRecord::Schema.define(version: 20150227102532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,9 +53,9 @@ ActiveRecord::Schema.define(version: 20150223152823) do
   create_table "issues", force: true do |t|
     t.date     "year"
     t.string   "title"
-    t.string   "featured"
-    t.string   "editorial_team"
-    t.string   "credits"
+    t.text     "featured"
+    t.text     "editorial_team"
+    t.text     "credits"
     t.string   "cover_image"
     t.datetime "created_at"
     t.datetime "updated_at"
