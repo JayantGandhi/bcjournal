@@ -74,6 +74,7 @@ article {
     &.book-cover {
       max-width: 60rem;
       min-height: 45rem;
+      height: 45rem; //firefox no likey min-height
       margin: 0 auto;
       background-size: contain;
       background-attachment: initial;
