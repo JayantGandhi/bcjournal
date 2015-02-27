@@ -16,8 +16,10 @@
     <div><a href="<%= @issue.pdf %>" target='_blank'>Download PDF</a><span class="volume-issue right">Volume: <%= @issue.volume %> Issue: <%= @issue.issue_no %></span></div>
   </section>
   <section class="issue-info">
-    <h3 class="featured">Featured: <%= @issue.featured %></h3>
-    <h4 class="credits">Credits: <%= raw @issue.credits %></h4>
+    <h3 class="credits">Acknowledgments</h4>
+    <div><%= raw @issue.credits %></div>
+    <h4 class="editorial-staff"><%= @issue.year.strftime('%Y') %> Journal Staff</h5>
+    <div><%= raw @issue.editorial_team %></div>
   </section>
   <section class="article-list">
     <h3>Articles:</h3>
