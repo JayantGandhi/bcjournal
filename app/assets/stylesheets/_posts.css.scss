@@ -257,6 +257,10 @@ article .article-content {
 }
 
 @media #{$medium-up} {
+  audio {
+    width: 40rem;
+  }
+
   .sticky-social {
     position: absolute;
     display: inline-block;

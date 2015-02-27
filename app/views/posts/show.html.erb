@@ -36,7 +36,7 @@
   <div class="photo-credit">
     <a href="<%= @post.photo_url %>" target="_blank"><%= @post.photo_credit %></a>
   </div>
-  <%- if @post.article_type == 'interview' -%>
+  <%- if @post.article_type == 'interview' && !@post.audio.blank? -%>
     <div class="interview-audio">
       <div>Play Interview Audio</div>
       <audio controls>
