@@ -32,4 +32,10 @@
       text-align: center;
     }
   }
+
+  .cover-image {
+    border: 1px solid lightslategray;
+    max-width: 32rem;
+    background-size: cover;
+  }
 }
