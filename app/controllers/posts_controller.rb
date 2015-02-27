@@ -165,6 +165,7 @@ class PostsController < ApplicationController
         :abstract,
         :notes,
         :article_type,
+        :audio,
         vertical_ids: [],
         sections_attributes: [
           :id,

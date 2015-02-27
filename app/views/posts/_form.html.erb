@@ -23,6 +23,7 @@
     <%= f.input :author_bio, input_html: {rows: 5, max_length: 1000, class: 'text-area-with-limit'} %>
     <%= f.input :verticals, as: :check_boxes, collection: Vertical.all %>
     <%= f.input :article_type, required: true, as: :radio, collection: ['interview', 'commentary', 'scholarly research'] %>
+    <%= f.input :audio, as: :file%>
     <%= f.input :tag_list %>
     <%= f.input :publish_date, as: :date_picker %>
     <%= f.input :posts, label: 'Related Articles', collection: @posts, input_html: {multiple: true} %>

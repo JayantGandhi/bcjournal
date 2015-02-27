@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
   before_save :clean_notes, :mark_notes
 
   mount_uploader :cover_image, CoverImageUploader
+  mount_uploader :audio, AudioUploader
 
   belongs_to :issue
 

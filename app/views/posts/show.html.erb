@@ -36,6 +36,14 @@
   <div class="photo-credit">
     <a href="<%= @post.photo_url %>" target="_blank"><%= @post.photo_credit %></a>
   </div>
+  <%- if @post.article_type == 'interview' -%>
+    <div class="interview-audio">
+      <div>Play Interview Audio</div>
+      <audio controls>
+        <source src="<%= @post.audio %>" type="audio/mp3">
+      </audio>
+    </div>
+  <%- end -%>
 
   <div class="sticky-social">
     <ul class="social-list">
