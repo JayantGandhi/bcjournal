@@ -17,7 +17,7 @@ class IssuesController < ApplicationController
 
   def create
     @issue = Issue.new(issue_params)
-    @issue.slug = "vol-#{@issue.volume}-iss-#{@issue.issue_no}"
+    @issue.build_slug
 
     # make sure this is the only one with the volume and issue
     if Issue.find_by_slug(@issue.slug)

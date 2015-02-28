@@ -21,8 +21,15 @@ class Issue < ActiveRecord::Base
     end
   end
 
-  def update_slug
+  def build_slug
     self.slug = "vol-#{self.volume}-iss-#{self.issue_no}"
+
+    # make sure it's unique, if not add the year
+    if !Issue.find_by_slug(self.slug).nil?
+      self.issue_no += 1
+      self.build_slug
+    end
+  end
   end
 
 end
