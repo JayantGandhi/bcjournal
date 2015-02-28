@@ -30,6 +30,5 @@ class Issue < ActiveRecord::Base
       self.build_slug
     end
   end
-  end
 
 end
