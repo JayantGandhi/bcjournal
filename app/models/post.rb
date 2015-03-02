@@ -48,12 +48,16 @@ class Post < ActiveRecord::Base
     end
   end
 
-  def build_slug
+  def build_slug(add_year=false)
     self.slug = self.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#|\,|\.|\%|\;|\:/, '')
 
     # make sure it's unique, if not add the year
-    if !Post.find_by_slug(self.slug).nil?
-      self.slug += "-#{self.publish_date.strftime('%Y')}"
+    if Post.where(slug: self.slug).length > 1
+      build_slug(true)
+    end
+
+    if add_year
+      self.slug = self.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#|\,|\.|\%|\;|\:/, '') + "-#{self.publish_date.strftime('%Y')}"
     end
   end
 

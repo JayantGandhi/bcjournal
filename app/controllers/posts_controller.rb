@@ -42,7 +42,12 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.build_slug
+
+    @post.build_slug()
+
+    if Post.where(slug: @post.slug).length >= 1
+      @post.build_slug(true)
+    end
 
     check_photo_url
 
