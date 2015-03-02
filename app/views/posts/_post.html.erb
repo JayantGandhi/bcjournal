@@ -69,7 +69,7 @@
   <%- if post.book_review -%>
     <span class="book-review desktop-only"><span class="icon-book"></span>Book Review</span>
   <%- elsif post.article_type = 'interview' -%>
-    <span class="interview desktop-only"><span class="icon-chat-alt"></span>Interview</span>
+    <span class="interview desktop-only"><span class="icon-chat-alt"></span> Interview</span>
   <%- elsif !post.abstract.blank? -%>
     <span data-target="<%= post.id %>" class="desktop-only abstract-link">View Abstract</span>
   <%- end -%>
