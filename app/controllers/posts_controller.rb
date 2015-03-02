@@ -80,11 +80,7 @@ class PostsController < ApplicationController
     check_photo_url
 
     respond_to do |format|
-      puts '&&&&&&&&&&&&'
-      puts post_params[:notes]
-      @post.notes = post_params[:notes]
-      if @post.update(post_params)
-        puts @post.notes
+      if @post.update!(post_params)
         format.html { redirect_to @post, notice: 'post was successfully updated.' }
         format.json { head :no_content }
       else
