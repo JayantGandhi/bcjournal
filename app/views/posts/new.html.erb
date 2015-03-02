@@ -1,1 +1,7 @@
-<%= render 'form' %>
+<%- if @type == 'interview' -%>
+  <%= render 'posts/forms/interview_form' %>
+<%- elsif @type == 'commentary' -%>
+  <%= render 'posts/forms/commentary_form' %>
+<%- else -%>
+  <%= render 'posts/forms/research_form' %>
+<%- end -%>

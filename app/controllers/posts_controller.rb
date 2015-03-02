@@ -37,6 +37,8 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
 
+    @type = params[:type]
+
     @verticals = Verticals::VERTICALS
   end
 
@@ -153,6 +155,10 @@ class PostsController < ApplicationController
     else
       @posts = Post.published.interview.paginate(:page => params[:page], per_page: 23).order('publish_date DESC')
     end
+  end
+
+  def type_select
+
   end
 
   private

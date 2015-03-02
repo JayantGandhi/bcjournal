@@ -37,6 +37,8 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :posts
+  get '/editors/post-select', to: 'posts#type_select'
+  get '/posts/new/:type', to: 'posts#new'
   resources :book_reviews, path: 'book-reviews'
 
   post 'posts/search', to: 'posts#search'
