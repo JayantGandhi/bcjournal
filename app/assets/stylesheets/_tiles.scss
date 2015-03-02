@@ -134,6 +134,18 @@
       }
     }
 
+    .interview {
+      @extend .abstract-link;
+
+      background-color: $interview-color;
+
+      &:hover,
+      &:active {
+        background-color: $interview-color;
+        color: #fff;
+      }
+    }
+
     .overlay {
       width: 25rem;
       height: 16.666667rem;
