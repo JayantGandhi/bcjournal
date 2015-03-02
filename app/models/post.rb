@@ -34,6 +34,7 @@ class Post < ActiveRecord::Base
   scope :published, -> { where(published: true) }
   scope :not_book_review, -> { where(book_review: false) }
   scope :book_review, -> { where(book_review: true) }
+  scope :interview, -> {where(article_type: 'interview')}
 
   # methods
   def to_param

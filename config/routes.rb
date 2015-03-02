@@ -52,6 +52,9 @@ Rails.application.routes.draw do
   post 'book_review/:id/publish', to: 'book_reviews#publish', as: 'book_review_publish'
   post 'book_review/:id/unpublish', to: 'book_reviews#unpublish', as: 'book_review_unpublish'
 
+  get 'interviews', to: 'posts#interviews', as: 'interviews'
+  post 'interviews', to: 'posts#interviews'
+
 
   # Editor Routes (once logged in)
   get 'editor-panel', to: 'editors#panel', as: 'editor_panel'

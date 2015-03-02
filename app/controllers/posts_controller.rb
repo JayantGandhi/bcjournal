@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_editor!, only: [:new, :edit, :destroy]
   before_action :set_post, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
-  before_action :set_slideshow, only: [:index, :vertical_sort]
+  before_action :set_slideshow, only: [:index, :vertical_sort, :interviews]
 
   def show
     if @post.book_review
@@ -144,6 +144,14 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html {render 'index'}
       format.js
+    end
+  end
+
+  def interviews
+    if params[:search]
+      @posts = Post.published.interview.search(params[:search]).paginate(:page => params[:page], per_page: 23).order('publish_date DESC')
+    else
+      @posts = Post.published.interview.paginate(:page => params[:page], per_page: 23).order('publish_date DESC')
     end
   end
 
