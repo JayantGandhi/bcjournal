@@ -13,8 +13,6 @@ $ ->
     # to the js to tell if we're home or not
     weAreHome = $('#homeHeader').length
 
-    console.log weAreHome
-
     if weAreHome
         currentURL = window.location.href
         e.preventDefault()
