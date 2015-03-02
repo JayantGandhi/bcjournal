@@ -44,7 +44,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-
+    puts @post
     @post.build_slug()
 
     if Post.where(slug: @post.slug).length >= 1
@@ -80,7 +80,11 @@ class PostsController < ApplicationController
     check_photo_url
 
     respond_to do |format|
+      puts '&&&&&&&&&&&&'
+      puts post_params[:notes]
+      @post.notes = post_params[:notes]
       if @post.update(post_params)
+        puts @post.notes
         format.html { redirect_to @post, notice: 'post was successfully updated.' }
         format.json { head :no_content }
       else
