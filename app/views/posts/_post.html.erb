@@ -71,7 +71,7 @@
   <%- elsif post.article_type == 'interview' -%>
     <span class="interview desktop-only"><span class="icon-chat-alt"></span> Interview</span>
   <%- elsif !post.abstract.blank? -%>
-    <span data-target="<%= post.id %>" class="desktop-only abstract-link">View Abstract</span>
+    <span data-target="<%= post.id %>" class="desktop-only abstract-link"><span class="icon-graduation-cap"></span> View Abstract</span>
   <%- end -%>
 
 </div>
