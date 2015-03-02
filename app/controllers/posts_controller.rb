@@ -70,6 +70,8 @@ class PostsController < ApplicationController
     end
 
     @post = Post.find_by_slug(params[:id])
+
+    @type = @post.article_type
   end
 
   def update
@@ -150,6 +152,10 @@ class PostsController < ApplicationController
   end
 
   def interviews
+    @position = 0
+    @missing_images = 0
+    @every_other = false
+
     if params[:search]
       @posts = Post.published.interview.search(params[:search]).paginate(:page => params[:page], per_page: 23).order('publish_date DESC')
     else
