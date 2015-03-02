@@ -146,6 +146,18 @@
       }
     }
 
+    .commentary {
+      @extend .abstract-link;
+
+      background-color: $commentary-color;
+
+      &:hover,
+      &:active {
+        background-color: $commentary-color;
+        color: #fff;
+      }
+    }
+
     .overlay {
       width: 25rem;
       height: 16.666667rem;

@@ -70,6 +70,8 @@
     <span class="book-review desktop-only"><span class="icon-book"></span>Book Review</span>
   <%- elsif post.article_type == 'interview' -%>
     <span class="interview desktop-only"><span class="icon-chat-alt"></span> Interview</span>
+  <%- elsif post.article_type == 'commentary' -%>
+    <span class="commentary desktop-only"><span class="icon-edit"></span> Commentary</span>
   <%- elsif !post.abstract.blank? -%>
     <span data-target="<%= post.id %>" class="desktop-only abstract-link"><span class="icon-graduation-cap"></span> View Abstract</span>
   <%- end -%>
