@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   get 'submit', to: 'pages#submit'
 
+  get 'open-access-statement', to: 'pages#open_access'
+
   get 'call-for-submissions', to: 'pages#call_for_submissions'
 
   get 'most-recent', to: 'posts#index'
