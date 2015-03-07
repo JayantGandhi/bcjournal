@@ -26,8 +26,8 @@
     <%= f.input :publish_date, as: :date_picker %>
     <%= f.input :posts, label: 'Related Articles', collection: @posts, input_html: {multiple: true} %>
     <%= f.hidden_field :book_review, value: false %>
+    <%= f.input :article_type, required: true, as: :radio, collection: ['interview', 'commentary', 'scholarly research'] %>
     <div data-tooltip aria-haspopup='true' class="has-tip form-checkbox" title="Check this box if the post an archive post">
-    <%= f.hidden_field :article_type, value: 'scholarly research' %>
       <%= f.input :archived %>
     </div>
   <% end %>
