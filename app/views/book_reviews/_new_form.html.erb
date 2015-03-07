@@ -1,0 +1,43 @@
+<%- @i = 0 -%>
+<%= semantic_nested_form_for @book_review, url: {controller: 'book_reviews', action: 'create'}, multipart: true do |f| %>
+  <%= f.inputs "Book Review", multipart: true do %>
+    <%= f.input :title, required: true %>
+    <%= f.input :subtitle %>
+    <%= f.input :author, required: true %>
+    <%= f.input :publisher, required: true %>
+    <%= f.input :link_to_book %>
+    <%= f.input :price %>
+    <%= f.input :book_publish_date, as: :date_picker, required: true %>
+    <%= f.input :by_line %>
+    <%= f.input :blurb, required: true, input_html: {rows: 3, max_length: 100, class: 'text-area-with-limit'} %>
+    <span id="img_preview" style="background-image:url(<%= @book_review.cover_image %>)"></span>
+    <%= f.input :cover_image, as: :file%>
+    <%= f.input :photo_credit %>
+    <%= f.input :photo_url %>
+    <%= f.input :photo_title %>
+    <%= f.semantic_fields_for :sections do |s| %>
+      <%- @i += 1 -%>
+      <%= s.input :header %>
+      <%= s.input :body, as: :ckeditor %>
+      <%= s.input :position, input_html: {value: @i} %>
+      <%= s.link_to_remove 'Remove This Section', class: 'button alert radius' %>
+    <%- end -%>
+    <%= f.link_to_add 'Add A Section', :sections, class: 'button success radius' %>
+    <%= f.input :notes, as: :ckeditor %>
+    <%= f.input :tag_list %>
+    <%= f.input :publish_date, as: :date_picker %>
+    <%= f.hidden_field :book_review, value: true %>
+    <%= f.hidden_field :article_type, value: 'book review' %>
+    <div data-tooltip aria-haspopup='true' class="has-tip form-checkbox" title="Check this box if the post an archive post">
+      <%= f.input :archived %>
+    </div>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, button_html: {class: 'button success'} %>
+    <li class="cancel">
+      <a class="button alert" href="/editor-panel">Cancel</a>
+    </li>
+  <% end %>
+
+<% end %>
