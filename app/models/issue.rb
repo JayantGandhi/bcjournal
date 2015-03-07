@@ -1,7 +1,6 @@
 class Issue < ActiveRecord::Base
 
-  before_create :update_slug
-  before_save :update_slug
+  before_save :build_slug
 
   mount_uploader :cover_image, CoverImageUploader
   mount_uploader :pdf, AttachmentUploader
