@@ -35,7 +35,7 @@ class BookReviewsController < ApplicationController
     @book_review = Post.new(book_review_params)
     @book_review.slug = @book_review.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#|\,|\.|\%|\;|\:/, '')
 
-    check_photo_url
+    check_book_url
 
     respond_to do |format|
       if @book_review.save
