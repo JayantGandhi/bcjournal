@@ -38,4 +38,10 @@
     max-width: 32rem;
     background-size: cover;
   }
+
+  .tile .caption {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
