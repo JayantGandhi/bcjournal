@@ -158,6 +158,12 @@
       }
     }
 
+    .book-reivew,
+    .commentary,
+    .interview {
+      z-index: -1;
+    }
+
     .overlay {
       width: 25rem;
       height: 16.666667rem;
