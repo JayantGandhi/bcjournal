@@ -178,6 +178,7 @@ class PostsController < ApplicationController
         :blurb,
         :vertical_id,
         :tag_list,
+        :author_list,
         :subtitle,
         :published,
         :book_review,

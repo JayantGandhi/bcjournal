@@ -14,7 +14,13 @@ $ ->
     readURL this
     return
 
-  $('#post_tag_list').tagsInput()
+  $('#post_tag_list').tagsInput({
+    'width'       : '100%'
+  })
+  $('#post_author_list').tagsInput({
+    'defaultText' : 'add an author',
+    'width'       : '100%'
+  })
 
   $('#slideshow_post_ids').chosen({
     no_results_text: "Nada, niente, rien",

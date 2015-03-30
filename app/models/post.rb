@@ -9,9 +9,6 @@ class Post < ActiveRecord::Base
 
   has_many :sections, -> { order 'position ASC' }
 
-  has_many :authorships, :dependent => :destroy
-  has_many :authors, :through => :authorships
-
   has_and_belongs_to_many :verticals
   has_and_belongs_to_many :slideshows
 
@@ -21,6 +18,7 @@ class Post < ActiveRecord::Base
     :association_foreign_key => "post_b_id")
 
   acts_as_taggable
+  acts_as_taggable_on :authors
 
   accepts_nested_attributes_for :sections, allow_destroy: true
   accepts_nested_attributes_for :verticals, allow_destroy: true
@@ -62,6 +60,14 @@ class Post < ActiveRecord::Base
 
     if add_year
       self.slug = self.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#|\,|\.|\%|\;|\:/, '') + "-#{self.publish_date.strftime('%Y')}"
+    end
+  end
+
+  def convert_by_line
+    authors_array = self.by_line.split(/[,&]/).map(&:strip)
+
+    for author in authors_array
+      self.author_list.push(author) if !self.author_list.include?(author)
     end
   end
 
