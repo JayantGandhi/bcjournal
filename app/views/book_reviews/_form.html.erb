@@ -24,6 +24,7 @@
     <%- end -%>
     <%= f.link_to_add 'Add A Section', :sections, class: 'button success radius' %>
     <%= f.input :notes, as: :ckeditor %>
+    <%= f.input :authro_bio %>
     <%= f.input :tag_list %>
     <%= f.input :publish_date, as: :date_picker %>
     <%= f.hidden_field :book_review, value: true %>
