@@ -9,6 +9,9 @@ class Post < ActiveRecord::Base
 
   has_many :sections, -> { order 'position ASC' }
 
+  has_many :authorships, :dependent => :destroy
+  has_many :authors, :through => :authorships
+
   has_and_belongs_to_many :verticals
   has_and_belongs_to_many :slideshows
 

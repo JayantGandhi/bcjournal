@@ -11,10 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150227131338) do
+ActiveRecord::Schema.define(version: 20150330112625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "authors", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "authorships", force: true do |t|
+    t.integer  "post_id"
+    t.integer  "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "authorships", ["author_id"], name: "index_authorships_on_author_id", using: :btree
+  add_index "authorships", ["post_id"], name: "index_authorships_on_post_id", using: :btree
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -88,7 +104,6 @@ ActiveRecord::Schema.define(version: 20150227131338) do
     t.string   "photo_title"
     t.text     "abstract"
     t.text     "notes"
-    t.string   "author"
     t.string   "publisher"
     t.date     "book_publish_date"
     t.float    "price"

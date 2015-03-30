@@ -4,6 +4,7 @@
     <%= f.input :title, required: true %>
     <%= f.input :subtitle %>
     <%= f.input :by_line, required: true %>
+    <%= f.input :authors %>
     <%= f.input :blurb, required: true, input_html: {rows: 3, max_length: 100, class: 'text-area-with-limit'} %>
     <span id="img_preview" style="background-image:url(<%= @post.cover_image %>)"></span>
     <%= f.input :cover_image, as: :file%>
