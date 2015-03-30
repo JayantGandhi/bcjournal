@@ -1,0 +1,113 @@
+$gutter: 10px;
+
+.tab-box {
+  .tab-headers {
+    .tab {
+      font-size: 1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid $black;
+      margin: 0 2px;
+      cursor: pointer;
+      height: 1.5em;
+      line-height: 1.5em;
+
+      &.active {
+        border-top: 2px solid $black;
+        border-bottom: none;
+      }
+
+      .tab-check-box {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      &.placeholder {
+        cursor: auto;
+      }
+    }
+  }
+
+  .tab-content {
+    display: none;
+    width: 100%;
+    padding: 0 $gutter;
+    margin-left: -10px; //TODO: figure out why this is getting offset...
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.flexbox {
+  .row {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+
+    // use flexbox if we can
+    html.flexbox & {
+      display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+      display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+      display: -ms-flexbox;      /* TWEENER - IE 10 */
+      display: -webkit-flex;     /* NEW - Chrome */
+      display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    }
+
+    .cell {
+      display: table-cell;
+      flex: 1;
+      flex-direction: column;
+      position: relative;
+
+      //vertical alignment to middle
+      vertical-align: middle; // table
+      justify-content: center; // flexbox
+
+      html.flexbox & {
+        display: flex;
+      }
+
+      &.top-align {
+        vertical-align: top; //table
+        justify-content: flex-start; //flexbox
+      }
+
+      &.bottom-align {
+        vertical-align: bottom; //table
+        justify-content: flex-end; //flexbox
+      }
+
+      &.left-align {
+        text-align: left;
+      }
+
+      &.right-align {
+        text-align: right;
+      }
+
+      &.centered {
+        text-align: center;
+      }
+
+      // make a cell double width
+      // so far only works when flexbox works
+      &.double {
+        flex-grow: 2; //dont know the table fallback...
+      }
+
+      &.triple {
+        flex-grow: 3;
+      }
+
+      &.half {
+        flex-grow: 0.5;
+      }
+    }
+
+    &.border-bottom {
+      border-bottom: 1px solid $gray;
+    }
+  }
+}

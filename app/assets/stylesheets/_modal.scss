@@ -1,17 +1,72 @@
-.modal {
+// Pure CSS Modal
+// TODO: add transitions
+$space: 40px;
+
+.modal{
+
+  // This is modal bg
+  &:before{
+    content: "";
+    display: none;
+    background: rgba(0,0,0,.6);
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 10;
+  }
+
+  &:target{
+
+    // Active animate in modal
+    &:before{
+      display: block;
+    }
+    .modal-dialog{
+      top: 20%;
+    }
+
+  }
+
+}
+
+// Modal Dialog
+// ----------------------
+
+.modal-dialog{
+  background: #fefefe;
+  border: gray solid 1px;
+  margin-left: -35%;
   position: fixed;
-  top: -9999px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  min-height: 10rem;
-  min-width: 10rem;
-  max-width: 30rem;
-  max-height: 30rem;
-  background-color: #fff;
+  left: 50%;
+  top: -100%;
+  z-index: 11;
+  width: 70%;
 }
 
-#cite:target {
-  top: 50%;
+.modal-body{
+  padding: $space/2;
+}
+
+.modal-header,
+.modal-footer{
+  padding: $space/4 $space/2;
+}
+
+.modal-header{
+  border-bottom: gray solid 1px;
+
+  h2{
+    font-size: 20px;
+  }
 
 }
+
+.modal-footer{
+  border-top: gray solid 1px;
+  text-align: right;
+}
+
+/*ADDED TO STOP SCROLLING TO TOP*/
+#close {
+  display: none;
+}
+
