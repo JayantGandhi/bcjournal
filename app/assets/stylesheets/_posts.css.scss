@@ -448,7 +448,8 @@ a[href*='note_'] {
       list-style: none;
       display: inline-block;
 
-      .related-article {
+      .related-article,
+      .recent-article {
         height: 10rem;
         width: 10rem;
         background-size: cover;

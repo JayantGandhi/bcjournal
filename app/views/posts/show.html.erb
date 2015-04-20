@@ -63,8 +63,21 @@
     <span><%= @post.title %> <%= ": #{@post.subtitle}" if !@post.subtitle.blank? %> - <%= @post.by_line %></span>
   </div>
 
-  <%- if @post.posts.length > 1 -%>
-    <div class="related-articles desktop-only">
+  <div class="related-articles desktop-only">
+    <h3>Recent Articles</h3>
+    <ul>
+      <%- for article in @recent_articles -%>
+        <li>
+          <%= link_to article do%>
+            <div class="recent-article" style="background-image:url('<%= article.cover_image.tile_small %>')">
+            </div>
+            <div class="title"><%= truncate(article.title, length: 47, omission: '...') %></div>
+          <%- end -%>
+        </li>
+      <%- end -%>
+    </ul>
+
+    <%- if @post.posts.length > 1 -%>
       <h3>Related Articles</h3>
       <ul>
         <%- for article in @post.posts -%>
@@ -77,8 +90,8 @@
           </li>
         <%- end -%>
       </ul>
-    </div>
-  <%- end -%>
+    <%- end -%>
+  </div>
 
   <div class="article-content" itemprop="articleBody">
     <% if !@post.abstract.blank? %>
