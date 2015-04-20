@@ -479,6 +479,7 @@ a[href*='note_'] {
   width: 100%;
   background-color: $white;
   font-family: $title-font;
+  z-index: 10;
 
   @include transition(
     opacity 250ms ease-in-out,
