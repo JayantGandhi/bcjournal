@@ -60,7 +60,7 @@
   <%= render 'cite' %>
 
   <div id="nameReminder" class="desktop-only">
-    <span><%= @post.title %>: <%= @post.subtitle %> - <%= @post.by_line %></span>
+    <span><%= @post.title %> <%= ": #{@post.subtitle}" if !@post.subtitle.blank? %> - <%= @post.by_line %></span>
   </div>
 
   <%- if @post.posts.length > 1 -%>
