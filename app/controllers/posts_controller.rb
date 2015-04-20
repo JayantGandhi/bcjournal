@@ -17,7 +17,7 @@ class PostsController < ApplicationController
       @hashtags +=" ##{tag.name.gsub(/\s+/, "")}"
     end
 
-    @recent_articles = Post.where("id != ?", @post.id).order('publish_date DESC').limit(4)
+    @recent_articles = Post.where("id != ?", @post.id).published.order('publish_date DESC').limit(4)
 
     # Set the page title
     @page_title = @post.title
