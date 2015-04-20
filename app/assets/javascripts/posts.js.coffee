@@ -24,6 +24,7 @@ jQuery ->
   do init
 
   $sectionNavigator = $('.section-navigator')
+  $nameReminder = $('#nameReminder')
 
   if $sectionNavigator.length
     $progressBar = $('.progress-bar')
@@ -34,6 +35,7 @@ jQuery ->
 
     if $window.scrollTop() > titleAreaBottom
       $sectionNavigator.addClass('shown')
+      $nameReminder.addClass('shown')
 
     articleHeight = $('.article-content').height()
     articleOffset = $('.article-content').offset().top
@@ -54,8 +56,10 @@ jQuery ->
 
       if $window.scrollTop() > titleAreaBottom
         $sectionNavigator.addClass('shown')
+        $nameReminder.addClass('shown')
       else
         $sectionNavigator.removeClass('shown')
+        $nameReminder.removeClass('shown')
 
       for section in $sections
         $section = $(section)

@@ -53,11 +53,15 @@
       <li class="social-item twitter">
         <a class="tweet-this" href="https://twitter.com/share?text=<%= CGI::escape(@post.blurb) %><%= CGI::escape(@hashtags) %>&url=<%= CGI::escape(@bitly_url) %>"><span class="social-text">Share on</span><span class="icon-twitter"></span></a>
       </li>
-      <li class="social-item cite"><a href="#cite">Cite</a></li>
+      <!-- <li class="social-item cite"><a href="#cite">Cite</a></li> -->
     </ul>
   </div>
 
   <%= render 'cite' %>
+
+  <div id="nameReminder" class="desktop-only">
+    <span><%= @post.title %>: <%= @post.subtitle %> - <%= @post.by_line %></span>
+  </div>
 
   <%- if @post.posts.length > 1 -%>
     <div class="related-articles desktop-only">
