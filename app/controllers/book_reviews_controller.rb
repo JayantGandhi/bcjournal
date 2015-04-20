@@ -132,7 +132,7 @@ class BookReviewsController < ApplicationController
         :publisher,
         :link_to_book,
         :price,
-        :author_bio
+        :author_bio,
         sections_attributes: [
           :id,
           :header,
@@ -140,7 +140,6 @@ class BookReviewsController < ApplicationController
           :position,
           :_destroy
         ],
-
       )
     end
 
