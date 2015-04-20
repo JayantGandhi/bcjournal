@@ -80,7 +80,7 @@ class Post < ActiveRecord::Base
 
       self.sections.each_with_index.map { |section, index|
         section_html = Nokogiri::HTML(section.body)
-        section_links = section_html.css("a[href*='bcjournal'], a[href*='note'], a.footnote")
+        section_links = section_html.css("a[href*='bcjournal'], a[href*='note'], a.footnote, a[href*='_edn']")
 
         for link in section_links
           linkNumber = link.content.gsub(/[\[\]]+/, '')
