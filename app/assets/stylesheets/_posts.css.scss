@@ -268,7 +268,7 @@ article .article-content {
 
     &.sticky {
       position: fixed;
-      top: 6.5rem;
+      top: 7.5rem;
 
       .social-list {
         margin: 0;
@@ -480,6 +480,8 @@ a[href*='note_'] {
   background-color: $white;
   font-family: $title-font;
   z-index: 10;
+  font-weight: bold;
+  padding-bottom: 1rem;
 
   @include transition(
     opacity 250ms ease-in-out,
