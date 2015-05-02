@@ -77,16 +77,4 @@
   <%- end -%>
 </article>
 
-<%- if @book_review.sections.length > 1 -%>
-  <div class="section-navigator desktop-only">
-    <div class="progress-bar"></div>
-    <ul>
-      <%- for section in @book_review.sections do -%>
-        <li><a href="#<%= section.header.parameterize %>"><%= truncate(section.header, length: 20, omission: '...') %></a></li>
-      <%- end -%>
-      <%- if !@book_review.notes.blank? -%>
-        <li><a href="#notes">Notes</a></li>
-      <%- end -%>
-    </ul>
-  </div>
-<%- end -%>
+<%= render partial: 'shared/section_navigator', locals: {article: @post} %>

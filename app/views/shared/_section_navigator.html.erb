@@ -1,0 +1,13 @@
+<%- if article.sections.length > 1 -%>
+  <div class="section-navigator desktop-only">
+    <div class="progress-bar"></div>
+    <ul>
+      <%- for section in article.sections do -%>
+        <li title="<%= section.header %>"><a href="#<%= section.header.parameterize %>"><%= truncate(section.header, length: 20, omission: '...') %></a></li>
+      <%- end -%>
+      <%- if !article.notes.blank? -%>
+        <li><a href="#notes">Notes</a></li>
+      <%- end -%>
+    </ul>
+  </div>
+<%- end -%>
