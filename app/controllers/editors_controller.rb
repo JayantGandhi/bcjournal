@@ -38,7 +38,7 @@ class EditorsController < ApplicationController
   end
 
   def index
-    @editors = Editor.all
+    @editors = Editor.where.not(email: 'jgandhi2@jhu.edu')
   end
 
   def destroy
