@@ -3,7 +3,6 @@
   <%= f.inputs "Post", multipart: true do %>
     <%= f.input :title, required: true %>
     <%= f.input :subtitle %>
-    <%= f.input :by_line, required: true %>
     <%= f.input :authors %>
     <%= f.input :blurb, required: true, input_html: {rows: 3, max_length: 100, class: 'text-area-with-limit'} %>
     <span id="img_preview" style="background-image:url(<%= @post.cover_image %>)"></span>
@@ -26,7 +25,7 @@
     <%= f.input :article_type, required: true, as: :radio, collection: ['interview', 'commentary', 'scholarly research'] %>
     <%= f.input :audio, as: :file%>
     <%= f.input :tag_list %>
-    <%= f.input :publish_date, as: :date_picker %>
+    <%= f.input :publish_date, as: :date_picker, required: true %>
     <%= f.input :posts, label: 'Related Articles', collection: @posts, input_html: {multiple: true} %>
     <%= f.hidden_field :book_review, value: false %>
     <div data-tooltip aria-haspopup='true' class="has-tip form-checkbox" title="Check this box if the post an archive post">

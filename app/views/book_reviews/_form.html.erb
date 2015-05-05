@@ -3,7 +3,7 @@
   <%= f.inputs "Book Review", multipart: true do %>
     <%= f.input :title, required: true %>
     <%= f.input :subtitle %>
-    <%= f.input :author, required: true %>
+    <%= f.input :book_author, required: true %>
     <%= f.input :publisher, required: true %>
     <%= f.input :link_to_book %>
     <%= f.input :price %>
@@ -24,7 +24,7 @@
     <%- end -%>
     <%= f.link_to_add 'Add A Section', :sections, class: 'button success radius' %>
     <%= f.input :notes, as: :ckeditor %>
-    <%= f.input :authro_bio %>
+    <%= f.input :author_bio %>
     <%= f.input :tag_list %>
     <%= f.input :publish_date, as: :date_picker %>
     <%= f.hidden_field :book_review, value: true %>

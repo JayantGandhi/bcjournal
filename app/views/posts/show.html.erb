@@ -1,3 +1,5 @@
+<% by_line = construct_by_line(@post) %>
+
 <% content_for :head do %>
     <meta property="og:title" content="<%= @post.title %><%= " - #{@post.subtitle}" if !@post.subtitle.blank? %>">
     <meta property="og:image" content="<%= @post.cover_image.facebook %>">
@@ -19,7 +21,7 @@
     <div class="title">
       <h1 itemprop="name"><%= @post.title %></h1>
       <h2><%= @post.subtitle %></h3>
-      <h5>By <span itemprop="author"><%= @post.by_line %></span></h5>
+      <h5>By <span itemprop="author"><%= by_line %></span></h5>
       <span class="visibly-hidden"><%= @post.photo_title %></span>
     </div>
   </section>
@@ -53,14 +55,14 @@
       <li class="social-item twitter">
         <a class="tweet-this" href="https://twitter.com/share?text=<%= CGI::escape(@post.blurb) %><%= CGI::escape(@hashtags) %>&url=<%= CGI::escape(@bitly_url) %>"><span class="social-text">Share on</span><span class="icon-twitter"></span></a>
       </li>
-      <!-- <li class="social-item cite"><a href="#cite">Cite</a></li> -->
+      <li class="social-item cite"><a href="#cite">Cite</a></li>
     </ul>
   </div>
 
   <%= render 'cite' %>
 
   <div id="nameReminder" class="desktop-only">
-    <span><%= @post.title %> <%= ": #{@post.subtitle}" if !@post.subtitle.blank? %> - <%= @post.by_line %></span>
+    <span><%= @post.title %> <%= ": #{@post.subtitle}" if !@post.subtitle.blank? %> - <%= by_line %></span>
   </div>
 
   <div class="related-articles desktop-only">
