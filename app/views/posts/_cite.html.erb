@@ -11,9 +11,15 @@
           <div class="cell tab" data-tab-content="chicago">Chicago</div>
         </div>
         <div class="row">
-          <div id="apa" class="tab-content active">APA</div>
-          <div id="mla" class="tab-content">MLA</div>
-          <div id="chicago" class="tab-content">Chicago</div>
+          <div id="apa" class="tab-content active">
+            <%= construct_author_list(@post, true) %>. (<%= (@post.publish_date.strftime('%Y, %B %e')) %>). <em><%= @post.title %><%= ": #{@post.subtitle}" if !@post.subtitle.blank? %></em>. Retrieved from <%= request.original_url %>.
+          </div>
+          <div id="mla" class="tab-content">
+            <%= construct_author_list(@post) %>. "<%= @post.title %><%= ": #{@post.subtitle}" if !@post.subtitle.blank? %>." <em>The SAIS Europe Journal of Global Affairs</em>. <%= @post.publish_date.strftime('%d %B %Y') %>. Web. <%= Date.today.strftime('%d %B %Y') %>.
+          </div>
+          <div id="chicago" class="tab-content">
+            <%= construct_author_list(@post) %>. "<%= @post.title %><%= ": #{@post.subtitle}" if !@post.subtitle.blank? %>." The SAIS Europe Journal of Global Affairs. <%= request.original_url %> (accessed <%= Date.today.strftime('%d %B %Y') %>).
+          </div>
         </div>
       </div>
     </div>
