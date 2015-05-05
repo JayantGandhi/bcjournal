@@ -9,6 +9,7 @@
   <% if @book_review.archived? %>
     <!-- <div class="archive-tag">From the Archive</div> -->
   <%- end -%>
+  <h1>Book Review:</h1>
   <section class="book-cover cover-image" style="background-image:url(<%= @book_review.cover_image.cover %>)">
   </section>
   <div class="print-only">Published in The SAIS Journal of Global Affairs</div>
