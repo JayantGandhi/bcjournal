@@ -311,10 +311,15 @@ article .article-content {
         }
 
         &.cite {
-          background-color: #F7F90B;
+          background-color: $main-color;
 
           &:hover {
-            background-color: lighten(#F7F90B, 20%);
+            background-color: darken($main-color, 5%);
+          }
+
+          .quote-icon {
+            font-size: 1rem;
+            vertical-align: super;
           }
         }
       }

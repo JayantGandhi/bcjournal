@@ -21,3 +21,9 @@ $ ->
   $('.citation').on 'click', ->
     selectText(this)
 
+  $('.modal-dialog').on 'click', (e) ->
+    e.stopPropagation()
+
+  $('.modal').on 'click', (e) ->
+    window.location.hash = 'close'
+    e.preventDefault()
