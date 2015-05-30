@@ -128,6 +128,7 @@ class BookReviewsController < ApplicationController
         :abstract,
         :notes,
         :author,
+        :book_author,
         :book_publish_date,
         :publisher,
         :link_to_book,
