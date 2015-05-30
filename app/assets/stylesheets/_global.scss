@@ -10,6 +10,9 @@ $interview-color: #2C7200;
 $commentary-color: #006572;
 $title-font: 'Old Standard TT';
 $body-font: '';
+$create-color: #1CB841;
+$delete-color: #c60f13;
+$info-color: lighten($main-color, 10%);
 
 .page-wrap {
   width: 100%;

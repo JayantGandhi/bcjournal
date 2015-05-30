@@ -1,12 +1,19 @@
 <section id="editor-options">
   <h1>Here's what you can do</h1>
-  <ul class="button-group round">
-    <li data-hastooltip aria-haspopup="true" class="hastip" title=""><%= link_to 'Manage Posts', manage_posts_path, class: 'button' %></li>
-    <li data-hastooltip aria-haspopup="true" class="hastip" title=""><%= link_to 'Manage Book Reviews', manage_book_reviews_path, class: 'button success' %></li>
-    <li data-hastooltip aria-haspopup="true" class="hastip" title=""><%= link_to 'Edit Slideshow', edit_slideshow_path, class: 'button' %></li>
-    <li data-hastooltip aria-haspopup="true" class="hastip" title=""><%= link_to 'Manage Verticals', verticals_path, class: 'button success' %></li>
-    <li data-hastooltip aria-haspopup="true" class="hastip" title=""><%= link_to 'Manage Issues', manage_issues_path, class: 'button' %></li>
-    <li data-hastooltip aria-haspopup="true" class="hastip" title=""><%= link_to 'Add an Editor', new_editor_path, class: 'button' %></li>
-    <li data-hastooltip aria-haspopup="true" class="hastip" title=""><%= link_to 'Delete an Editor', editors_path, class: 'button alert' %></li>
+
+  <ul class="btn-group btns-content">
+    <li><%= link_to(raw('Manage Posts <span class="arrow">❯</span>'), manage_posts_path, class: 'btn') %></li>
+    <li><%= link_to(raw('Manage Book Reviews <span class="arrow">❯</span>'), manage_book_reviews_path, class: 'btn') %></li>
+    <li><%= link_to(raw('Manage Issues (Archive) <span class="arrow">❯</span>'), manage_issues_path, class: 'btn') %></li>
+  </ul>
+
+  <ul class="btn-group btns-organization">
+    <li><%= link_to(raw('Edit Verticals <span class="arrow">❯</span>'), verticals_path, class: 'btn btn-info') %></li>
+    <li><%= link_to(raw('Edit Slideshow <span class="arrow">❯</span>'), edit_slideshow_path, class: 'btn btn-info') %></li>
+  </ul>
+
+  <ul class="btn-group btns-editors">
+    <li><%= link_to(raw('Add an Editor <span class="arrow">❯</span>'), new_editor_path, class: 'btn btn-info') %></li>
+    <li><%= link_to(raw('Delete an Editor <span class="arrow">❯</span>'), editors_path, class: 'btn btn-delete') %></li>
   </ul>
 </section>
