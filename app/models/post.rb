@@ -59,7 +59,7 @@ class Post < ActiveRecord::Base
     end
 
     if add_year
-      self.slug = self.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#|\,|\.|\%|\;|\:/, '') + "-#{self.publish_date.strftime('%Y')}"
+      self.slug = self.title.downcase.gsub(" ", "-").gsub(/\?|\&|\=|\$|\@|\#|\,|\.|\%|\;|\:|\\|\//, '') + "-#{self.publish_date.strftime('%Y')}"
     end
   end
 
