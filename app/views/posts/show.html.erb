@@ -1,4 +1,12 @@
-<% by_line = construct_by_line(@post) %>
+<%
+
+  if @post.authors.length >= 1
+    by_line = construct_by_line(@post)
+  else
+    by_line = @post.by_line
+  end
+
+%>
 
 <% content_for :head do %>
     <meta property="og:title" content="<%= @post.title %><%= " - #{@post.subtitle}" if !@post.subtitle.blank? %>">

@@ -13,6 +13,8 @@ module NamesHelper
   end
 
   def last_name_first_name(full_name)
+    return if full_name.nil?
+
     names = full_name.split(' ')
     number_of_names = names.length
     last_name_first = "#{names[number_of_names-1]},"
