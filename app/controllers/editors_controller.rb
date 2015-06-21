@@ -3,6 +3,8 @@ class EditorsController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def manage_posts
+    puts sort_column
+    puts sort_direction
     @posts = Post.not_book_review.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:page => params[:page])
   end
 
@@ -69,7 +71,7 @@ class EditorsController < ApplicationController
     end
 
     def sort_direction
-      %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+      %w[asc desc].include?(params[:direction]) ?  params[:direction] : "desc"
     end
 
 end

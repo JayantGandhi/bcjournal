@@ -13,12 +13,12 @@
         <div class="row">
           <div id="apa" class="tab-content active">
             <div class="citation">
-              <%= construct_author_list(@post, true) %>. (<%= (@post.publish_date.strftime('%Y, %B %e')) %>). <em><%= @post.title %><%= ": #{@post.subtitle}" if !@post.subtitle.blank? %></em>. Retrieved from <%= request.original_url %>.
+              <%= construct_author_list(@post, true) %>. (<%= (@post.publish_date.strftime('%Y, %B %e') if !@post.publish_date.nil?) %>). <em><%= @post.title %><%= ": #{@post.subtitle}" if !@post.subtitle.blank? %></em>. Retrieved from <%= request.original_url %>.
             </div>
           </div>
           <div id="mla" class="tab-content">
             <div class="citation">
-              <%= construct_author_list(@post) %>. "<%= @post.title %><%= ": #{@post.subtitle}" if !@post.subtitle.blank? %>." <em>The SAIS Europe Journal of Global Affairs</em>. <%= @post.publish_date.strftime('%d %B %Y') %>. Web. <%= Date.today.strftime('%d %B %Y') %>.
+              <%= construct_author_list(@post) %>. "<%= @post.title %><%= ": #{@post.subtitle}" if !@post.subtitle.blank? %>." <em>The SAIS Europe Journal of Global Affairs</em>. <%= @post.publish_date.strftime('%d %B %Y') if !@post.publish_date.nil? %>. Web. <%= Date.today.strftime('%d %B %Y') %>.
             </div>
           </div>
           <div id="chicago" class="tab-content">
