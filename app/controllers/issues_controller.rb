@@ -8,7 +8,7 @@ class IssuesController < ApplicationController
   end
 
   def show
-
+    @position = 0
   end
 
   def new

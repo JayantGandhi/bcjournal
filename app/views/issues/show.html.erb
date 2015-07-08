@@ -4,31 +4,32 @@
     <meta property="og:description" content="<%= @issue.featured %>">
     <meta property="og:url" content="<%= request.original_url %>">
 <% end %>
+<div class="archives">
+  <article>
+    <section class="title-area cover-image book-cover" style="background-image:url(<%= @issue.cover_image.cover %>)">
+      <div class="title visually-hidden">
+        <h1><%= @issue.title %></h1>
+        <h2><%= @issue.year.strftime('%Y') %></h3>
+      </div>
+    </section>
+    <section class="download-tools">
+      <div><a href="<%= @issue.pdf %>" target='_blank' class="icon-file-pdf">Download PDF</a><span class="volume-issue right">Volume: <%= @issue.volume %> Issue: <%= @issue.issue_no %></span></div>
+    </section>
+    <section class="issue-info">
+      <h3 class="credits">Acknowledgments</h4>
+      <div><%= raw @issue.credits %></div>
+      <h4 class="editorial-staff"><%= @issue.year.strftime('%Y') %> Journal Staff</h5>
+      <div><%= raw @issue.editorial_team %></div>
+    </section>
 
-<article>
-  <section class="title-area cover-image book-cover" style="background-image:url(<%= @issue.cover_image.cover %>)">
-    <div class="title visually-hidden">
-      <h1><%= @issue.title %></h1>
-      <h2><%= @issue.year.strftime('%Y') %></h3>
-    </div>
-  </section>
-  <section class="download-tools">
-    <div><a href="<%= @issue.pdf %>" target='_blank' class="icon-file-pdf">Download PDF</a><span class="volume-issue right">Volume: <%= @issue.volume %> Issue: <%= @issue.issue_no %></span></div>
-  </section>
-  <section class="issue-info">
-    <h3 class="credits">Acknowledgments</h4>
-    <div><%= raw @issue.credits %></div>
-    <h4 class="editorial-staff"><%= @issue.year.strftime('%Y') %> Journal Staff</h5>
-    <div><%= raw @issue.editorial_team %></div>
-  </section>
-  <section id="tileWrapper" class="tile-wrapper small-10 columns no-pre-header">
-    <h3>Articles:</h3>
-    <%= render @issue.posts %>
-  </section>
-
-  <% if editor_signed_in? %>
-    <div class="editor-tools desktop-only">
-      <%= link_to 'Edit', edit_issue_path %>
-    </div>
-  <%- end -%>
-</article>
+    <% if editor_signed_in? %>
+      <div class="editor-tools desktop-only">
+        <%= link_to 'Edit', edit_issue_path %>
+      </div>
+    <%- end -%>
+  </article>
+</div>
+<section id="tileWrapper" class="tile-wrapper small-10 columns no-pre-header">
+  <h3>Articles:</h3>
+  <%= render @issue.posts if @issue.posts.length > 0 %>
+</section>

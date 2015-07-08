@@ -1,4 +1,4 @@
-<section id="tileWrapper" class="tile-wrapper small-10 columns no-pre-header">
+<section id="tileWrapper" class="tile-wrapper small-10 columns no-pre-header archives">
   <%- @issues.each_with_index do |issue, index| -%>
     <div class="tile-large tile <%= "inverted" if index % 2 == 0 %>">
       <%= link_to issue do %>
