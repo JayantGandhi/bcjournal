@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505093520) do
+ActiveRecord::Schema.define(version: 20150708191237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -112,6 +112,7 @@ ActiveRecord::Schema.define(version: 20150505093520) do
     t.string   "article_type",      default: "scholarly research"
     t.string   "audio"
     t.string   "book_author"
+    t.string   "bitly_url"
   end
 
   create_table "posts_slideshows", id: false, force: true do |t|

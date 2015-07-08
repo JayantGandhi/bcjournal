@@ -9,7 +9,10 @@ class PostsController < ApplicationController
     end
 
     # shorten the url with bitly
-    @bitly_url = Bitly.client.shorten(request.original_url).short_url
+    if @post.bitly_url.blank?
+      @post.bitly_url = Bitly.client.shorten(request.original_url).short_url
+      @post.save!
+    end
 
     # construct hashtags
     @hashtags = ''

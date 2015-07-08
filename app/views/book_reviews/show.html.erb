@@ -23,7 +23,7 @@
         <a class="fbshare" data-title="<%= @book_review.title %>" data-image="<%= @book_review.cover_image.thumb %>" data-desc="<%= @book_review.blurb %>" href="https://www.facebook.com/sharer/sharer.php?u=<%= request.original_url %>" target="_blank"><span class="social-text">Share on</span><span class="icon-facebook"></span></a>
       </li>
       <li class="social-item twitter">
-      <a class="tweet-this" href="https://twitter.com/share?text=<%= CGI::escape(@book_review.blurb) %><%= CGI::escape(@hashtags) %>&url=<%= CGI::escape(@bitly_url) %>"><span class="social-text">Share on</span><span class="icon-twitter"></span></a>
+      <a class="tweet-this" href="https://twitter.com/share?text=<%= CGI::escape(@book_review.blurb) %><%= CGI::escape(@hashtags) %>&url=<%= CGI::escape(@post.bitly_url) %>"><span class="social-text">Share on</span><span class="icon-twitter"></span></a>
       </li>
     </ul>
   </div>
