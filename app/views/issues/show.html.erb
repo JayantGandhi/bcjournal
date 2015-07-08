@@ -21,13 +21,9 @@
     <h4 class="editorial-staff"><%= @issue.year.strftime('%Y') %> Journal Staff</h5>
     <div><%= raw @issue.editorial_team %></div>
   </section>
-  <section class="article-list">
+  <section id="tileWrapper" class="tile-wrapper small-10 columns no-pre-header">
     <h3>Articles:</h3>
-    <ul>
-      <%- for post in @issue.posts -%>
-        <li><%= link_to "#{post.title}", post %></li>
-      <%- end -%>
-    </ul>
+    <%= render @issue.posts %>
   </section>
 
   <% if editor_signed_in? %>
