@@ -72,6 +72,7 @@ class Post < ActiveRecord::Base
   end
 
   private
+
     def clean_notes
       if self.sections.blank?
         # No need to do anything

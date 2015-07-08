@@ -1,0 +1,8 @@
+<div class="nested-fields">
+  <%= f.inputs do %>
+    <%= f.input :header %>
+    <%= f.input :body, as: :ckeditor %>
+    <%= f.input :position %>
+    <%= link_to_remove_association "remove section", f %>
+  <% end %>
+</div>

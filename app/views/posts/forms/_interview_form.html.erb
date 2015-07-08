@@ -1,5 +1,5 @@
 <%- @i = 0 -%>
-<%= semantic_nested_form_for @post, multipart: true do |f| %>
+<%= semantic_form_for @post, multipart: true do |f| %>
   <%= f.inputs "Interview", multipart: true do %>
     <%= f.input :title, required: true %>
     <%= f.input :subtitle %>
@@ -12,14 +12,15 @@
     <%= f.input :photo_url %>
     <%= f.input :photo_title %>
     <%= f.input :abstract %>
-    <%= f.semantic_fields_for :sections do |s| %>
-      <%- @i += 1 -%>
-      <%= s.input :header %>
-      <%= s.input :body, as: :ckeditor %>
-      <%= s.input :position, input_html: {value: @i} %>
-      <%= s.link_to_remove 'Remove This Section', class: 'button alert radius' %>
-    <%- end -%>
-    <%= f.link_to_add 'Add A Section', :sections, class: 'button success radius' %>
+    <h3>Sections</h3>
+    <div id="sections">
+      <%= f.semantic_fields_for :sections do |section| %>
+        <%= render 'section_fields', f: section %>
+        <div class="links">
+          <%= link_to_add_association 'Add A Section', f, :sections, class: 'button success radius' %>
+        </div>
+      <%- end -%>
+    </div>
     <%= f.input :notes, as: :ckeditor %>
     <%= f.input :author_bio, input_html: {rows: 5, max_length: 1000, class: 'text-area-with-limit'} %>
     <%= f.input :verticals, as: :check_boxes, collection: Vertical.all %>

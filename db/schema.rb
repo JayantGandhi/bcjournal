@@ -88,16 +88,16 @@ ActiveRecord::Schema.define(version: 20150505093520) do
     t.string   "cover_image"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "published",           default: false
+    t.boolean  "published",         default: false
     t.text     "blurb"
     t.integer  "slideshow_id"
     t.integer  "weight"
     t.string   "slug"
     t.integer  "vertical_id"
     t.string   "subtitle"
-    t.boolean  "book_review",         default: false
+    t.boolean  "book_review",       default: false
     t.date     "publish_date"
-    t.boolean  "archived",            default: false
+    t.boolean  "archived",          default: false
     t.text     "author_bio"
     t.string   "photo_credit"
     t.string   "photo_url"
@@ -108,15 +108,9 @@ ActiveRecord::Schema.define(version: 20150505093520) do
     t.date     "book_publish_date"
     t.float    "price"
     t.string   "link_to_book"
-    t.text     "tags",                default: [],                   array: true
     t.integer  "issue_id"
-    t.integer  "related_article_ids", default: [],                   array: true
-    t.boolean  "interview",           default: false
-    t.boolean  "commentary",          default: false
-    t.boolean  "research",            default: true
-    t.string   "article_type",        default: "scholarly research"
+    t.string   "article_type",      default: "scholarly research"
     t.string   "audio"
-    t.string   "authors",             default: [],                   array: true
     t.string   "book_author"
   end
 

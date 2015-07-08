@@ -38,6 +38,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @post.sections.push(Section.new(post_id: @post.id, position: 1))
 
     @type = params[:type]
 
@@ -46,7 +47,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    puts @post
+
     @post.build_slug()
 
     if Post.where(slug: @post.slug).length >= 1

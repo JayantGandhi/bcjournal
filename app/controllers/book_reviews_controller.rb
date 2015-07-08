@@ -27,6 +27,7 @@ class BookReviewsController < ApplicationController
 
   def new
     @book_review = Post.new
+    @book_review.sections.push(Section.new(post_id: @book_review.id, position: 1))
 
     @verticals = Verticals::VERTICALS
   end

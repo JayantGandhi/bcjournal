@@ -17,3 +17,15 @@ $ ->
       chars = $element.val().length
       if chars >= 0
         $element.next('.char-counter').text(chars + '/' + textAreaMax)
+
+  $sectionsContainer = $('#sections')
+
+  $sectionsContainer.on 'cocoon:after-insert', (e, insertedItem) ->
+    sectionsCount = $sectionsContainer.find('.nested-fields').length
+    $latestPositionInput = $sectionsContainer.find(':input[type=number]').last()
+    $latestPositionInput.val(sectionsCount)
+
+  $sectionsContainer.on 'cocoon:after-remove', (e, removedItem) ->
+    $positionInputs = $sectionsContainer.find(':input[type=number]')
+    for input, i in $positionInputs
+      $(input).val(i+1)

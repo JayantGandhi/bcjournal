@@ -71,7 +71,7 @@ gem 'slick_rails'
 
 # For Forms
 gem 'formtastic'
-gem 'nested_form'
+gem 'cocoon'
 
 # for pagination
 gem 'will_paginate'

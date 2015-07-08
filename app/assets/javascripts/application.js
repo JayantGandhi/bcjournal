@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require lodash.min
-//= require jquery_nested_form
+//= require cocoon
 //= require ckeditor/init
 //= require chosen.jquery.min
 //= require jquery.validate.min
