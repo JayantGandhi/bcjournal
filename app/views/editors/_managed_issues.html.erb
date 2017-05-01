@@ -8,7 +8,7 @@
       </ul>
     </div>
     <div class="post-created-date column small-2">
-      Year: <%= issue.year.strftime('%Y') %>
+      Year: <%= issue.year.strftime('%Y') if !issue.year.blank? %>
     </div>
     <ul class="button-group round right post-tools">
       <li class="post-delete">
