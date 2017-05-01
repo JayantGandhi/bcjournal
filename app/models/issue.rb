@@ -8,6 +8,8 @@ class Issue < ActiveRecord::Base
   has_many :posts
   accepts_nested_attributes_for :posts, allow_destroy: false
 
+  validates :year, presence: true
+
   def to_param
     slug
   end
