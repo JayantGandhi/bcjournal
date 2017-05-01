@@ -6,7 +6,7 @@
         <span class="overlay"></span>
         <div class="caption">
           <h2><%= issue.title %></h2>
-          <h3><%= issue.year.strftime('%Y') %></h3>
+          <h3><%= issue.year.strftime('%Y') if !issue.year.blank? %></h3>
           <span class="desktop-only"><%= issue.featured %></span>
         </div>
       <%- end -%>
